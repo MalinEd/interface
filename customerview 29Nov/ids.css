@@ -1,0 +1,56 @@
+#toplefttbar {
+    float: left;
+    width: 30.75%;
+    margin: auto;
+    padding-left:8px;
+
+}
+#lefttbar {
+    float: left;
+    width: 16%;
+    margin: auto;
+    padding-bottom:23%;
+    padding-left:5px;
+    padding-top:9px;
+}
+
+#rightbar {
+    float: right;
+    width: 25%;
+    margin: auto;
+    text-align: center;
+    padding-bottom:7%;
+    padding-right:5px;
+    padding-top:9px;
+
+}
+
+#searchplacement{
+    position: center;
+
+}
+
+#logout{
+    float: right;
+    width: 25%;
+    margin: auto;
+}
+#top{
+    font-size: 20px;
+    text-align: center;
+
+}
+
+#moving {
+    position:fixed
+}
+#wrapperlogin {
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    width: 1200px;
+    min-height: 100%;
+}
+#bodywrapper {
+
+}
