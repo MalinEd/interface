@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <title>Employeerview layout proposal</title>
+    <link rel="stylesheet" type="text/css" href="basic.css">
+    <link rel="stylesheet" type="text/css" href="buttonstyles.css">
+    <link rel="stylesheet" type="text/css" href="ids.css">
+    <script type="text/javascript" src="jquery.js" ></script>
+    <script type="text/javascript" src ="jtest.js"></script>
+    <link rel="stylesheet" type="text/css" href="tabstyle.css">
+
+
+
+    <style type="text/css">
+        <!--
+        .style1 {
+            font-family: Georgia, "Times New Roman", Times, serif;
+            font-style: italic;
+        }
+        -->
+    </style>
+</head>
+<body>
+
+<div id="container">
+    <div id="top">
+        <h1 align="center"><span class="style1">The Flying Dutchman</span>      <img class="picturestyle2"  src="pictures/background.JPG"/>
+            <a href="index.html">
+                <button align="right" class="logoutbutton">Log Out</button> </a>    </h1>
+    </div>
+
+
+
+
+
+
+
+
+
+
+    <div id="lefttbar">
+        <ul class="tabs">
+            <br>
+            <li class="active" rel="tab1">Start</li><br><br>
+            <li rel="tab2"> Vip-members</li><br><br>
+            <li rel="tab3"> Stock</li>
+            <li rel="tab4"> Statistics</li>
+            <li rel="tab5"> Incidents</li>
+
+
+        </ul>
+
+    </div>
+    <div id="rightbar">
+
+        <div class="receipt"><h5>recent orders</h5>
+            <ul id="menu">
+                <li>5-10 new orders</li>
+                <li>able to remove from list when order</li>
+                <li>is handled</li>
+                <li></li>
+                <li></li>
+
+            </ul>
+
+
+        </div>
+
+
+    </div>
+
+    <div id="mainframe">
+        <div class="tab_container">
+
+            <div id="tab1" class="tab_content">
+
+                <p>
+                    WELCOME! emplll
+                </p>
+
+            </div><!-- #tab1 -->
+            <div id="tab2" class="tab_content">
+
+                <div id="searchplacement">
+                    <form method="post" action="">
+                        <input class="searchbox" name="Searchword" type="text">
+                        <input class=" button1" type="submit" name="Submit" value="Search">
+
+
+                    </form>
+
+                </div>
+                <p>
+                    BEERS
+                    BEERS
+                </p>
+
+                <div>
+                    <table class="table table-hover">
+                        <thead>
+                        <tr>
+                            <th>Credit</th>
+                            <th>Name</th>
+                            <th>Username</th>
+                            <th>Address</th>
+                            <th>Zip-Code</th>
+
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>100</td>
+                            <td>Otto</td>
+                            <td>@mdo</td>
+                            <td>Uppsala</td>
+                            <td>754 47</td>
+
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+            </div><!-- #tab2 -->
+            <div id="tab3" class="tab_content">
+
+                <p>
+                    hide/open this
+                </p>
+                <div>
+                    <table class="table table-hover">
+                        <thead>
+                        <tr>
+                            <th># in stock</th>
+                            <th>"beer"</th>
+                            <th>ngt</th>
+                            <th>ngt</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>+ 10 -</td>
+                            <td>Carlsberg</td>
+                            <td></td>
+                            <td></td>
+
+                        </tr>
+                        </tbody>
+
+                    </table>
+                </div>
+                <p>
+                    orders to increase stock hide/open
+                </p>
+
+            </div><!-- #tab3 -->
+
+            <div id="tab4" class="tab_content">
+
+                <p>
+                    maybe we could show a graph here over bars weekly/monthly income
+                    graph over sold beers maybe comparing to different months..
+                </p>
+
+            </div><!-- #tab4 -->
+
+            <div id="tab5" class="tab_content">
+
+                <p>
+                    jjj
+                </p>
+
+
+            </div><!-- #tab5 -->
+
+
+        </div> <!-- .tab_container -->
+    </div>
+
+
+</div>
+
+
+</body>
+</html>
