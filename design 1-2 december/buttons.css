@@ -3,11 +3,10 @@
     background:#7f8c8d;
     color:#fff;
     display:inline-block;
-    font-size:1.25em;
     margin:20px;
     padding:10px 0;
     text-align:center;
-    width:200px;
+    width:100px;
     text-decoration:none;
     box-shadow:0px 3px 0px #373c3c;
 }
@@ -17,19 +16,32 @@
 }
 
 /*Colors*/
+.button.bluesize {
+    font-size: 0.80em;
+    background:#3498db;
+    box-shadow:0px 3px 0px #266792;
+}
 .button.blue {
+    font-size:1.25em;
     background:#3498db;
     box-shadow:0px 3px 0px #266792;
 }
 
 .button.yellow {
+    font-size:1.25em;
     background:#e67e22;
     box-shadow:0px 3px 0px #b55704;
 }
 
+/*font size*/
+button.size {
+    font-size: 0.20em;
 
+}
 /*Sizes*/
-
+.button.smaller {
+    width:90px;
+}
 .button.small {
     width:130px;
 }
