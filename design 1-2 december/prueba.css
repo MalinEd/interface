@@ -1,4 +1,4 @@
-/*Estilos Generales*/
+/*general styles*/
 .button {
     background:#7f8c8d;
     color:#fff;
@@ -16,7 +16,7 @@
     margin-right:10px;
 }
 
-/*Colores*/
+/*Colors*/
 .button.blue {
     background:#3498db;
     box-shadow:0px 3px 0px #266792;
@@ -28,7 +28,7 @@
 }
 
 
-/*Tamaños*/
+/*Sizes*/
 
 .button.small {
     width:130px;
@@ -45,7 +45,7 @@
 
 
 
-/*Efectos, Hover*/
+/*Effects*/
 .button:hover {
     box-shadow:0px 0px 0px;
     padding-top:7px;
