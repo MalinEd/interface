@@ -9,7 +9,7 @@ $(function () {
 
     // First we hide all menus, but the one with all courses.
     //
-    $("allVipUsers").show();
+    $("#allVipUsers").show();
     $("#searchVipUser").hide();
 
 
