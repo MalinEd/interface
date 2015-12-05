@@ -1,0 +1,17 @@
+.flagbutton {
+    background-color: #234C69;
+    border-radius: 10px;
+    border: 2px solid #234C69;
+    width: 94px;
+    height:47px;
+}
+
+.flagbutton:hover {
+    -webkit-transform: scale(2, 2);
+}
+
+#translationbar {
+    position: fixed;
+    top: 70px;
+    right: 20px;
+}
