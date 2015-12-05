@@ -62,3 +62,25 @@ button.size {
     box-shadow:0px 0px 0px;
     padding-top:7px;
 }
+
+/*style of logout button*/
+.logoutbutton {
+    float:right;
+    /*border-radius: 100px;*/
+    background:#e67e22;
+    box-shadow:0px 3px 0px #266792;
+    width: 160px;
+    height:35px;
+    font-size: 18px;
+    font-weight: bold;
+    color:#fff;
+    /*font-style: italic;*/
+    text-align: center;
+}
+
+/*effects logout button*/
+.logoutbutton:hover {
+    border-color: white;
+    background-color: #5b5b62;
+
+}
