@@ -5,32 +5,53 @@
  * Created by LOe on 01/12/15.
  */
 
+/*should not be declared this way but now its possible to see that
+ * data was deleted without API :) */
+var VipData=getVipData();
+
 $(function () {
 
     // First we hide all menus, but the one with all courses.
     //
+
     $("#allVipUsers").show();
     $("#searchVipUser").hide();
+    $("#addVipUser").hide();
+
 
 
     $("#vip").click(function () { /* Here we show and hide the field. */
         $("#allVipUsers").show("slow");
         $("#searchVipUser").hide("slow");
+        $("#addVipUser").hide("slow");
+
     });
 
 
     $("#search").click(function () { /* Here we show and hide the field. */
         $("#allVipUsers").hide("slow");
         $("#searchVipUser").show("slow");
+        $("#addVipUser").hide("slow");
+
     });
 
-    $(Searchbox(getVipData())).appendTo("#searchVipUser");
-    $(getAllVipMem(getVipData())).appendTo("#allVipUsers");
+    $("#newUser").click(function () { /* Here we show and hide the field. */
+        $("#allVipUsers").hide("slow");
+        $("#searchVipUser").hide("slow");
+        $("#addVipUser").show("slow");
+
+    });
+
+    $(Searchbox(VipData)).appendTo("#searchVipUser");
+    $(getAllVipMem(VipData)).appendTo("#allVipUsers");
+    $(getNewUserInputField()).appendTo("#addVipUser");
+
 
 });
 
 
-function getAllVipMem(arr) {
+
+function getAllVipMem(VipData) {
 
     var temp = "";
     /* top1 is a variable that starts making a table with relevant information */
@@ -40,20 +61,21 @@ function getAllVipMem(arr) {
     /* bottom1 is a variable that "ends" the created table*/
     var bottom1='</table></div>';
 
-    temp += getUsers(arr) +"<br>";     /*gets all users one by one I think*/
+    temp += getUsers(VipData) +"<br>";     /*gets all users one by one I think*/
 
 
     return top1+temp+bottom1;
 
 }
 
-function getUsers(arr) {
+function getUsers(VipData) {
     var out1 = "";
     var i;
-    for (i = 0; i < arr.length; i++) {
+    for (i = 0; i < VipData.length; i++) {
         /* out1 is a variable that contains the "middle of the table" + information*/
-        out1 += '<tbody> <tr><td>'+arr[i].assets+'</td> <td>'+arr[i].username+
-            '</td> <td>'+ arr[i].first_name+'</td><td>'+ arr[i].last_name+'</td> </tr> </tbody>';
+        out1 += '<tbody> <tr><td>'+VipData[i].assets+'</td> <td>'+VipData[i].username+
+            '</td> <td>'+ VipData[i].first_name+'</td><td>'+ VipData[i].last_name+'</td>' +
+            '<td><button onclick="deletemember('+i+')">Delete</button></td> </tr>  </tr> </tbody>';
 
     }
     return out1;
@@ -64,14 +86,16 @@ function Searchbox() {
     /*this creates a search field and search button*/
     var search1='<div id="searchplacement">' +
         ' <input class="searchbox" id="Searchword1" type="text"> ' +
-        '<button class="" onclick="FindObject()">Search Vip-member</button> <p id="foundPersons"> </div>'
+        '<button class="" onclick="FindObject()">Search Vip-member</button> <p id="foundPersons"></p> </div>';
     return search1;
 }
 
 
+
+
 function FindObject() {
 
-    /*toppen =start of result table, bottom1 = end of result table*/
+    /*top1 =start of result table, bottom1 = end of result table*/
     var top1='<div> <table class="table table-hover"><thead> <tr> <th>Amount</th> <th>Username</th> ' +
         '<th>First Name</th> <th>Last Name</th> </tr> </thead>';
     var bottom1='</table></div>';
@@ -86,8 +110,6 @@ function FindObject() {
     user = document.getElementById("Searchword1").value;
 
 
-    var vipmembers=getVipData();/* this is probably a redundant way*/
-
 
     if(user=="" ){
         foundPersons.innerHTML="You didn't search for anyone ";
@@ -97,10 +119,11 @@ function FindObject() {
         foundPersons.innerHTML="Results"+'<br>' + top1+fPersons+bottom1;
 
         /*Goes every row in vipmembers to see if it can find the search vip-member*/
-        for (var i=0;  i < vipmembers.length; i++) {
-            if (user==vipmembers[i].username || user==vipmembers[i].first_name ||user==vipmembers[i].last_name) {
-                fPersons += '<tbody> <tr><td>'+vipmembers[i].assets+'</td> <td>'+vipmembers[i].username+ '</td> <td>'+
-                    vipmembers[i].first_name+ '</td><td>'+ vipmembers[i].last_name+'</td> </tr> </tbody>';
+        for (var i=0;  i < VipData.length; i++) {
+            if (user==VipData[i].username || user==VipData[i].first_name ||user==VipData[i].last_name) {
+                fPersons += '<tbody> <tr><td>'+VipData[i].assets+'</td> <td>'+VipData[i].username+ '</td> <td>'+
+                    VipData[i].first_name+ '</td><td>'+ VipData[i].last_name+'</td>' +
+                    '<td><button onclick="deletemember('+i+')">Delete</button></td> </tr> </tbody>';
 
             }
         }
@@ -112,6 +135,179 @@ function FindObject() {
         }
     }
 }
+
+function getNewUserInputField(){
+    /*this creates a table where it wil be possible to add members to the database*/
+
+    var addVip='<div>' +
+        '<p>NEW VIP</p> ' +
+        '<table align="center">' +
+        '<tr><td>First Name:</td><td><input class="inputfield" id="1first_name" type="text"></td></> ' +
+        '<tr><td>Last Name:</td><td><input class="inputfield" id="1last_name" type="text"> </td></tr>' +
+        '<tr><td>Username:</td><td><input class="inputfield" id="1new_username" type="text"> </td></tr>' +
+        '<tr><td>Password:</td><td><input class="inputfield" id="1new_password" type="password"> </td></tr>' +
+        '<tr><td>E-mail:</td><td> <input class="inputfield" id="1email" type="text"> </td></tr>' +
+        '<tr><td>Phone:</td><td><input class="inputfield" id="1phone" type="text"></td></tr> ' +
+        '<tr><td>Credit: </td><td><input class="inputfield" id="1credit" type="text"> </td></tr>' +
+        '<tr><td>Address: </td><td><input class="inputfield" id="1address" type="text"></td></tr> ' +
+        '<tr><td>Zip-Code:  </td><td><input class="inputfield" id="1zipCode" type="text"> </td></tr>' +
+        '<tr><td></td><td><button class="addVipbutton"  onclick="addmember()">Add Vip-member</button><td>' +
+        '<td><button class="addVipbutton"  onclick="cancleaddVip()">Cancel</button><td></td></tr></table>' +
+        '</div>';
+    return addVip;
+
+
+
+}
+
+function deletemember(i){
+
+    var message="You have deleted " +VipData[i].first_name +' '+ VipData[i].last_name;
+
+    var r = confirm("Are you sure you want to delete "+
+        VipData[i].first_name+' '+ VipData[i].last_name+"?" );
+
+    if (r == true) {
+        VipData.splice(i, i+1);
+        alert(message);
+
+        $(function () {
+
+            // First we hide all menus, but the one with all courses.
+            //
+
+            $("#allVipUsers").show();
+            $("#searchVipUser").hide();
+            $("#addVipUser").hide();
+
+
+
+            $("#vip").click(function () { /* Here we show and hide the field. */
+                $("#allVipUsers").show("slow");
+                $("#searchVipUser").hide("slow");
+                $("#addVipUser").hide("slow");
+
+            });
+
+
+            $("#search").click(function () { /* Here we show and hide the field. */
+                $("#allVipUsers").hide("slow");
+                $("#searchVipUser").show("slow");
+                $("#addVipUser").hide("slow");
+
+            });
+
+            $("#newUser").click(function () { /* Here we show and hide the field. */
+                $("#allVipUsers").hide("slow");
+                $("#searchVipUser").hide("slow");
+                $("#addVipUser").show("slow");
+
+            });
+
+            /*if this two rows is not performed the table:
+             * 1. Will not be updated
+             * or if just $(getAllVipMem(VipData)).appendTo("#allVipUsers");
+             *the content will just be appended another time so the table
+             * becomes twice as big with the deleted member gone in one of the
+             * tables*/
+
+            $('#allVipUsers').empty()   /*get rid of the old content*/
+            $(getAllVipMem(VipData)).appendTo("#allVipUsers"); /*appends the new content :)*/
+
+
+        });
+    } else {
+        alert("You didn't do any changes");
+
+    }
+
+
+
+
+}
+
+function cancleaddVip(){
+
+    /*Clearing the input fields*/
+    document.getElementById("1first_name").value="";
+    document.getElementById("1last_name").value="";
+    document.getElementById("1new_username").value="";
+    document.getElementById("1new_password").value="";
+    document.getElementById("1email").value="";
+    document.getElementById("1phone").value="";
+    document.getElementById("1credit").value="";
+    document.getElementById("1address").value="";
+    document.getElementById("1zipCode").value="";
+
+}
+
+
+function addmember() {
+
+
+    /*variables needed*/
+    var first_name, last_name, new_username, new_password, email, phone, credit, address, zipCode;
+
+    /*getting the needed variables from inputfields*/
+    first_name= document.getElementById("1first_name").value;
+    last_name=document.getElementById("1last_name").value;
+    new_username=document.getElementById("1new_username").value;
+    new_password=document.getElementById("1new_password").value;
+    email=document.getElementById("1email").value;
+    phone=document.getElementById("1phone").value;
+
+    /*somewhat from the requirements document but not needed in the database update*/
+    credit=document.getElementById("1credit").value;
+    address=document.getElementById("1address").value;
+    zipCode=document.getElementById("1zipCode").value;
+
+
+
+    if (new_username=="" || new_password=="" ||first_name=="" ||last_name=="" ||email=="" ||phone=="" || credit=="" ||address=="" || zipCode=="") {
+        alert("You need to fill in all the information");
+
+
+    }
+    else {
+
+        /*this is probably how it would look when adding to the api but im not sure
+         var url='http://pub.jamaica-inn.net/fpdb/api.php?username='+admin+'&password='+admin+'&action=user_edit&=new_username='+new_username+'&new_password='+new_password+'&first_name='+first_name+'&last_name='+last_name+'&email='+email+'&phone='+phone;
+         */
+        /*using this to simulate the whole thing */
+
+        VipData.push({"username" : new_username,"first_name" : first_name,"last_name" : last_name,"assets":credit});
+        alert("You have added " + first_name+' '+ last_name+' with username '+new_username + 'as a new VIP-customer' );
+
+        /*Clearing the input fields*/
+        document.getElementById("1first_name").value="";
+        document.getElementById("1last_name").value="";
+        document.getElementById("1new_username").value="";
+        document.getElementById("1new_password").value="";
+        document.getElementById("1email").value="";
+        document.getElementById("1phone").value="";
+        document.getElementById("1credit").value="";
+        document.getElementById("1address").value="";
+        document.getElementById("1zipCode").value="";
+
+
+        /*if this two rows is not performed the table:
+         * 1. Will not be updated
+         * or if just $(getAllVipMem(VipData)).appendTo("#allVipUsers");
+         *the content will just be appended another time so the table
+         * becomes twice as big with the deleted member gone in one of the
+         * tables*/
+
+        $('#allVipUsers').empty()   /*get rid of the old content*/
+        $(getAllVipMem(VipData)).appendTo("#allVipUsers"); /*appends the new content :)*/
+
+    }
+
+
+
+
+
+}
+
 
 
 function getVipData() {
