@@ -60,3 +60,20 @@ display: inline-block;
     min-height: 100%;
 }
 
+
+/*barframe, bartablesleft and menubarright belongs in the "Start" tab empview*/
+#barframe{
+    display: inline-block;
+    margin:0 auto;
+    width:35%;
+    max-height:500px;
+}
+
+#bartablesleft {
+    float: left;
+}
+#menubarright{
+    float: right;
+    width: 50%;
+
+}
