@@ -24,7 +24,7 @@ $(function () {
         $("#searchVipUser").show("slow");
     });
 
-    $(Searchbox("search1", getVipData())).appendTo("#searchVipUser");
+    $(Searchbox(getVipData())).appendTo("#searchVipUser");
     $(getAllVipMem(getVipData())).appendTo("#allVipUsers");
 
 });
@@ -36,30 +36,22 @@ function getAllVipMem(arr) {
     /* top1 is a variable that starts making a table with relevant information */
     var top1='<div> <table class="table table-hover"><thead> <tr> <th>Amount</th> ' +
         '<th>Username</th> <th>First Name</th> <th>Last Name</th> </tr> </thead>';
+
     /* bottom1 is a variable that "ends" the created table*/
     var bottom1='</table></div>';
 
-    var types = ["users"];
-    var names = ["Vip-members"];
-    len = types.length;
+    temp += getUsers(arr) +"<br>";     /*gets all users one by one I think*/
 
-    for (var i = 0; i < len; i++) {
-        temp += '<strong>' + names[i] + '</strong><br><hr>';
-
-        temp += getUsers(types[i], arr) +"<br>";
-
-    }
 
     return top1+temp+bottom1;
 
-
 }
 
-function getUsers(name, arr) {
+function getUsers(arr) {
     var out1 = "";
     var i;
     for (i = 0; i < arr.length; i++) {
-    /* out1 is a variable that contains the "middle of the table" + information*/
+        /* out1 is a variable that contains the "middle of the table" + information*/
         out1 += '<tbody> <tr><td>'+arr[i].assets+'</td> <td>'+arr[i].username+
             '</td> <td>'+ arr[i].first_name+'</td><td>'+ arr[i].last_name+'</td> </tr> </tbody>';
 
@@ -72,7 +64,7 @@ function Searchbox() {
     /*this creates a search field and search button*/
     var search1='<div id="searchplacement">' +
         ' <input class="searchbox" id="Searchword1" type="text"> ' +
-        '<button type=button1" onclick="FindObject()">Search Vip-member</button> <p id="foundPersons"> </div>'
+        '<button class="" onclick="FindObject()">Search Vip-member</button> <p id="foundPersons"> </div>'
     return search1;
 }
 
@@ -87,26 +79,37 @@ function FindObject() {
     /* needed variables*/
     var foundPersons;
     var user;
-    var fPersons ="";
+    var fPersons ="";/*if able to find a Vip-member this will later become the middle of the table*/
+
     /*gets the variables from the html document and also the data needed*/
     foundPersons = document.getElementById("foundPersons");
     user = document.getElementById("Searchword1").value;
-    var vipmembers=getVipData();
 
 
-    for (var i=0;  i < vipmembers.length; i++) {
-        if (user==vipmembers[i].username || user==vipmembers[i].first_name ||user==vipmembers[i].last_name) {
-            fPersons += '<tbody> <tr><td>'+vipmembers[i].assets+'</td> <td>'+vipmembers[i].username+ '</td> <td>'+
-                vipmembers[i].first_name+ '</td><td>'+ vipmembers[i].last_name+'</td> </tr> </tbody>';
+    var vipmembers=getVipData();/* this is probably a redundant way*/
 
-        }
 
+    if(user=="" ){
+        foundPersons.innerHTML="You didn't search for anyone ";
     }
-    if(fPersons==""){
-        foundPersons.innerHTML="Couldn't find " + user;
-    }
+
     else {
         foundPersons.innerHTML="Results"+'<br>' + top1+fPersons+bottom1;
+
+        /*Goes every row in vipmembers to see if it can find the search vip-member*/
+        for (var i=0;  i < vipmembers.length; i++) {
+            if (user==vipmembers[i].username || user==vipmembers[i].first_name ||user==vipmembers[i].last_name) {
+                fPersons += '<tbody> <tr><td>'+vipmembers[i].assets+'</td> <td>'+vipmembers[i].username+ '</td> <td>'+
+                    vipmembers[i].first_name+ '</td><td>'+ vipmembers[i].last_name+'</td> </tr> </tbody>';
+
+            }
+        }
+        if(fPersons==""){
+            foundPersons.innerHTML="Couldn't find " + user;
+        }
+        else {
+            foundPersons.innerHTML="Results"+'<br>' + top1+fPersons+bottom1;
+        }
     }
 }
 

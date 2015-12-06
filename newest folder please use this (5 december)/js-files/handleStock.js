@@ -33,7 +33,7 @@ $(function () {
 
     });
 
-    $("#searching").click(function () { /* Here we show and hide the field. */
+    $("#searching1").click(function () { /* Here we show and hide the field. */
         $("#allStock").hide("slow");
         $("#lowStock").hide("slow");
         $("#SearchStock").show("slow");
@@ -43,7 +43,7 @@ $(function () {
 
     $(getlowStock(getBeerData())).appendTo("#lowStock");
     $(getAllBeers(getBeerData())).appendTo("#allStock");
-    $(SearchItem("search", getBeerData())).appendTo("#SearchStock");
+    $(SearchItem(getBeerData())).appendTo("#SearchStock");
 
 
 
@@ -123,7 +123,7 @@ function SearchItem() {
     /*this creates a search field and search button*/
     var search='<div id="searchplacement">' +
         ' <input class="searchbox" id="searchword1" type="text"> ' +
-        '<button type=button2" onclick="SearchInStock()">Search Beverage</button> <p id="foundBeverage"> </div>'
+        '<button onclick="SearchInStock()">Search Beverage</button> <p id="foundBeverage"> </div>'
     return search;
 }
 
@@ -139,28 +139,36 @@ function SearchInStock() {
     var foundBeverage;
     var searchBeverage;
     var fBeverage ="";
+
     /*gets the variables from the html document and also the data needed*/
     foundBeverage = document.getElementById("foundBeverage");
     searchBeverage = document.getElementById("searchword1").value;
-    var allBeverages=getBeerData();
 
+    var allBeverages=getBeerData();/* this is probably a redundant way*/
 
-    for (var i=0;  i < allBeverages.length; i++) {
-        if (searchBeverage==allBeverages[i].namn) {
-            fBeverage += '<tbody> <tr><td>'+allBeverages[i].count+'</td> <td>'+allBeverages[i].namn+ '</td> <td>'+
-                allBeverages[i].price+ '</td></tr> </tbody>';
-
-        }
-    }
-    if(fBeverage==""){
-        foundBeverage.innerHTML="Couldn't find " + searchBeverage;
+    if(searchBeverage=="" ){
+        foundBeverage.innerHTML="You didn't search for anything ";
 
     }
     else {
-        foundBeverage.innerHTML="Results"+'<br>' + top+fBeverage+bottom;
+        for (var i=0;  i < allBeverages.length; i++) {
+            if (searchBeverage==allBeverages[i].namn) {
+                fBeverage += '<tbody> <tr><td>'+allBeverages[i].count+'</td> <td>'+allBeverages[i].namn+ '</td> <td>'+
+                    allBeverages[i].price+ '</td></tr> </tbody>';
 
+            }
+        }
+        if(fBeverage==""){
+            foundBeverage.innerHTML="Couldn't find " + searchBeverage;
+
+        }
+        else {
+            foundBeverage.innerHTML="Results"+'<br>' + top+fBeverage+bottom;
+
+        }
     }
 }
+
 
 
 

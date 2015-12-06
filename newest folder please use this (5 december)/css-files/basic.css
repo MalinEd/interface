@@ -3,7 +3,10 @@
 div {
    /* border: solid 2px brown;*/
 }
-
+.style1 {
+    font-family: Georgia, "Times New Roman", Times, serif;
+    font-style: italic;
+}
 body {
     font-family: sans-serif;
     font-family: sans-serif;
