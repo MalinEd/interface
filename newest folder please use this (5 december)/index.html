@@ -11,7 +11,7 @@
 <link rel="stylesheet" type="text/css" href="css-files/basic.css">
 <link rel="stylesheet" type="text/css" href="css-files/buttons.css">
 <link rel="stylesheet" type="text/css" href="css-files/ids.css">
-
+<script type="text/javascript" src ="js-files/handleLogin.js"></script>
 
 
 <div id="wrapperlogin">
@@ -19,30 +19,23 @@
 
     <table class="tablestyleloginbox">
         <tr>
-            <form name="form1" method="post" action="custview.html">
+            <form name="loginForm" method="post" onSubmit="validateLogin();">
                 <td>
                     <tr>
-                        <td colspan="3"><strong>Log in to order </strong></td>
+                        <td colspan="3"><strong>All Aboard the Ship!</strong></td>
                     </tr>
-
-
                     <tr>
                         <td>Username:</td>
-                        <td><input class="searchbox" name="membername" type="text" id="user"></td>
+                        <td><input class="searchbox" name="username" type="text" placeholder="Type your username" id="user"></td>
                     </tr>
                     <tr>
                         <td>Password:</td>
-
-
-                        <td><input class="searchbox" name="memberpassword" type="password" id="password"></td>
+                        <td><input class="searchbox" name="password" type="password" placeholder="Type your password" id="password"></td>
                     </tr>
                     <tr>
                         <td></td>
                         <td><input class="button blue small" type="submit" name="Submit" value="Login"></td>
 
-            </form>
-            <form name="form2" method="post" action="empview.html">
-                <td><input class=" button blue small" type="submit" name="Submit" value="AdminLogin"></td>
             </form>
 
 
