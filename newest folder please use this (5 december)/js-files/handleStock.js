@@ -152,7 +152,7 @@ function SearchInStock() {
     }
     else {
         for (var i=0;  i < allBeverages.length; i++) {
-            if (searchBeverage.toLowerCase()==allBeverages[i].namn.toLowerCase()) {
+            if (searchBeverage.replace(/ +/g, "").toLowerCase()==allBeverages[i].namn.replace(/ +/g, "").toLowerCase()) {
                 fBeverage += '<tbody> <tr><td>'+allBeverages[i].count+'</td> <td>'+allBeverages[i].namn+ '</td> <td>'+
                     allBeverages[i].price+ '</td></tr> </tbody>';
 
