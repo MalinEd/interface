@@ -97,3 +97,13 @@ div {
 .table-hover > tbody > tr:hover > th {
     background-color: #dfdfdf;
 }
+.inputfield{
+    background-color: #ebebf2;
+    border-radius: 1px;
+    width: 250px;
+    height:25px;
+    font-size: 22px;
+    font-weight: bold;
+    font-style: italic;
+    text-align: center;
+}
