@@ -152,7 +152,7 @@ function SearchInStock() {
     }
     else {
         for (var i=0;  i < allBeverages.length; i++) {
-            if (searchBeverage==allBeverages[i].namn) {
+            if (searchBeverage==allBeverages[i].namn.toLowerCase()) {
                 fBeverage += '<tbody> <tr><td>'+allBeverages[i].count+'</td> <td>'+allBeverages[i].namn+ '</td> <td>'+
                     allBeverages[i].price+ '</td></tr> </tbody>';
 
