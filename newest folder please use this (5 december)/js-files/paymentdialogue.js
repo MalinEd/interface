@@ -2,7 +2,7 @@ $(document).ready(function() {
 
                 $('#wrapper').dialog({
                     autoOpen: false,
-                    title: 'Basic Dialog'
+                    title: 'Are you sure?'
                 });
                 $('#opener').click(function() {
                     $('#wrapper').dialog('open');
