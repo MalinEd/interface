@@ -44,21 +44,9 @@
       <file leaf-file-name="custview.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/custview.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.8244406">
-              <caret line="68" column="36" selection-start-line="67" selection-start-column="37" selection-end-line="68" selection-end-column="36" />
+            <state vertical-scroll-proportion="0.38554215">
+              <caret line="21" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="144" selection-end-column="0" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="handleBaverages.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js-files/handleBaverages.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="159" column="73" selection-start-line="159" selection-start-column="73" selection-end-line="159" selection-end-column="73" />
-              <folding>
-                <element signature="e#10944#10988#0" expanded="false" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -68,6 +56,16 @@
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
               <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="handleBaverages.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js-files/handleBaverages.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="236" selection-end-column="3" />
               <folding />
             </state>
           </provider>
@@ -130,9 +128,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="CSS File" />
         <option value="Html5" />
-        <option value="JavaScript File" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -147,11 +144,8 @@
         <option value="$PROJECT_DIR$/buttonstyles.css" />
         <option value="$PROJECT_DIR$/css-files/index_style.css" />
         <option value="$PROJECT_DIR$/css-files/tabstyle.css" />
-        <option value="$PROJECT_DIR$/css-files/basic.css" />
-        <option value="$PROJECT_DIR$/js-files/handle_baverages.html" />
         <option value="$PROJECT_DIR$/empview.html" />
         <option value="$PROJECT_DIR$/custview.html" />
-        <option value="$PROJECT_DIR$/js-files/handleBaverages.js" />
       </list>
     </option>
   </component>
@@ -328,7 +322,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1378" height="744" extended-state="0" />
+    <frame x="-8" y="-8" width="1378" height="744" extended-state="1" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19236417" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -475,7 +469,7 @@
         <state vertical-scroll-proportion="-2.110345">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="n#!!doc" expanded="true" />
+            <element signature="n#!!doc" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -528,14 +522,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/css-files/buttons.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/css-files/buttonstyles.css">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -578,20 +564,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/css-files/buttons.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/js-files/handleBaverages.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="159" column="73" selection-start-line="159" selection-start-column="73" selection-end-line="159" selection-end-column="73" />
-          <folding>
-            <element signature="e#10944#10988#0" expanded="false" />
-          </folding>
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="236" selection-end-column="3" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/custview.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.8244406">
-          <caret line="68" column="36" selection-start-line="67" selection-start-column="37" selection-end-line="68" selection-end-column="36" />
+        <state vertical-scroll-proportion="0.38554215">
+          <caret line="21" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="144" selection-end-column="0" />
           <folding />
         </state>
       </provider>
