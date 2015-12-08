@@ -232,7 +232,7 @@ function SearchStock() {
                 }
                 else {
 
-                    ffBeverage += '<div>'+allBeverages[i].namn+' Price:'+allBeverages[i].pub_price + ' id:'+allBeverages[i].beer_id;
+                    ffBeverage += '<div>'+allBeverages[i].namn+' Price:'+allBeverages[i].pub_price + ' id:'+allBeverages[i].beer_id+'</div';
                 }
             }
         }
