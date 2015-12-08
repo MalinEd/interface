@@ -55,9 +55,9 @@ function getAllBeers(arr) {
     var temp = "";
     /* top is a variable that starts making a table with relevant information */
     var top='<div> <table class="table table-hover"><thead> <tr> ' +
-        '<th># in stock</th> <th>"beer"</th> <th>price</th> </tr> </thead>';
+        '<th># in stock</th> <th>"beer"</th> <th>price</th> </tr> </thead><tbody>';
     /* bottom is a variable that "ends" the created table*/
-    var bottom='</table></div>';
+    var bottom='</tbody></table></div>';
 
     var types = ["all"];
     var names = ["All in Stock"];
@@ -76,9 +76,9 @@ function getlowStock(arr) {
     var temp = "";
     /* top is a variable that starts making a table with relevant information */
     var top='<div> <table class="table table-hover"><thead> <tr> <th># in stock</th>' +
-        ' <th>"beer"</th> <th>price</th> </tr> </thead>';
+        ' <th>"beer"</th> <th>price</th> </tr> </thead><tbody>';
     /* bottom is a variable that "ends" the created table*/
-    var bottom='</table></div>';
+    var bottom='</tbody></table></div>';
 
     var types = ["low"];
     var names = ["Low in Stock"];
@@ -99,8 +99,8 @@ function getBeers(namn, arr) {
     var i;
     for (i = 0; i < arr.length; i++) {
         /* out is a variable that contains the "middle of the table" + information*/
-        out += '<tbody> <tr><td>'+arr[i].count+'</td> <td>'+arr[i].namn+ '</td> ' +
-            '<td>'+ arr[i].price+'</td> </tr> </tbody>';
+        out += ' <tr><td>'+arr[i].count+'</td> <td>'+arr[i].namn+ '</td> ' +
+            '<td>'+ arr[i].price+'</td> </tr>';
     }
     return out;
 }
@@ -111,8 +111,8 @@ function checkStock(namn, arr){
     for (i = 0; i < arr.length; i++) {
         if (arr[i].count<lowStockLimit) {
             /* out is a variable that contains the "middle of the table" + information*/
-            out += '<tbody> <tr><td>'+arr[i].count+'</td> <td>'+arr[i].namn+ '</td> ' +
-                '<td>'+ arr[i].price+'</td> </tr> </tbody>';
+            out += ' <tr><td>'+arr[i].count+'</td> <td>'+arr[i].namn+ '</td> ' +
+                '<td>'+ arr[i].price+'</td> </tr>';
         }
     }
     return out;
@@ -132,8 +132,8 @@ function SearchInStock() {
 
     /*top =start of result table, bottom = end of result table*/
     var top='<div> <table class="table table-hover"><thead> <tr> <th>#Instock</th> <th>"Beverage"</th> ' +
-        '<th>Price</th></tr> </thead>';
-    var bottom='</table></div>';
+        '<th>Price</th></tr> </thead><tbody>';
+    var bottom='</tbody></table></div>';
 
     /* needed variables*/
     var foundBeverage;
@@ -153,8 +153,8 @@ function SearchInStock() {
     else {
         for (var i=0;  i < allBeverages.length; i++) {
             if (searchBeverage.replace(/ +/g, "").toLowerCase()==allBeverages[i].namn.replace(/ +/g, "").toLowerCase()) {
-                fBeverage += '<tbody> <tr><td>'+allBeverages[i].count+'</td> <td>'+allBeverages[i].namn+ '</td> <td>'+
-                    allBeverages[i].price+ '</td></tr> </tbody>';
+                fBeverage += '<tr><td>'+allBeverages[i].count+'</td> <td>'+allBeverages[i].namn+ '</td> <td>'+
+                    allBeverages[i].price+ '</td></tr>';
 
             }
         }
