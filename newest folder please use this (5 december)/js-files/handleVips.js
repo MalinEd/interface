@@ -9,6 +9,10 @@
  * data was deleted without API :) */
 var VipData=getVipData();
 
+/* variables to undo/redo*/
+var deletedVIP = [];
+var undoneVIP = [];
+
 $(function () {
 
     // First we hide all menus, but the one with all courses.
@@ -168,41 +172,11 @@ function deletemember(i){
         VipData[i].first_name+' '+ VipData[i].last_name+"?" );
 
     if (r == true) {
+        var saveVIP = {"username" : VipData[i].username,"first_name" : VipData[i].first_name,"last_name" : VipData[i].last_name,"assets" : VipData[i].assets};
         VipData.splice(i, i+1);
         alert(message);
+        deletedVIP.push(saveVIP);
 
-        $(function () {
-
-            // First we hide all menus, but the one with all courses.
-            //
-
-            $("#allVipUsers").show();
-            $("#searchVipUser").hide();
-            $("#addVipUser").hide();
-
-
-
-            $("#vip").click(function () { /* Here we show and hide the field. */
-                $("#allVipUsers").show("slow");
-                $("#searchVipUser").hide("slow");
-                $("#addVipUser").hide("slow");
-
-            });
-
-
-            $("#search").click(function () { /* Here we show and hide the field. */
-                $("#allVipUsers").hide("slow");
-                $("#searchVipUser").show("slow");
-                $("#addVipUser").hide("slow");
-
-            });
-
-            $("#newUser").click(function () { /* Here we show and hide the field. */
-                $("#allVipUsers").hide("slow");
-                $("#searchVipUser").hide("slow");
-                $("#addVipUser").show("slow");
-
-            });
 
             /*if this two rows is not performed the table:
              * 1. Will not be updated
@@ -211,11 +185,10 @@ function deletemember(i){
              * becomes twice as big with the deleted member gone in one of the
              * tables*/
 
-            $('#allVipUsers').empty()   /*get rid of the old content*/
+            $('#allVipUsers').empty();  /*get rid of the old content*/
             $(getAllVipMem(VipData)).appendTo("#allVipUsers"); /*appends the new content :)*/
 
 
-        });
     } else {
         alert("You didn't do any changes");
 
@@ -225,6 +198,47 @@ function deletemember(i){
 
 
 }
+
+
+
+
+
+/*here is our undo/redo function and there are global variables at the top of this file
+* but there is a bugg somewhere......*/
+
+
+function undoVIPdelete() {
+    var i = deletedVIP.length - 1;
+    VipData.push(deletedVIP[i]);
+    undoneVIP.push(deletedVIP[i]);
+    if (deletedVIP.length > 0) {
+        deletedVIP.pop();
+
+        $('#allVipUsers').empty();  /*get rid of the old content*/
+        $(getAllVipMem(VipData)).appendTo("#allVipUsers"); /*appends the new content :)*/
+
+    }
+    else {
+        alert("Nothing to undo");
+
+    }
+}
+
+function redoVIPdelete() {
+    var i = undoneVIP.length - 1;
+    deletedVIP.push(undoneVIP[i]);
+    if (undoneVIP.length > 0) {
+        VipData.pop();
+
+        $('#allVipUsers').empty();   /*get rid of the old content*/
+        $(getAllVipMem(VipData)).appendTo("#allVipUsers"); /*appends the new content :)*/
+    }
+    else {
+        alert("Nothing to redo");
+    }
+}
+
+
 
 function cancleaddVip(){
 
