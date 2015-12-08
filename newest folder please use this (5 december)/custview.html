@@ -17,8 +17,9 @@
     <script type="text/javascript" src ="js-files/jtest.js"></script>
      <script type="text/javascript" src ="js-files/jqueryui.js"></script>
 	<script type="text/javascript" src ="js-files/translate.js"></script>
-    <script type="text/javascript" src ="js-files/handleBaverages.js"></script>
+    <script type="text/javascript" src ="js-files/handleBeverages.js"></script>
     <script type="text/javascript" src ="js-files/paymentdialogue.js"></script>
+    <script type="text/javascript" src="js-files/drop.js" ></script>
 
     
 	<style type="text/css">
@@ -67,14 +68,9 @@
     </div>
     <div id="rightbar">
 
-        <div class="receipt"><h5>Your credit: ...</h5>
+        <div class="receipt" ondrop="drop(event)" ondragover="allowDrop(event)"><h5>Your credit: ...</h5>
             <ul id="menu">
-                <li>do you think</li>
-                <li>it is going</li>
-                <li>to be possible</li>
-                <li>to do drag</li>
-                <li>and drop to this list?</li>
-
+                
             </ul>
             <h5>Total cost: ....</h5>
 
@@ -110,7 +106,7 @@
 
 
             <div id="tab2" class="tab_content">
-                    <!-- See queries for this in file handleBaverages.js -->
+                    <!-- See queries for this in file handleBeverages.js -->
 
                     <div id="menutabs">
                         <ul id="mtabs">
