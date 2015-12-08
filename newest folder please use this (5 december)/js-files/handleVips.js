@@ -143,9 +143,9 @@ function FindObject() {
 function getNewUserInputField(){
     /*this creates a table where it wil be possible to add members to the database*/
 
-    var addVip='<div>' +
-        '<p>NEW VIP</p> ' +
-        '<table align="center">' +
+ var addVip='<div>' +
+        '<span>NEW VIP</span> ' +
+        '<table border="2px solid black" align="center">' +
         '<tr><td>First Name:</td><td><input class="inputfield" id="1first_name" type="text"></td></> ' +
         '<tr><td>Last Name:</td><td><input class="inputfield" id="1last_name" type="text"> </td></tr>' +
         '<tr><td>Username:</td><td><input class="inputfield" id="1new_username" type="text"> </td></tr>' +
@@ -155,8 +155,8 @@ function getNewUserInputField(){
         '<tr><td>Credit: </td><td><input class="inputfield" id="1credit" type="text"> </td></tr>' +
         '<tr><td>Address: </td><td><input class="inputfield" id="1address" type="text"></td></tr> ' +
         '<tr><td>Zip-Code:  </td><td><input class="inputfield" id="1zipCode" type="text"> </td></tr>' +
-        '<tr><td></td><td><button class="addVipbutton"  onclick="addmember()">Add Vip-member</button><td>' +
-        '<td><button class="addVipbutton"  onclick="cancleaddVip()">Cancel</button><td></td></tr></table>' +
+        '<tr><td></td><td><button class="addVipbutton"  onclick="addmember()">Add VIP</button>' +
+        '<button class="cancelButton"  onclick="cancleaddVip()">Cancel</button></tr></table>' +
         '</div>';
     return addVip;
 
