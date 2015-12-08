@@ -119,16 +119,6 @@ function getBeers(type, arr) {
     }
     return out;
 }
-function getFoods(type, arr) {
-    var out = "";
-    var i;
-    for (i = 0; i < arr.length; i++) {
-        if (arr[i].type == type) {
-            out += '<div id="' + "menuitem" + i + '" draggable="true" ondragstart="drag(event)">' + arr[i].name + ' <span id="' + "price" + i + '">' + arr[i].price + '</span></div>';
-        }
-    }
-    return out;
-}
 
 
 function getWine(namn, arr) {
@@ -136,8 +126,9 @@ function getWine(namn, arr) {
     var i;
     for (i = 0; i < arr.length; i++) {
         /* out is a variable that contains the "middle of the table" + information*/
-        out += '<tbody> <tr><td>'+arr[i].count+'</td> <td>'+arr[i].namn+ '</td> ' +
-            '<td>'+ arr[i].price+'</td> </tr> </tbody>';
+        out +='<div id="' + "menuitem" + i + '"draggable="true" ' +
+            'ondragstart="drag(event)" data-price="'+arr[i].price+'" data-name="'+arr[i].namn+'">'+
+            arr[i].namn+' <spann id="'+"price"+i+'"> '+arr[i].pub_price+'</span></div><br>';
     }
     return out;
 }
