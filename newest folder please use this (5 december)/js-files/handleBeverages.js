@@ -74,11 +74,7 @@ function getAllBeers(arr) {
 
 function getAllWines(arr) {
     var temp = "";
-    /* top is a variable that starts making a table with relevant information */
-    var top='<div> <table class="table table-hover"><thead> <tr> <th>stock</th>' +
-        ' <th>wine</th> <th>price</th> </tr> </thead>';
-    /* bottom is a variable that "ends" the created table*/
-    var bottom='</table></div>';
+
 
     var types = ["all"];
     var names = ["All in Stock"];
@@ -90,7 +86,7 @@ function getAllWines(arr) {
         temp += getWine(types[i], arr) +"<br>";
     }
 
-    return top+temp+bottom;
+    return temp;
 }
 
 
@@ -201,15 +197,15 @@ function SearchInStock() {
 
 function getBeerData() {
     return [
-        {"namn" : "Brooklyn Lager","namn2" : "","sbl_price" : "17.90","pub_price" : "20","beer_id" : "154803","count" : "4","price" : "16.90"},
+        {"namn" : "Brooklyn Lager","namn2" : "","sbl_price" : "17.90","pub_price" : "20.00","beer_id" : "154803","count" : "4","price" : "16.90"},
         {"namn" : "Cameleon","namn2" : "Selection Malbec","sbl_price" : "43.00","pub_price" : "45","beer_id" : "658102","count" : "80","price" : "43.00"},
-        {"namn" : "Campos Góticos","namn2" : "Tempranillo","sbl_price" : "49.00","pub_price" : "55","beer_id" : "209702","count" : "203","price" : "49.00"},
+        {"namn" : "Campos Goticos","namn2" : "Tempranillo","sbl_price" : "49.00","pub_price" : "55","beer_id" : "209702","count" : "203","price" : "49.00"},
         {"namn" : "Casillero del Diablo","namn2" : "Chardonnay","sbl_price" : "29.00","pub_price" : "35","beer_id" : "207504","count" : "203","price" : "30.00"},
         {"namn" : "Ch Malavieille Alliance","namn2" : "","sbl_price" : "119.00","pub_price" : "125","beer_id" : "266201","count" : "194","price" : "119.00"},
-        {"namn" : "Château Pech-Latt","namn2" : "","sbl_price" : "99.00","pub_price" : "105","beer_id" : "223301","count" : "201","price" : "99.00"},
+        {"namn" : "Chateau Pech-Latt","namn2" : "","sbl_price" : "99.00","pub_price" : "105","beer_id" : "223301","count" : "201","price" : "99.00"},
         {"namn" : "Chilcas","namn2" : "Sauvignon Blanc","sbl_price" : "46.00","pub_price" : "50","beer_id" : "669702","count" : "200","price" : "45.00"},
         {"namn" : "Chill Out Mountains","namn2" : "Malbec","sbl_price" : "69.00","pub_price" : "75","beer_id" : "614601","count" : "177","price" : "69.00"},
-        {"namn" : "Chimay blå","namn2" : "","sbl_price" : "29.90","pub_price" : "35","beer_id" : "165103","count" : "192","price" : "28.90"},
+        {"namn" : "Chimay bla","namn2" : "","sbl_price" : "29.90","pub_price" : "35","beer_id" : "165103","count" : "192","price" : "28.90"},
         {"namn" : "Cidraie Pear","namn2" : "","sbl_price" : "20.00","pub_price" : "25","beer_id" : "180202","count" : "198","price" : "20.00"},
         {"namn" : "Citra Pale Ale","namn2" : "","sbl_price" : "20.90","pub_price" : "25","beer_id" : "155103","count" : "193","price" : "20.90"},
         {"namn" : "Coopers Best","namn2" : "Extra Stout","sbl_price" : "19.90","pub_price" : "25","beer_id" : "1127103","count" : "197","price" : "19.90"},
@@ -226,13 +222,13 @@ function getWineData() {
     return [
         {"namn" : "Brooklyn Lager","namn2" : "","sbl_price" : "17.90","pub_price" : "20","beer_id" : "154803","count" : "4","price" : "16.90"},
         {"namn" : "Cameleon","namn2" : "Selection Malbec","sbl_price" : "43.00","pub_price" : "45","beer_id" : "658102","count" : "80","price" : "43.00"},
-        {"namn" : "Campos Góticos","namn2" : "Tempranillo","sbl_price" : "49.00","pub_price" : "55","beer_id" : "209702","count" : "203","price" : "49.00"},
+        {"namn" : "Campos Goticos","namn2" : "Tempranillo","sbl_price" : "49.00","pub_price" : "55","beer_id" : "209702","count" : "203","price" : "49.00"},
         {"namn" : "Casillero del Diablo","namn2" : "Chardonnay","sbl_price" : "29.00","pub_price" : "35","beer_id" : "207504","count" : "203","price" : "30.00"},
         {"namn" : "Ch Malavieille Alliance","namn2" : "","sbl_price" : "119.00","pub_price" : "125","beer_id" : "266201","count" : "194","price" : "119.00"},
-        {"namn" : "Château Pech-Latt","namn2" : "","sbl_price" : "99.00","pub_price" : "105","beer_id" : "223301","count" : "201","price" : "99.00"},
+        {"namn" : "Chateau Pech-Latt","namn2" : "","sbl_price" : "99.00","pub_price" : "105","beer_id" : "223301","count" : "201","price" : "99.00"},
         {"namn" : "Chilcas","namn2" : "Sauvignon Blanc","sbl_price" : "46.00","pub_price" : "50","beer_id" : "669702","count" : "200","price" : "45.00"},
         {"namn" : "Chill Out Mountains","namn2" : "Malbec","sbl_price" : "69.00","pub_price" : "75","beer_id" : "614601","count" : "177","price" : "69.00"},
-        {"namn" : "Chimay blå","namn2" : "","sbl_price" : "29.90","pub_price" : "35","beer_id" : "165103","count" : "192","price" : "28.90"},
+        {"namn" : "Chimay bla","namn2" : "","sbl_price" : "29.90","pub_price" : "35","beer_id" : "165103","count" : "192","price" : "28.90"},
         {"namn" : "Cidraie Pear","namn2" : "","sbl_price" : "20.00","pub_price" : "25","beer_id" : "180202","count" : "198","price" : "20.00"},
         {"namn" : "Citra Pale Ale","namn2" : "","sbl_price" : "20.90","pub_price" : "25","beer_id" : "155103","count" : "193","price" : "20.90"},
         {"namn" : "Coopers Best","namn2" : "Extra Stout","sbl_price" : "19.90","pub_price" : "25","beer_id" : "1127103","count" : "197","price" : "19.90"},
