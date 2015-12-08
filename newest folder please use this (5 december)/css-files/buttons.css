@@ -86,11 +86,10 @@ button.size {
 }
 
 .addVipbutton{
-    float:right;
     /*border-radius: 100px;*/
-    background:#e67e22;
+    background: #648f77;
     box-shadow:0px 3px 0px #266792;
-    width: 240px;
+    width: 140px;
     height:35px;
     font-size: 18px;
     font-weight: bold;
@@ -99,9 +98,30 @@ button.size {
     text-align: center;
 }
 
-/*effects logout button*/
+/*effects addVip button*/
 .addVipbutton:hover {
     border-color: white;
     background-color: #5b5b62;
+
+}
+
+.cancelButton{
+    float:right;
+    /*border-radius: 100px;*/
+    background: #8f716f;
+    box-shadow:0px 3px 0px #266792;
+    width: 140px;
+    height:35px;
+    font-size: 18px;
+    font-weight: bold;
+    color:#fff;
+    /*font-style: italic;*/
+    text-align: center;
+}
+
+/*effects cancel button*/
+.cancelButton:hover {
+    border-color: white;
+    background-color: #775b59;
 
 }
