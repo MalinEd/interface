@@ -58,6 +58,13 @@
 		width: 100%;
 		color:white;
 	}
+	
+	
+	#menutabs2 {
+		position: relative;
+		width: 100%;
+		color:white;
+	}
 
 
 	#mtabs li {
@@ -72,6 +79,38 @@
 		background: #2e513b;
 	}
 	#mtabs li.active{
+		background: #FFFFFF;
+		border-bottom: 1px solid #FFFFFF;
+	}
+	
+	#mtabs2 li {
+		margin: auto;
+		display: inline;  /* Makes the list horisontal */
+		padding: 4px;
+		border-radius: 10px 10px 0px 0px;
+		background-color: #648f77;
+		color: white;
+	}
+	#mtabs2 li:hover {
+		background: #2e513b;
+	}
+	#mtabs2 li.active{
+		background: #FFFFFF;
+		border-bottom: 1px solid #FFFFFF;
+	}
+
+	#mtabs3 li {
+		margin: auto;
+		display: inline;  /* Makes the list horisontal */
+		padding: 4px;
+		border-radius: 10px 10px 0px 0px;
+		background-color: #648f77;
+		color: white;
+	}
+	#mtabs3 li:hover {
+		background: #2e513b;
+	}
+	#mtabs3 li.active{
 		background: #FFFFFF;
 		border-bottom: 1px solid #FFFFFF;
 	}
