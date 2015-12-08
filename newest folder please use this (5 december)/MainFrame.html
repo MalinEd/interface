@@ -1,8 +1,7 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Frameset//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Documento sin título</title>
 <!-- CSS --->
 <link rel="stylesheet" type="text/css" href="css-files/basic.css">
 <link rel="stylesheet" type="text/css" href="css-files/buttons.css">
@@ -20,16 +19,39 @@
 <script type="text/javascript" src ="js-files/paymentdialogue.js"></script>
 <script type="text/javascript" src="js-files/drop.js" ></script>
 </head>
-<frameset rows="150,*" frameborder="no" border="0" framespacing="0">
-  <frame src="TopFrame.html" name="topFrame" scrolling="no" noresize="noresize" id="topFrame" title="topFrame" />
-  <frameset rows="*" cols="*,600,*" framespacing="0" frameborder="no" border="0">
-    <frame src="LeftFrame.html" name="leftFrame" scrolling="no" noresize="noresize" id="leftFrame" title="leftFrame" />
-    <frame src="MainFrame.html" name="mainFrame" id="mainFrame" title="mainFrame" />
-    <frame src="RightFrame.html" name="RightFrame" scrolling="no" noresize="noresize" id="rightFrame" title="rightFrame" />
-  </frameset>
-</frameset>
-<noframes>
+
 <body>
+<div id="searchplacement">
+  <form method="post" action="">
+    <input class="searchbox" name="Searchword" type="text">
+    <input class=" button blue small" type="submit" name="Submit" value="Search">
+  </form>
+</div>
+<div id="mainframe">
+  <div class="tab_container">
+    <div id="tab1" class="tab_content">
+      <p> WELCOME! </p>
+    </div>
+    <!-- #tab1 -->
+    
+    <div id="tab2" class="tab_content"> 
+      <!-- See queries for this in file handleBeverages.js -->
+      
+      <div id="menutabs">
+        <ul id="mtabs">
+          <li id="drinks">Beer</li>
+          <li id="runningout">Wine</li>
+          <li id="searching1">Search Baverage</li>
+        </ul>
+      </div>
+      <div class="menu" id="allStockBeer"></div>
+      <div class="menu" id="allStockWine"></div>
+      <div class="menu" id="SearchStock"></div>
+    </div>
+    <!-- #tab2 --> 
+    
+  </div>
+  <!-- .tab_container --> 
+</div>
 </body>
-</noframes>
 </html>
