@@ -56,10 +56,10 @@ function getAllVipMem(VipData) {
     var temp = "";
     /* top1 is a variable that starts making a table with relevant information */
     var top1='<div> <table class="table table-hover"><thead> <tr> <th>Amount</th> ' +
-        '<th>Username</th> <th>First Name</th> <th>Last Name</th> </tr> </thead>';
+        '<th>Username</th> <th>First Name</th> <th>Last Name</th> </tr> </thead><tbody>';
 
     /* bottom1 is a variable that "ends" the created table*/
-    var bottom1='</table></div>';
+    var bottom1='</tbody></table></div>';
 
     temp += getUsers(VipData) +"<br>";     /*gets all users one by one I think*/
 
@@ -73,9 +73,9 @@ function getUsers(VipData) {
     var i;
     for (i = 0; i < VipData.length; i++) {
         /* out1 is a variable that contains the "middle of the table" + information*/
-        out1 += '<tbody> <tr><td>'+VipData[i].assets+'</td> <td>'+VipData[i].username+
+        out1 += ' <tr><td>'+VipData[i].assets+'</td> <td>'+VipData[i].username+
             '</td> <td>'+ VipData[i].first_name+'</td><td>'+ VipData[i].last_name+'</td>' +
-            '<td><button onclick="deletemember('+i+')">Delete</button></td> </tr>  </tr> </tbody>';
+            '<td><button onclick="deletemember('+i+')">Delete</button></td> </tr>  </tr>';
 
     }
     return out1;
@@ -97,8 +97,8 @@ function FindObject() {
 
     /*top1 =start of result table, bottom1 = end of result table*/
     var top1='<div> <table class="table table-hover"><thead> <tr> <th>Amount</th> <th>Username</th> ' +
-        '<th>First Name</th> <th>Last Name</th> </tr> </thead>';
-    var bottom1='</table></div>';
+        '<th>First Name</th> <th>Last Name</th> </tr> </thead><tbody>';
+    var bottom1='</tbody></table></div>';
 
     /* needed variables*/
     var foundPersons;
@@ -121,9 +121,9 @@ function FindObject() {
         /*Goes every row in vipmembers to see if it can find the search vip-member*/
         for (var i=0;  i < VipData.length; i++) {
             if (user==VipData[i].username || user==VipData[i].first_name ||user==VipData[i].last_name) {
-                fPersons += '<tbody> <tr><td>'+VipData[i].assets+'</td> <td>'+VipData[i].username+ '</td> <td>'+
+                fPersons += ' <tr><td>'+VipData[i].assets+'</td> <td>'+VipData[i].username+ '</td> <td>'+
                     VipData[i].first_name+ '</td><td>'+ VipData[i].last_name+'</td>' +
-                    '<td><button onclick="deletemember('+i+')">Delete</button></td> </tr> </tbody>';
+                    '<td><button onclick="deletemember('+i+')">Delete</button></td> </tr>';
 
             }
         }
