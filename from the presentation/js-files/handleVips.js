@@ -59,7 +59,7 @@ function getAllVipMem(VipData) {
 
     var temp = "";
     /* top1 is a variable that starts making a table with relevant information */
-    var top1='<div> <table class="table table-hover"><thead> <tr> <th>Amount</th> ' +
+    var top1='<div> <table class="table table-hover"><thead> <tr> <th>Balance</th> ' +
         '<th>Username</th> <th>First Name</th> <th>Last Name</th> </tr> </thead><tbody>';
 
     /* bottom1 is a variable that "ends" the created table*/
