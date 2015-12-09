@@ -3,16 +3,12 @@
  */
 /**
  * Created by LOe on 01/12/15.
- */
+ see which beverages are the most popular ones (Popular and Search) look further down on the page*/
 
-/* function that makes it possible to click on table and place where
- * orders can be dragged and dropped to shows up
-  * DRAG AND DROP NOT IMPLEMENTED YET*/
+/*rigth now popular beverages is generated from how many it is in the stock....(and it should be from 
+the table where you can see all transaction.....(at least that is what I think)*/
 
-/*function that allows the bartender to "drag and drop most popular beverages quickly to
- * the different tables (drag and drop not implemented yet and no function to
- * see which beverages are the most popular ones (Popular and Search) look further down on the page*/
-var popLimit=195;
+var popLimit=195; /*variable that states what is popular or not if below this limit it should not be counted as popular*/
 
 
 $(function() {
@@ -233,8 +229,11 @@ function SearchStock() {
 
                 }
                 else {
-
-                    ffBeverage += '<div>'+allBeverages[i].namn+' Price:'+allBeverages[i].pub_price + ' id:'+allBeverages[i].beer_id+'</div';
+                 ffBeverage += '<div id="' + "menuitem" + i + '"draggable="true" ' +
+                 'ondragstart="drag(event)" data-price=""'+allBeverages[i].price+'" data-name=""'+allBeverages[i].namn+'">'+
+                 allBeverages[i].namn+' Price:'+allBeverages[i].pub_price + ' ' +
+                 'id:'+allBeverages[i].beer_id+'</div>';                
+                 
                 }
             }
         }
@@ -250,6 +249,8 @@ function SearchStock() {
 
 }
 
+
+/*we do got a lot of redunant code so we will probably have to check it out*/
 function getAllPopular(pop) {
     var tempt = "";
 
@@ -275,10 +276,9 @@ function getpopulars(pop) {
     return out;
 }
 
-/*this one should not look like this....it should */
 
 
-
+/*this is probably not the data we should use to get most brought beverages but it was just used for the presentation*/
 function getPopData() {
     return [
         {"namn" : "Brooklyn Lager","namn2" : "","sbl_price" : "17.90","pub_price" : "20","beer_id" : "154803","count" : "4","price" : "16.90"},
@@ -304,7 +304,7 @@ function getPopData() {
 }
 
 
-
+/*just how i thought when i was trying to generate most brought items.......*/
 /*
 function getPopular(arr) {
 
