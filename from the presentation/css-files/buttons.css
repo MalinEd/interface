@@ -1,0 +1,127 @@
+/*general styles*/
+.button {
+    background:#7f8c8d;
+    color:#fff;
+    display:inline-block;
+    margin:20px;
+    padding:10px 0;
+    text-align:center;
+    width:100px;
+    text-decoration:none;
+    box-shadow:0px 3px 0px #373c3c;
+}
+
+.button span {
+    margin-right:10px;
+}
+
+/*Colors*/
+.button.bluesize {
+    font-size: 0.80em;
+    background:#3498db;
+    box-shadow:0px 3px 0px #266792;
+}
+.button.blue {
+    font-size:1.25em;
+    background:#3498db;
+    box-shadow:0px 3px 0px #266792;
+}
+
+.button.yellow {
+    font-size:1.25em;
+    background:#e67e22;
+    box-shadow:0px 3px 0px #b55704;
+}
+
+/*font size*/
+button.size {
+    font-size: 0.20em;
+
+}
+/*Sizes*/
+.button.smaller {
+    width:90px;
+}
+.button.small {
+    width:130px;
+}
+
+.button.medium {
+    width:350px;
+}
+
+
+.button.large {
+    width:450px;
+}
+
+
+
+/*Effects*/
+.button:hover {
+    box-shadow:0px 0px 0px;
+    padding-top:7px;
+}
+
+/*style of logout button*/
+.logoutbutton {
+    float:right;
+    /*border-radius: 100px;*/
+    background:#e67e22;
+    box-shadow:0px 3px 0px #266792;
+    width: 160px;
+    height:35px;
+    font-size: 18px;
+    font-weight: bold;
+    color:#fff;
+    /*font-style: italic;*/
+    text-align: center;
+}
+
+/*effects logout button*/
+.logoutbutton:hover {
+    border-color: white;
+    background-color: #5b5b62;
+
+}
+
+.addVipbutton{
+    /*border-radius: 100px;*/
+    background: #648f77;
+    box-shadow:0px 3px 0px #266792;
+    width: 140px;
+    height:35px;
+    font-size: 18px;
+    font-weight: bold;
+    color:#fff;
+    /*font-style: italic;*/
+    text-align: center;
+}
+
+/*effects addVip button*/
+.addVipbutton:hover {
+    border-color: white;
+    background-color: #5b5b62;
+
+}
+
+.cancelButton{
+    float:right;
+    /*border-radius: 100px;*/
+    background: #8f716f;
+    box-shadow:0px 3px 0px #266792;
+    width: 140px;
+    height:35px;
+    font-size: 18px;
+    font-weight: bold;
+    color:#fff;
+    /*font-style: italic;*/
+    text-align: center;
+}
+
+/*effects cancel button*/
+.cancelButton:hover {
+    border-color: white;
+    background-color: #775b59;
+
+}
