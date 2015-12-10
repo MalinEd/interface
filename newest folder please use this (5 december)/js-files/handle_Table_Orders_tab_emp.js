@@ -232,7 +232,13 @@ function SearchStock() {
                 }
                 else {
 
+                    /* i left this just incase something goes wrong when i updated the code 
                     ffBeverage += '<div>'+allBeverages[i].namn+' Price:'+allBeverages[i].pub_price + ' id:'+allBeverages[i].beer_id+'</div';
+                    */
+                     ffBeverage += '<div id="' + "menuitem" + i + '"draggable="true" ' +
+                        'ondragstart="drag(event)" data-price=""'+allBeverages[i].price+'" data-name=""'+allBeverages[i].namn+'">'+
+                        allBeverages[i].namn+' Price:'+allBeverages[i].pub_price + ' ' +
+                        'id:'+allBeverages[i].beer_id+'</div>';
                 }
             }
         }
