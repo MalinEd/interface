@@ -74,11 +74,11 @@
 		display: inline;  /* Makes the list horisontal */
 		padding: 4px;
 		border-radius: 10px 10px 0px 0px;
-		background-color: #648f77;
+		background-color: #234C69;
 		color: white;
 	}
 	#mtabs li:hover {
-		background: #2e513b;
+		background: #70C3FF;
 	}
 	#mtabs li.active{
 		background: #FFFFFF;
@@ -106,14 +106,14 @@
 		display: inline;  /* Makes the list horisontal */
 		padding: 4px;
 		border-radius: 10px 10px 0px 0px;
-		background-color: #648f77;
+		background-color: #234C69;
 		color: white;
 	}
 	#mtabs3 li:hover {
-		background: #2e513b;
+		background: #70C3FF;
 	}
 	#mtabs3 li.active{
-		background: #FFFFFF;
+		background-color: #234C69;
 		border-bottom: 1px solid #FFFFFF;
 	}
 	/* End menu styles */
