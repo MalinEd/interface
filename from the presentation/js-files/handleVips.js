@@ -12,6 +12,7 @@ var VipData=getVipData();
 /* variables to undo/redo*/
 var deletedVIP = [];
 var undoneVIP = [];
+var countDeletes=0;
 
 $(function () {
 
@@ -167,78 +168,74 @@ function getNewUserInputField(){
 function deletemember(i){
 
     var message="You have deleted " +VipData[i].first_name +' '+ VipData[i].last_name;
-
     var r = confirm("Are you sure you want to delete "+
-        VipData[i].first_name+' '+ VipData[i].last_name+"?" );
+        VipData[i].first_name+' '+ VipData[i].last_name+"?" ); //Confirmation message
 
     if (r == true) {
+        // saving information about the deleted user temporarily in an array
         var saveVIP = {"username" : VipData[i].username,"first_name" : VipData[i].first_name,"last_name" : VipData[i].last_name,"assets" : VipData[i].assets};
-        VipData.splice(i, i+1);
-        alert(message);
         deletedVIP.push(saveVIP);
-
-
-            /*if this two rows is not performed the table:
-             * 1. Will not be updated
-             * or if just $(getAllVipMem(VipData)).appendTo("#allVipUsers");
-             *the content will just be appended another time so the table
-             * becomes twice as big with the deleted member gone in one of the
-             * tables*/
-
-            $('#allVipUsers').empty();  /*get rid of the old content*/
-            $(getAllVipMem(VipData)).appendTo("#allVipUsers"); /*appends the new content :)*/
-
-
-    } else {
+        VipData.splice(i, 1); // removes a user from VipData(should be the database)
+        countDeletes++; // increases so it's possible to keep track of the index the "newest"
+                // deleted person is placed in the deletedVIP array
+        
+        $('#allVipUsers').empty();  /*get rid of the old content*/
+        $(getAllVipMem(VipData)).appendTo("#allVipUsers"); /*appends the new content :)*/
+    } 
+    
+    else {
         alert("You didn't do any changes");
-
     }
-
-
-
-
 }
 
-
-
-
-
-/*here is our undo/redo function and there are global variables at the top of this file
-* but there is a bugg somewhere......*/
-
-
+// undo/redo start
 function undoVIPdelete() {
-    var i = deletedVIP.length - 1;
-    VipData.push(deletedVIP[i]);
-    undoneVIP.push(deletedVIP[i]);
-    if (deletedVIP.length > 0) {
-        deletedVIP.pop();
+    if (countDeletes>0) {
+        countDeletes--; // decreases by one to get the right index
+        var restoreVIP = {"username" :deletedVIP[countDeletes].username,"first_name" : deletedVIP[countDeletes].first_name,
+            "last_name" : deletedVIP[countDeletes].last_name,"assets" :deletedVIP[countDeletes].assets};
+
+        VipData.push(restoreVIP); // adding the deleted VIP again
+        undoneVIP.push(restoreVIP); // adding the deleted VIP in this array to make it possible later to add it undo the
+                                    //delete again by pressing redo
 
         $('#allVipUsers').empty();  /*get rid of the old content*/
         $(getAllVipMem(VipData)).appendTo("#allVipUsers"); /*appends the new content :)*/
 
+        deletedVIP.pop(); //removing the last element in this array
     }
+
     else {
         alert("Nothing to undo");
-
     }
 }
 
 function redoVIPdelete() {
-    var i = undoneVIP.length - 1;
-    deletedVIP.push(undoneVIP[i]);
-    if (undoneVIP.length > 0) {
-        VipData.pop();
+
+    var backStep=undoneVIP.length; // variable to find most recently undone delete
+
+    if( backStep > 0) {
+        backStep--; // so we don't start out of bounds
+        countDeletes++;  // so we can keep track of most recently deleted VIP
+        var vipp = {"username" :undoneVIP[backStep].username,
+            "first_name" : undoneVIP[backStep].first_name,
+            "last_name" : undoneVIP[backStep].last_name, "assets" :undoneVIP[backStep].assets};
+
+        VipData.pop();// since in this case all deleted VIPS is placed last when undoing a delete
+        deletedVIP.push(vipp);
+        undoneVIP.pop();
 
         $('#allVipUsers').empty();   /*get rid of the old content*/
         $(getAllVipMem(VipData)).appendTo("#allVipUsers"); /*appends the new content :)*/
+
     }
+
+
     else {
         alert("Nothing to redo");
     }
 }
-
-
+//end of undo/redo
 
 function cancleaddVip(){
 
