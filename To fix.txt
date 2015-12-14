@@ -1,0 +1,12 @@
+Change white on white leftbar tab-buttons
+	- css: button active/focus?
+Fix alignment of names and price of beverages
+	- All beverages in tables (like in empview>Stock but dragable)
+Implement undo-redo on orders (both custview and empview)
+	- Are rows in tables dragable?
+Make order window (receipt in css) scrollable when many beverages in order.
+	- Or maximum # of beverages set to 5? This was an requirement
+Add pay button on empview
+Show total cost of order
+Show user logged in, assets showing. And decreasing with payment.
+	- Session/cockies needed for this?
