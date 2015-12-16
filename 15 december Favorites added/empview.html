@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <title>Employeer view layout proposal</title>
+
+    <link rel="stylesheet" type="text/css" href="css-files/basic.css">
+    <link rel="stylesheet" type="text/css" href="css-files/buttons.css">
+    <link rel="stylesheet" type="text/css" href="css-files/buttonstyles.css">
+    <link rel="stylesheet" type="text/css" href="css-files/ids.css">
+    <link rel="stylesheet" type="text/css" href="css-files/tabstyle.css">
+    <link rel="stylesheet" type="text/css" href="css-files/BillAndTablestyle.css">
+
+
+    <script type="text/javascript" src="js-files/jquery.js" ></script>
+    <script type="text/javascript" src ="js-files/jtest.js"></script>
+    <script type="text/javascript" src ="js-files/handleStock.js"></script>
+    <script type="text/javascript" src ="js-files/handleVips.js"></script>
+    <script type="text/javascript" src ="js-files/handle_Table_Orders_tab_emp.js"></script>
+    <script type="text/javascript" src="js-files/drop.js" ></script>
+    <script type="text/javascript" src="js-files/collectDataAndGlobalVariables.js" ></script>
+
+
+
+
+</head>
+<body>
+
+<div id="container">
+
+    <div id="top">
+        <h1 align="center"><span class="style1">The Flying Dutchman</span>      <img class="picturestyle2"  src="pictures/background.JPG"/>
+            <a href="login.html">
+                <button align="right" class="logoutbutton">Log Out</button> </a>    </h1>
+    </div>
+
+    <div id="lefttbar">
+        <ul class="tabs">
+            <li class="button blue small" rel="tab1">Handle Order</li>
+            <li class="button blue small" rel="tab2">Vip-members</li>
+            <li class="button blue small" rel="tab3">Stock</li>
+            <!--<li class="button blue small" rel="tab4">Statistics</li>-->
+            <li class="button blue small" rel="tab5">Incidents</li>
+          <!--  <li class="button blue small" rel="tab6">Table Orders</li>-->
+        </ul>
+
+    </div>
+    <div id="rightbar">
+
+        <div class="receipt" ondrop="drop(event)" ondragover="allowDrop(event)"><h5>Orders</h5>
+            <ul id="menu">
+            </ul>
+
+            <div>Total cost...</div>
+
+        </div>
+
+
+
+    </div>
+
+    <div id="mainframe">
+        <div class="tab_container">
+
+            <div id="tab1" class="tab_content">
+                    <!-- See queries for this in file handle_Table_Orders_tab_emp.js -->
+
+                    <div id="bartablesleft">
+
+                        <div class="barTable" id="t1">
+                            <span class="tname">Table 1</span>
+                            <div class="drinkorder" id="order1" ondrop="drop(event)" ondragover="allowDrop(event)">
+                                Table 1
+                            </div>
+
+                        </div>
+
+
+                        <div class="barTable" id="t2">
+                            <span class="tname">Table 2</span>
+                            <div class="drinkorder" id="order2" ondrop="drop(event)" ondragover="allowDrop(event)">
+                                Table 2
+                            </div>
+                        </div>
+
+                        <div class="barTable" id="t3">
+                            <span class="tname">Table 3</span>
+                            <div class="drinkorder" id="order3" ondrop="drop(event)" ondragover="allowDrop(event)">
+                                Table 3
+                            </div>
+
+                        </div>
+                        <div class="barTable" id="t4">
+                            <span class="tname">Table 4</span>
+                            <div class="drinkorder" id="order4" ondrop="drop(event)" ondragover="allowDrop(event)">
+                                Table 4
+                            </div>
+
+                        </div>
+                        <div class="barTable" id="t5">
+                            <span class="tname">Table 5</span>
+                            <div class="drinkorder" id="order5" ondrop="drop(event)" ondragover="allowDrop(event)">
+                                Table 5
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div>
+                        <div id="menubarright">
+                            <ul id="mtabs3">
+                                <li id="popular">
+                                    Popular
+                                </li>
+                                <li id="searching">
+                                    Search
+                                </li>
+                            </ul>
+                            <div class="menu" id="popularBeverages">
+                                <h3>Popular</h3>
+
+                            </div>
+
+                            <div class="menu" id="searchBeverage">
+
+                            </div>
+                        </div>
+
+                    </div>
+
+
+
+                    <div id="barframe">
+
+                        <div class="barTable" id="t6">
+                            <span class="tname">Table 6</span>
+                            <div class="drinkorder" id="order6" ondrop="drop(event)" ondragover="allowDrop(event)">
+                                Table 6
+                            </div>
+
+                        </div>
+
+
+                        <div class="barTable" id="t7">
+                            <span class="tname">Table 7</span>
+                            <div class="drinkorder" id="order7" ondrop="drop(event)" ondragover="allowDrop(event)">
+                                Table 7
+                            </div>
+
+                        </div>
+
+                        <div class="barTable" id="t8">
+                            <span class="tname">Table 8</span>
+                            <div class="drinkorder" id="order8" ondrop="drop(event)" ondragover="allowDrop(event)">
+                                Table 8
+                            </div>
+
+                        </div>
+
+                        <div class="barTable" id="t9">
+                            <span class="tname">Table 9</span>
+                            <div class="drinkorder" id="order9" ondrop="drop(event)" ondragover="allowDrop(event)">
+                                Table 9
+                            </div>
+
+                        </div>
+                        <div class="barTable" id="t10">
+                            <span class="tname">Table 10</span>
+                            <div class="drinkorder" id="order10" ondrop="drop(event)" ondragover="allowDrop(event)">
+                                Table 10
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                </div><!-- #tab1 -->
+
+
+
+            <!--
+                            <table align="center" border="1" width="50%" height="40%">
+                                <tr>
+                                    <td>
+                                        <li class="button blue small" rel="tab1">Beers</li>
+                                    </td>
+                                    <td>
+                                        <img src="pictures/menuPic.jpg">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <img src="pictures/menuPic.jpg">
+                                    </td>
+                                    <td>
+                                        <img src="pictures/menuPic.jpg">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <img src="pictures/menuPic.jpg">
+                                    </td>
+                                    <td>
+                                        <img src="pictures/menuPic.jpg">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <img src="pictures/menuPic.jpg">
+                                    </td>
+                                    <td>
+                                        <img src="pictures/menuPic.jpg">
+                                    </td>
+
+                            </table>
+                            -->
+
+
+            <div id="tab2" class="tab_content">
+                <!-- See queries for this in file handleVips.js -->
+                <div>
+                    <button onclick="undoVIPdelete()">Undo Delete</button>
+                    <button onclick="redoVIPdelete()">Redo Delete</button>
+                    <div id="menutabs">
+                        <ul id="mtabs">
+                            <li id="vip">
+                                All VIPS
+                            </li>
+                            <li id="search">
+                                Search VIP
+                            </li>
+                              <li id="newUser">
+                                Add new VIP
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="menu" id="allVipUsers">
+                    </div>
+
+                    <div class="menu" id="searchVipUser">
+                    </div>
+                    
+                     <div class="menu" id="addVipUser">
+                    </div>
+                </div>
+
+            </div><!-- #tab2 -->
+            <div id="tab3" class="tab_content">
+                <!-- See queries for this in file handleStock.js -->
+
+                <div id="menutabs2">
+                    <ul id="mtabs2">
+                        <li id="drinks">All in Stock</li>
+                        <li id="runningout">Low in Stock</li>
+                        <li id="searching1">Search Stock</li>
+                    </ul>
+                </div>
+
+
+                <div class="menu" id="allStock"></div>
+
+                <div class="menu" id="lowStock"></div>
+
+                <div class="menu" id="SearchStock"></div>
+
+            </div><!-- #tab3 -->
+
+            <!--<div id="tab4" class="tab_content">
+                <p>hej</p>                <p>hej</p>
+                <p>hej</p>
+                <p>hej</p>
+                <p>hej</p>
+                <p>hej</p>
+                <p>hej</p>
+                <p>hej</p>
+                <p>hej</p>
+                <p>hej</p>
+                <p>hej</p>
+
+
+            </div><!-- #tab4 -->
+
+            <div id="tab5" class="tab_content">
+
+                <table align ="center" >
+                    <tr>
+                        <form name="form1" method="post" action="custview.html">
+                            <td>
+                                <tr>
+                                    <td colspan="3"><strong>Incidents </strong></td>
+                                </tr>
+
+
+                                <tr>
+                                    <td>Personal number:</td>
+                                    <td><input class="searchbox" name="membername" type="text" id="user"></td>
+                                </tr>
+                                <tr>
+                                    <td>Password:</td>
+
+
+                                    <td><input class="searchbox" name="memberpassword" type="password" id="password"></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td><input class="button blue small" type="submit" name="Submit" value="Send"></td>
+
+                        </form>
+                        <form name="form2" method="post" action="empview.html">
+                            <td><input class=" button blue small" type="submit" name="Submit" value="Cancel"></td>
+                        </form>
+
+
+                        <td>&nbsp;</td>
+
+                    </tr>
+                    </td>
+
+                    </tr>
+                </table>
+            </div>
+
+    </div> <!-- .tab_container -->
+    <!-- #tab5 -->
+
+            <!--
+            <div id="tab6" class="tab_content">
+                <!-- See queries for this in file handle_Table_Orders_tab_emp.js
+
+                    <div id="bartablesleft">
+
+                        <div class="barTable" id="t1">
+                            <span class="tname">Table 1</span>
+                            <div class="drinkorder" id="order1">
+                                Table 1
+                            </div>
+
+                        </div>
+
+
+                        <div class="barTable" id="t2">
+                            <spann class="tname">Table 2</spann>
+                            <div class="drinkorder" id="order2">
+                                Table 2
+                            </div>
+                        </div>
+
+                        <div class="barTable" id="t3">
+                            <spann class="tname">Table 3</spann>
+                            <div class="drinkorder" id="order3">
+                                Table 3
+                            </div>
+
+                        </div>
+                        <div class="barTable" id="t4">
+                            <spann class="tname">Table 4</spann>
+                            <div class="drinkorder" id="order4">
+                                Table 4
+                            </div>
+
+                        </div>
+                        <div class="barTable" id="t5">
+                            <spann class="tname">Table 5</spann>
+                            <div class="drinkorder" id="order5">
+                                Table 5
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div>
+                        <div id="menubarright">
+                            <ul id="mtabs3">
+                                <li id="popular">
+                                    Popular
+                                </li>
+                                <li id="searching">
+                                    Search
+                                </li>
+                            </ul>
+                            <div class="menu" id="popularBeverages">
+                                empty atm since needs to generate "most sold beverages"
+
+                            </div>
+
+                            <div class="menu" id="searchBeverage">
+
+                            </div>
+                        </div>
+
+                    </div>
+
+
+
+                    <div id="barframe">
+
+                        <div class="barTable" id="t6">
+                            <spann class="tname">Table 6</spann>
+                            <div class="drinkorder" id="order6">
+                                Table 6
+                            </div>
+
+                        </div>
+
+
+                        <div class="barTable" id="t7">
+                            <spann class="tname">Table 7</spann>
+                            <div class="drinkorder" id="order7">
+                                Table 7
+                            </div>
+
+                        </div>
+
+                        <div class="barTable" id="t8">
+                            <spann class="tname">Table 8</spann>
+                            <div class="drinkorder" id="order8">
+                                Table 8
+                            </div>
+
+                        </div>
+
+                        <div class="barTable" id="t9">
+                            <spann class="tname">Table 9</spann>
+                            <div class="drinkorder" id="order9">
+                                Table 9
+                            </div>
+
+                        </div>
+                        <div class="barTable" id="t10">
+                            <spann class="tname">Table 10</spann>
+                            <div class="drinkorder" id="order10">
+                                Table 10
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                </div><!-- #tab1 -</div><!-- #tab6 -->
+
+
+    </div>
+
+
+</div>
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="../css-files/bootstrap.css" rel="stylesheet">
+<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
+<script type='text/javascript' src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script src="../js-files/pru.js"></script>
+</head>
+
+<body>
+<div class="panel panel-default">
+  <div class="panel-heading"> Your order: </div>
+  <div class="panel-body" id="RowsContainer">
+    <div class="alert alert-success alert-dismissable" id="line1">
+      <button type="button" id="button1" onclick="deleteRow('#line1')" class="close" data-dismiss="alert" aria-hidden="true"><i class="fa fa-trash-o"></i></button>
+      Guiness Beer </div>
+    <!--<script>
+		$( "#button1" ).click(function() {
+  		$( "div" ).remove("#line1");
+		});
+	</script>-->
+    <div class="alert alert-info alert-dismissable">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. </div>
+    <div class="alert alert-warning alert-dismissable">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. </div>
+    <div class="alert alert-danger alert-dismissable" id="line4">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. </div>
+  </div>
+</div>
+
+
+        <div class="receipt" ondrop="drop(event)" ondragover="allowDrop(event)"><h5>Your credit: ...</h5>
+            <ul id="menu">
+                
+            </ul>
+            <h5>Total cost: ....</h5>
+
+            <button id="opener">Pay</button>
+		<div id="wrapper">
+		<p>Are you sure you would like to pay?</p>
+        <form method="post" action="">
+                <input class="button bluesize smaller" type="submit" value="Yes">
+
+            </form>
+            <form method="post" action="">
+                <input class="button bluesize smaller" type="submit" value="No">
+
+            </form>
+		</div>
+                
+        </div>
+</body>
+</html>

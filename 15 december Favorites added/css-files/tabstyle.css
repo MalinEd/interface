@@ -1,0 +1,129 @@
+	ul.tabs {
+	margin: 0;
+	padding: 0;
+	float: left;
+	list-style: none;
+	height: 32px;
+	border-bottom: 0;
+	border-left: 0;
+	width: 100%;
+	}
+
+	ul.tabs li {
+		float: left;
+		margin: 0;
+		cursor: pointer;
+		padding: 0px 21px ;
+		height: 31px;
+		line-height: 31px;
+		border: 1px solid #999999;
+		border-left: none;
+		font-weight: bold;
+		background: #EEEEEE;
+		overflow: hidden;
+		position: relative;
+	}
+	ul.tabs li:hover {
+		background: #CCCCCC;
+	}	
+	ul.tabs li.active{
+		background: #CCCCCC;
+		border-bottom: 1px solid #FFFFFF;
+	}
+	.tab_container {
+		border: 1px solid #999999;
+		border-top: none;
+		clear: both;
+		float: left; 
+		width: 100%;
+		background: #FFFFFF;
+	}
+	.tab_content {
+		padding: 20px;
+		font-size: 1.2em;
+		display: none;
+	}
+
+
+	.menu {
+		position: relative;
+		width: 100%;
+		height: 100%;
+		color:black;
+		border: ghostwhite groove 5px;
+	}
+
+	/* Menu styles */
+
+	#menutabs {
+		position: relative;
+		width: 100%;
+		color:white;
+	}
+	
+	
+	#menutabs2 {
+		position: relative;
+		width: 100%;
+		color:white;
+	}
+
+
+	#mtabs li {
+		margin: auto;
+		display: inline;  /* Makes the list horisontal */
+		padding: 4px;
+		border-radius: 10px 10px 0px 0px;
+		background-color: #0068B2;
+		color: white;
+	}
+	#mtabs li:hover {
+		background: #70C3FF;
+	}
+	#mtabs li.active{
+		background: #FFFFFF;
+		border-bottom: 1px solid #FFFFFF;
+	}
+	
+	#mtabs2 li {
+		margin: auto;
+		display: inline;  /* Makes the list horisontal */
+		padding: 4px;
+		border-radius: 10px 10px 0px 0px;
+		background-color: #0068B2;
+		color: white;
+	}
+	#mtabs2 li:hover {
+		background: #70C3FF;
+	}
+	#mtabs2 li.active{
+		background: #FFFFFF;
+		border-bottom: 1px solid #FFFFFF;
+	}
+
+	#mtabs3 li {
+		margin: auto;
+		display: inline;  /* Makes the list horisontal */
+		padding: 4px;
+		border-radius: 10px 10px 0px 0px;
+		background-color: #0068B2;
+		color: white;
+	}
+	#mtabs3 li:hover {
+		background: #70C3FF;
+	}
+	#mtabs3 li.active{
+		background-color: #234C69;
+		border-bottom: 1px solid #FFFFFF;
+	}
+	/* End menu styles */
+
+	#display {
+		text-align: right;
+		font-size: larger;
+		background-color: darkgrey;
+		color: white;
+
+	}
+
+
