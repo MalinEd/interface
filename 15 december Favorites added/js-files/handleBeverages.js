@@ -18,10 +18,8 @@ $(function () {
         $("#rött_vin").hide("slow");
         $("#alcohol-free").hide("slow");
         $("#SearchStock").hide("slow");
-
-
     });
-// running out måste ändras
+    
     $("#öl1").click(function () { /* Here we show and hide the field. */
         $("#all").hide("slow");
         $("#öl").show("slow");
@@ -40,9 +38,8 @@ $(function () {
         $("#rött_vin").hide("slow");
         $("#alcohol-free").hide("slow");
         $("#SearchStock").hide("slow");
-
-
     });
+    
     $("#vitt_vin1").click(function () { /* Here we show and hide the field. */
         $("#all").hide("slow");
         $("#öl").hide("slow");
@@ -51,8 +48,6 @@ $(function () {
         $("#rött_vin").hide("slow");
         $("#alcohol-free").hide("slow");
         $("#SearchStock").hide("slow");
-
-
     });
 
     $("#rött_vin1").click(function () { /* Here we show and hide the field. */
@@ -63,9 +58,8 @@ $(function () {
         $("#rött_vin").show("slow");
         $("#alcohol-free").hide("slow");
         $("#SearchStock").hide("slow");
-
-
     });
+    
     $("#alcohol-free1").click(function () { /* Here we show and hide the field. */
         $("#all").hide("slow");
         $("#öl").hide("slow");
@@ -74,9 +68,8 @@ $(function () {
         $("#rött_vin").hide("slow");
         $("#alcohol-free").show("slow");
         $("#SearchStock").hide("slow");
-
-
     });
+    
     $("#searching1").click(function () { /* Here we show and hide the field. */
         $("#all").hide("slow");
         $("#öl").hide("slow");
@@ -85,7 +78,6 @@ $(function () {
         $("#rött_vin").hide("slow");
         $("#alcohol-free").hide("slow");
         $("#SearchStock").show("slow");
-
 
     });
 
@@ -97,8 +89,6 @@ $(function () {
     $(getBeers("alcohol-free", beerdata,fav)).appendTo("#alcohol-free");
     $(SearchItem(beerdata)).appendTo("#SearchStock");
     $(getAllBeers(beerdata,fav)).appendTo("#all");
-
-
 
 });
 
@@ -148,6 +138,69 @@ function getAllBeers(beerdata,fav) {
             }
             else{
                 if (beerdata[i].count>lowStockCustomer){
+                    out +='<div class="row" id="item'+i+' "draggable="true" ' +
+                        'ondragstart="drag(event)" data-price="'+beerdata[i].pub_price+'" data-name="'+beerdata[i].namn+'">' +
+                        '<div class="cell">'+ beerdata[i].namn+'</div> <div class="cell" id="price'+i+'">'
+                        +beerdata[i].pub_price+':-</div><div class="cell" >' +
+                        '<img class="picturestyleStar" onclick="addFavorite('+i+')" src="pictures/star-grey.png"/></div></div>';
+                }
+
+                else{ 
+                    out +='<div class="row" id="item'+i+' data-price="'+beerdata[i].pub_price+'" data-name="'+beerdata[i].namn+'">'+
+                        '<div class="cell">'+ beerdata[i].namn+'</div> <div class="cell" id="price'+i+'">'
+                        +beerdata[i].pub_price+':-</div><div class="cell" >' +
+                        '<img class="picturestyleStar" onclick="addFavorite('+i+')" src="pictures/star-grey.png"/> ' +
+                        'Order from Bartender</div></div>';
+                }
+            }
+
+    }
+    return out+ endtable;
+}
+
+
+// this function gets all beverages but they are sorted in what type they are
+// and appended to the "right tab" otherwise works the same way as getallBeers()
+function getBeers(type, beerdata, fav) {
+
+    var out = '<div class="table" ><div class="row"><div class =cell><strong>All Beverages:</strong></div>' +
+        '<div class =cell><strong>Price:</strong></div></div>';
+    var endtable= '</div>';
+    var i, myFavorite;
+
+
+    // this variable needs to be generated from a cookie for exemple...
+    var start={"Firstname" : "Aquilina","Lastname" : "Lyndon","Username" : "aqulyn"};
+    // this for-loop checks based on the cookie whose favorite list it should use
+    for (var h = 0; h < fav.length; h++) {
+        if (fav[h].Firstname==start.Firstname && fav[h].Lastname==start.Lastname && fav[h].Username==start.Username){
+            myFavorite=fav[h].fav_beer_id;
+        }
+    }
+
+
+    for (i = 0; i < beerdata.length; i++) {
+        if (beerdata[i].type == type) {
+            if(myFavorite.indexOf(beerdata[i].beer_id)>-1){
+                if (beerdata[i].count>lowStockCustomer){
+                    out +='<div class="row" id="item'+i+' "draggable="true" ' +
+                        'ondragstart="drag(event)" data-price="'+beerdata[i].pub_price+'" data-name="'+beerdata[i].namn+'">'+
+                        '<div class="cell">'+ beerdata[i].namn+'</div> <div class="cell" id="price'+i+'">'
+                        +beerdata[i].pub_price+':-</div><div class="cell" >' +
+                        '<img class="picturestyleStar" onclick="removeFavorite('+i+')" src="pictures/stargul.png"/></div></div>';
+                }
+
+                else {
+                    out +='<div class="row" id="item'+i+' data-price="'+beerdata[i].pub_price+'" data-name="'+beerdata[i].namn+'">'+
+                        '<div class="cell">'+ beerdata[i].namn+'</div> <div class="cell" id="price'+i+'">'
+                        +beerdata[i].pub_price+':-</div><div class="cell" >' +
+                        '<img class="picturestyleStar" onclick="removeFavorite('+i+')" src="pictures/stargul.png"/> ' +
+                        'Order from Bartender</div></div>';
+                }
+
+            }
+            else{
+                if (beerdata[i].count>lowStockCustomer){
 
 
                     out +='<div class="row" id="item'+i+' "draggable="true" ' +
@@ -158,19 +211,20 @@ function getAllBeers(beerdata,fav) {
                 }
 
                 else{ out +='<div class="row" id="item'+i+' data-price="'+beerdata[i].pub_price+'" data-name="'+beerdata[i].namn+'">'+
-                        '<div class="cell">'+ beerdata[i].namn+'</div> <div class="cell" id="price'+i+'">'
-                        +beerdata[i].pub_price+':-</div><div class="cell" >' +
-                        '<img class="picturestyleStar" onclick="addFavorite('+i+')" src="pictures/star-grey.png"/> ' +
-                        'Order from Bartender</div></div>';
+                    '<div class="cell">'+ beerdata[i].namn+'</div> <div class="cell" id="price'+i+'">'
+                    +beerdata[i].pub_price+':-</div><div class="cell" >' +
+                    '<img class="picturestyleStar" onclick="addFavorite('+i+')" src="pictures/star-grey.png"/> ' +
+                    'Order from Bartender</div></div>';
 
 
                 }
             }
 
+        }
     }
-
     return out+ endtable;
 }
+
 
 
 function addFavorite(i){
@@ -205,10 +259,8 @@ function addFavorite(i){
     $(getAllBeers(beerdata,fav)).appendTo("#all");
     $(getAllfav(fav, beerdata)).appendTo("#favBeverage");
 
-
-
-
 }
+
 function removeFavorite(i){
     var favoritList;
 
@@ -247,52 +299,6 @@ function removeFavorite(i){
     $(getAllfav(fav, beerdata)).appendTo("#favBeverage");
 
 
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// this function gets all beverages but they are sorted in what type they are
-// and appended to the "right tab"
-function getBeers(type, beerdata, fav) {
-
-    var out = '<div><br></div><div class="table" ><div class="row"><div class =cell><strong></strong></div>' +
-        '<div class =cell><strong>Price:</strong></div></div>';
-    var endtable= '</div>';
-    var i;
-    for (i = 0; i < beerdata.length; i++) {
-        if (beerdata[i].type == type) {
-            if (beerdata[i].count>lowStockCustomer){
-
-                out +='<div class="row" id="itemtype'+i+' "draggable="true" ' +
-                    'ondragstart="drag(event)" data-price="'+beerdata[i].pub_price+'" data-name="'+beerdata[i].namn+'">'+
-                    '<div class="cell">'+ beerdata[i].namn+'</div> <div class="cell" id="price'+i+'">'
-                    +beerdata[i].pub_price+':-</div><div class="cell" onclick="alert('+i+')">' +
-                    '<img class="picturestyleStar" src="pictures/stargul.png"/></div></div>';
-            }
-
-            else {
-                out+='<div class="row" id="itemtype'+i+' data-price="'+beerdata[i].pub_price+'" data-name="'+beerdata[i].namn+'">'+
-                    '<div class="cell">'+ beerdata[i].namn+'</div> <div class="cell" id="price'+i+'">'
-                    +beerdata[i].pub_price+':-</div><div class="cell" onclick="alert('+i+')">' +
-                    '<img class="picturestyleStar" src="pictures/stargul.png"/>Order from bartender</div></div>';}
-            }
-        }
-
-
-    return out+ endtable;
 }
 
 
