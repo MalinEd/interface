@@ -38,9 +38,20 @@ var pop=getPurchaseData();
  * data was deleted without API) :) */
 var VipData=getVipData();
 
-// used to allow persons to login (and for bartenders to add a new incident)
+// contains all usernames,passwords and if they are admin or not. Admin:1 means that the user is a Admin
+// and Admin:0 means that the user is not and Admin
 var users = getUsers();
 
+/*contains comments that bartenders have added in the tab incidents*/
+var historyData=getHistoryData();
+
+function getHistoryData(){
+
+    return [{"Username" : "ervtodd","timestamp":"2015-12-12", "comment":"A chair broke during the night"},
+        {"Username" : "hirchr","timestamp":"2015-11-11" ,"comment": "Several glasses fell down, needs to order more"},
+    ]
+
+}
 
 function getUsers() {
     return [
