@@ -77,7 +77,7 @@ function getVips(VipData) {
         /* out1 is a variable that contains the "middle of the table" + information*/
         out1 += ' <tr><td>'+VipData[i].assets+'</td> <td>'+VipData[i].username+
             '</td> <td>'+ VipData[i].first_name+'</td><td>'+ VipData[i].last_name+'</td>' +
-            '<td><button onclick="deletemember('+i+')">Delete</button></td> </tr>  </tr>';
+            '<td><button class="undobutton" onclick="deletemember('+i+')">Delete</button></td> </tr>  </tr>';
 
     }
     return out1;
@@ -88,7 +88,7 @@ function Searchbox() {
     /*this creates a search field and search button*/
     var search1='<div id="searchplacement">' +
         ' <input class="searchbox" id="Searchword1" type="text"> ' +
-        '<button class="" onclick="FindObject()">Search Vip-member</button> <p id="foundPersons"></p> </div>';
+        '<button class="addVipbutton" onclick="FindObject()">Search Vip-member</button> <p id="foundPersons"></p> </div>';
     return search1;
 }
 
@@ -125,7 +125,7 @@ function FindObject() {
             if (user==VipData[i].username || user==VipData[i].first_name ||user==VipData[i].last_name) {
                 fPersons += ' <tr><td>'+VipData[i].assets+'</td> <td>'+VipData[i].username+ '</td> <td>'+
                     VipData[i].first_name+ '</td><td>'+ VipData[i].last_name+'</td>' +
-                    '<td><button onclick="deletemember('+i+')">Delete</button></td> </tr>';
+                    '<td><button class="undobutton" onclick="deletemember('+i+')">Delete</button></td> </tr>';
 
             }
         }
