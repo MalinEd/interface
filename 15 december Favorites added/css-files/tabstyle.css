@@ -116,6 +116,29 @@
 		background-color: #234C69;
 		border-bottom: 1px solid #FFFFFF;
 	}
+	
+	#menutabs4 {
+		position: relative;
+		width: 100%;
+		color:white;
+	}
+	#mtabs4 li {
+		margin: auto;
+		display: inline;  /* Makes the list horisontal */
+		padding: 4px;
+		border-radius: 10px 10px 0px 0px;
+		background-color: #0068B2;
+		color: white;
+	}
+	#mtabs4 li:hover {
+		background: #70C3FF;
+	}
+	#mtabs4 li.active{
+		background-color: #234C69;
+		border-bottom: 1px solid #FFFFFF;
+	}
+
+	
 	/* End menu styles */
 
 	#display {
