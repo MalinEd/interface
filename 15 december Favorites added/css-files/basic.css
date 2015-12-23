@@ -157,6 +157,25 @@ div {
     width: 30px;
     height: 30px;
 }
+/* i dont think this one is used..
 .starbutton{
     background:white;
+}*/
+
+.tableHist{
+    /*border: 2px solid black;*/
+    display: table;
+    width: 715px;
+    margin: auto;
+    text-align: left;
+
+}
+
+.tableIncident{
+    text-align: center;
+    position: relative;
+    left: 25%;
+    width: 400px;
+    height: 250px;
+
 }
