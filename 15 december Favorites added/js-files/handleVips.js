@@ -154,7 +154,7 @@ function getNewUserInputField(){
         '<tr><td>Address: </td><td><input class="inputfield" id="1address" type="text"></td></tr> ' +
         '<tr><td>Zip-Code:  </td><td><input class="inputfield" id="1zipCode" type="text"> </td></tr>' +
         '<tr><td></td><td><button class="addVipbutton"  onclick="addmember()">Add VIP</button>' +
-        '<button class="cancelButton"  onclick="cancleaddVip()">Cancel</button></tr></table>' +
+        '<button class="addVipbutton"  onclick="cancleaddVip()">Cancel</button></tr></table>' +
         '</div>';
     return addVip;
 
