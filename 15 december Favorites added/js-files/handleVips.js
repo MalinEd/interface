@@ -88,7 +88,7 @@ function Searchbox() {
     /*this creates a search field and search button*/
     var search1='<div id="searchplacement">' +
         ' <input class="searchbox" id="Searchword1" type="text"> ' +
-        '<button class="addVipbutton" onclick="FindObject()">Search Vip-member</button> <p id="foundPersons"></p> </div>';
+        '<button class="addVipbutton" onclick="FindObject()">Search Vip</button> <p id="foundPersons"></p> </div>';
     return search1;
 }
 
