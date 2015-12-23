@@ -63,14 +63,14 @@ function getAllVipMem(VipData) {
     /* bottom1 is a variable that "ends" the created table*/
     var bottom1='</tbody></table></div>';
 
-    temp += getUsers(VipData) +"<br>";     /*gets all users one by one I think*/
+    temp += getVips(VipData) +"<br>";     /*gets all users one by one I think*/
 
 
     return top1+temp+bottom1;
 
 }
 
-function getUsers(VipData) {
+function getVips(VipData) {
     var out1 = "";
     var i;
     for (i = 0; i < VipData.length; i++) {
