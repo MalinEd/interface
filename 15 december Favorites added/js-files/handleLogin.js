@@ -5,23 +5,30 @@
 var users = getUsers();
 
 function validateLogin() {
+	var test=0;
         var un = document.loginForm.username.value;
         var pw = document.loginForm.password.value;
     for (var i=0; i < users.length; i++) {
         if ((un == users[i].Username) && (pw == users[i].Password)) {
 			
 			if (users[i].Admin == 0){
-            document.loginForm.action = "custview.html";
-			return True;
+				document.loginForm.action = "custview.html";
+				test=1;
+				return True;
 			}
 			
 			else{
 				document.loginForm.action = "empview.html";
+				test=1;
 				return True;
 			}
 		}
 		
     }
+    
+    	if (test== 0){
+		alert("wrong username or password");
+	}
 }
 
 
