@@ -308,7 +308,7 @@ function SearchItem(beerdata) {
     /*this creates a search field and search button*/
     var search='<div id="searchplacement">' +
         ' <input class="searchbox" id="searchword1" type="text"> ' +
-        '<button onclick="SearchInStock(beerdata)">Search Beverage</button> <p id="foundBeverage"> </div>';
+        '<button class="addVipbutton" onclick="SearchInStock(beerdata)">Search Beverage</button> <p id="foundBeverage"> </div>';
     return search;
 }
 
