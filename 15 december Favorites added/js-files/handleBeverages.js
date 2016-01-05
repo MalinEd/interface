@@ -100,12 +100,12 @@ function getAllBeers(beerdata,fav) {
     var endtable= '</div>';
     var i, myFavorite;
 
+    var CK = document.cookie;  //get cookieinformation
+    var start=CK.split("=")[1]; // chooses the part of the cookie that we need (looks like userName=username and we remove userName= by using split)
 
-    // this variable needs to be generated from a cookie for exemple...
-    var start={"Firstname" : "Aquilina","Lastname" : "Lyndon","Username" : "aqulyn"};
     // this for-loop checks based on the cookie whose favorite list it should use
     for (var h = 0; h < fav.length; h++) {
-        if (fav[h].Firstname==start.Firstname && fav[h].Lastname==start.Lastname && fav[h].Username==start.Username){
+        if (fav[h].Username==start){
             myFavorite=fav[h].fav_beer_id;
         }
     }
@@ -169,11 +169,12 @@ function getBeers(type, beerdata, fav) {
     var i, myFavorite;
 
 
-    // this variable needs to be generated from a cookie for exemple...
-    var start={"Firstname" : "Aquilina","Lastname" : "Lyndon","Username" : "aqulyn"};
+    var CK = document.cookie;  //get cookieinformation
+    var start=CK.split("=")[1]; // chooses the part of the cookie that we need (looks like userName=username and we remove userName= by using split)
+    
     // this for-loop checks based on the cookie whose favorite list it should use
     for (var h = 0; h < fav.length; h++) {
-        if (fav[h].Firstname==start.Firstname && fav[h].Lastname==start.Lastname && fav[h].Username==start.Username){
+        if (fav[h].Username==start){
             myFavorite=fav[h].fav_beer_id;
         }
     }
@@ -230,10 +231,11 @@ function getBeers(type, beerdata, fav) {
 function addFavorite(i){
     var favoritList;
 
-    /*get start from cookie push the beer_id of the beverage you want to add to favorites and then updates*/
-    var start={"Firstname" : "Aquilina","Lastname" : "Lyndon","Username" : "aqulyn"};
+    var CK = document.cookie;  //get cookieinformation
+    var start=CK.split("=")[1]; // chooses the part of the cookie that we need (looks like userName=username and we remove userName= by using split)
+   
     for (var j = 0; j < fav.length; j++) {
-        if (fav[j].Firstname==start.Firstname && fav[j].Lastname==start.Lastname && fav[j].Username==start.Username){
+        if (fav[h].Username==start){
             favoritList= fav[j].fav_beer_id;
         }
     }
@@ -264,11 +266,12 @@ function addFavorite(i){
 function removeFavorite(i){
     var favoritList;
 
-    /*get start from a cookie, search from whose favorite list beverage shall be removed
-    * slices favoriteList where the beer_ids matches and removes 1 element then updates*/
-    var start={"Firstname" : "Aquilina","Lastname" : "Lyndon","Username" : "aqulyn"};
+   /* slices favoriteList where the beer_ids matches and removes 1 element then updates*/
+    var CK = document.cookie;  //get cookieinformation
+    var start=CK.split("=")[1]; // chooses the part of the cookie that we need (looks like userName=username and we remove userName= by using split)
+    
     for (var j = 0; j < fav.length; j++) {
-        if (fav[j].Firstname==start.Firstname && fav[j].Lastname==start.Lastname && fav[j].Username==start.Username){
+        if (fav[h].Username==start){
             favoritList= fav[j].fav_beer_id;
         }
     }
