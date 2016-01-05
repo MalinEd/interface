@@ -27,7 +27,8 @@ $(function () {
 
 function getAllfav(fav, beerdata) {
 
-    var start={"Firstname" : "Aquilina","Lastname" : "Lyndon","Username" : "aqulyn"};
+    var CK = document.cookie;  //get cookieinformation
+    var start=CK.split("=")[1]; // chooses the part of the cookie that we need (looks like userName=username and we remove userName= by using split)
 
     var out = '<div class="table" ><div class="row"><div class =cell>Beverages:</div>' +
         '<div class =cell>Price:</div></div>';
@@ -36,7 +37,7 @@ function getAllfav(fav, beerdata) {
     var i;
     for (i = 0; i < fav.length; i++) {
 
-        if (fav[i].Firstname==start.Firstname && fav[i].Lastname==start.Lastname && fav[i].Username==start.Username){
+        if (start==fav[i].Username){
             var favoritList= fav[i].fav_beer_id;
             if (favoritList.length>0) {
 
