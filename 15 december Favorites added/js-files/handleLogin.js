@@ -13,12 +13,14 @@ function validateLogin() {
 			if (users[i].Admin == 0){
 				document.loginForm.action = "custview.html";
 				test=1;
+				document.cookie="usName="+un;
 				return True;
 			}
 			
 			else{
 				document.loginForm.action = "empview.html";
 				test=1;
+				document.cookie="usName="+un;
 				return True;
 			}
 		}
