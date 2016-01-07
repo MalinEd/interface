@@ -44,7 +44,7 @@ function logInToAddNewIncident() {
         '<div class="cell"><input class="searchbox" id=user1 name="username" type="text" placeholder="Type your username"></div></div>' +
         '<div class=row><div class="cell">Password:</div><div class="cell">' +
         '<input class="searchbox" name="password" type="password" placeholder="Type your password" id="password1">' +
-        '</div></div><div class="row"><div class="cell"><button onclick="checkEmpl()">Login</button></div><div class="cell"></div></div></div>';
+        '</div></div><div class="row"><div class="cell"><button class="undobutton" onclick="checkEmpl()">Login</button></div><div class="cell"></div></div></div>';
     return out
 
 }
@@ -73,7 +73,7 @@ function checkEmpl() {
 // makes it possible to write text in in a text area
 function AddNewIncident() {
     var out1='<div><textarea id="textAreaId" rows="10" cols="50">' +
-        '</textarea><button onclick="upload()">Upload</button><button onclick="cancelNewIncident()">Cancel</button></div>';
+        '</textarea><br><button class="undobutton" onclick="upload()">Upload</button><button class="undobutton" onclick="cancelNewIncident()">Cancel</button></div>';
 
     return out1;
 
