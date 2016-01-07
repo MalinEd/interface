@@ -3,7 +3,7 @@
 <head>
 
     <meta charset="UTF-8">
-    <title>Employeer view layout proposal</title>
+    <title>The Flying Dutchman</title>
 
     <link rel="stylesheet" type="text/css" href="css-files/basic.css">
     <link rel="stylesheet" type="text/css" href="css-files/buttons.css">
@@ -114,11 +114,11 @@
                     <div>
                         <div id="menubarright">
                             <ul id="mtabs3">
-                                <li id="popular">
-                                    Popular
+                                <li onclick="checklist('b','b1')" id="popular">
+                                    <b id="b1" class="current" >Popular</b>
                                 </li>
-                                <li id="searching">
-                                    Search
+                                <li onclick="checklist('b','b2')" id="searching">
+                                    <b id="b2">Search</b>
                                 </li>
                             </ul>
                             <div class="menu" id="popularBeverages">
@@ -132,7 +132,6 @@
                         </div>
 
                     </div>
-
 
 
                     <div id="barframe">
@@ -228,15 +227,15 @@
                     <button class="undobutton" onclick="undoVIPdelete()">Undo Delete</button>
                     <button class="undobutton" onclick="redoVIPdelete()">Redo Delete</button>
                     <div id="menutabs">
-                        <ul id="mtabs">
-                            <li id="vip">
-                                All VIPS
+                       <ul  id="mtabs">
+                            <li onclick="checklist('c','c1')" id="vip">
+                                <c id="c1" class="current">All VIPS</c>
                             </li>
-                            <li id="search">
-                                Search VIP
+                            <li onclick="checklist('c','c2')" id="search">
+                                <c id="c2" >Search VIP</c>
                             </li>
-                              <li id="newUser">
-                                Add new VIP
+                              <li onclick="checklist('c','c3')" id="newUser">
+                                <c id="c3">Add new VIP</c>
                             </li>
                         </ul>
                     </div>
@@ -256,19 +255,25 @@
                 <!-- See queries for this in file handleStock.js -->
 
                 <div id="menutabs2">
-                    <ul id="mtabs2">
-                        <li id="drinks">All in Stock</li>
-                        <li id="runningout">Low in Stock</li>
-                        <li id="searching1">Search Stock</li>
+                   <ul id="mtabs2">
+                        <li onclick="checklist('d','d1')" id="drinks">
+                            <d id="d1" class="current" >All in Stock</d>
+                        </li>
+                        <li onclick="checklist('d','d2')" id="runningout">
+                            <d id="d2" >Low in Stock</d>
+                        </li>
+                        <li onclick="checklist('d','d3')" id="searching1">
+                            <d id="d3">Search Stock</d>
+                        </li>
                     </ul>
                 </div>
 
-
-                <div class="menu" id="allStock"></div>
-
-                <div class="menu" id="lowStock"></div>
-
-                <div class="menu" id="SearchStock"></div>
+                <div class="menu" id="allStock">
+                </div>
+                <div class="menu" id="lowStock">
+                </div>
+                <div class="menu" id="SearchStock">
+                </div>
 
             </div><!-- #tab3 -->
 
@@ -279,21 +284,19 @@
 
             <div id="tab5" class="tab_content">
                  <div id="menutabs4">
-                    <ul id="mtabs4">
-                        <li id="history">
-                            History
+                   <ul id="mtabs4">
+                        <li onclick="checklist('e','e1')" id="history">
+                            <e id="e1" class="current" >History</e>
                         </li>
-                        <li id="newincident">
-                            New Incident
+                        <li onclick="checklist('e','e2')" id="newincident">
+                            <e id="e2">New Incident</e>
                         </li>
                     </ul>
                 </div>
 
                 <div class="menu" id="Incidents">
                 </div>
-
                 <div class="menu" id="History1">
-                    
                 </div>
 
                
