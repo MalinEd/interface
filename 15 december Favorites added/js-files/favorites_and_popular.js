@@ -1,10 +1,9 @@
 /**
- */
-
+*/
 
 $(function () {
 
-    // First we hide all menus
+    // First we hide all menus, but the one with all courses.
     //
     $("#popularBev").hide();
     $("#favBeverage").show();
@@ -26,15 +25,16 @@ $(function () {
 
 
 function getAllfav(fav, beerdata) {
-
     var CK = document.cookie;  //get cookieinformation
     var start=CK.split("=")[1]; // chooses the part of the cookie that we need (looks like userName=username and we remove userName= by using split)
 
-    var out = '<br><div class="table" ><div class="row"><div class =cell></div>' +
+    var out = '<br><div class="table" ><div class="row"><div id="bev2" class =cell></div>' +
         '<div class =cell></div></div>';
     var endtable= '</div><br>';
-    
+
+
     var i;
+
     for (i = 0; i < fav.length; i++) {
 
         if (start==fav[i].Username){
@@ -51,7 +51,7 @@ function getAllfav(fav, beerdata) {
                                     'ondragstart="drag(event)" data-price="'+beerdata[j].pub_price+'" data-name="'+beerdata[j].namn+'">'+
                                     '<div class="cell">'+ beerdata[j].namn+'</div> <div class="cell" id="'+
                                     " price"+j+'">'+beerdata[j].pub_price+':-</div><div class="cell" >' +
-                                    '<img class="picturestyleStar" onclick="removeFavorite('+j+')" ' +
+                                    '<img class="picturestyleStar" onclick="removeFavorite('+j+')"' +
                                     'src="pictures/stargul.png"/></div></div>';
                             }
                             else {
@@ -59,9 +59,10 @@ function getAllfav(fav, beerdata) {
                                 out +='<div class="row" id="menuItemFav' + j +' " draggable="false" ' +
                                     'data-price="'+beerdata[j].pub_price+'" data-name="'+beerdata[j].namn+'">'+
                                     '<div class="cell">'+ beerdata[j].namn+'</div> <div class="cell" id="'+
-                                    " price"+j+'">'+beerdata[j].pub_price+':-</div><div class="cell" >' +
+                                    " price"+j+'">'+beerdata[j].pub_price+':-</div><div id="order1" class="cell" >' +
                                     '<img class="picturestyleStar" onclick="removeFavorite('+j+')" src="pictures/stargul.png"/> ' +
                                     'ⓘ</div></div>';
+
                             }
                         }
                     }
@@ -76,6 +77,7 @@ function getAllfav(fav, beerdata) {
         }
     }
     return out+endtable;
+
 }
 
 
@@ -83,6 +85,7 @@ function getAllpop(pop, beerdata) {
     var out = '<br><div class="table" ><div class="row"><div class =cell></div>' +
         '<div class =cell></div></div>';
     var endtable= '</div><br>';
+
 
     var countedItem=countSales(pop);
 
@@ -106,11 +109,13 @@ function getAllpop(pop, beerdata) {
     }
 
     if (out == '<br><div class="table" ><div class="row"><div class =cell></div>' +
-        '<div class =cell></div></div>'){
+        '<div class =cell></div></div>')
+
+    {
         /* out is a variable that contains the information*/
         out ='<br><div class="table" ><div class="row"><div class =cell></div>' +
         '<div class =cell></div></div><div id="popMessage"> The most popular beverages might be out of stock, please contact the bartender<br>';
-       }
+    }
     return out+endtable;
 }
 

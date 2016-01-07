@@ -8,20 +8,21 @@ $(function() {
 
 function generateTranslateButtons() {
     var genArray = [' url("pictures/flag_british.png")', ' url("pictures/flag_swedish.png")', ' url("pictures/flag_spanish.png")'];
-    for (i=0; i<genArray.length; i++) {
+    for (var i=0; i<genArray.length; i++) {
         var changeFlag = document.getElementsByClassName("flagbutton");
         changeFlag[i].style.backgroundImage = genArray[i];
     }
 }
 
 function Translate(language) {
+
     var translate = language();
     var count;
-    for(count = 0; count < translate.length; count++){
-        document.getElementById(translate[count][0]).innerHTML = translate[count][1];
-    }
-    }
 
+    for(count = 0; count < translate.length; count++){
+       document.getElementById(translate[count][0]).innerHTML = translate[count][1];
+    }
+}
 
 function English() {
     return [

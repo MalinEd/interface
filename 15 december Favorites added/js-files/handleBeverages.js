@@ -1,6 +1,6 @@
 $(function () {
 
-    // First we hide all menus, but not the first one
+    // First we hide all menus, but the one with all courses.
     //
     $("#all").show();
     $("#öl").hide();
@@ -92,13 +92,16 @@ $(function () {
 
 });
 
+
 // this function gets all of the beverages in one list but no sorting of what type they are
 
 function getAllBeers(beerdata,fav) {
-   var out = '<br><div class="table" ><div class="row"><div class =cell></div>' +
+    var out = '<br><div class="table" ><div class="row"><div class =cell></div>' +
         '<div class =cell></div></div>';
     var endtable= '</div><br>';
+
     var i, myFavorite;
+
 
     var CK = document.cookie;  //get cookieinformation
     var start=CK.split("=")[1]; // chooses the part of the cookie that we need (looks like userName=username and we remove userName= by using split)
@@ -130,7 +133,7 @@ function getAllBeers(beerdata,fav) {
                 else {
                     out +='<div class="row" id="item'+i+' data-price="'+beerdata[i].pub_price+'" data-name="'+beerdata[i].namn+'">'+
                         '<div class="cell">'+ beerdata[i].namn+'</div> <div class="cell" id="price'+i+'">'
-                        +beerdata[i].pub_price+':-</div><div class="cell" >' +
+                        +beerdata[i].pub_price+':-</div><div id="order2" class="cell" >' +
                         '<img class="picturestyleStar" onclick="removeFavorite('+i+')" src="pictures/stargul.png"/> ' +
                         'ⓘ</div></div>';
                 }
@@ -148,7 +151,7 @@ function getAllBeers(beerdata,fav) {
                 else{ 
                     out +='<div class="row" id="item'+i+' data-price="'+beerdata[i].pub_price+'" data-name="'+beerdata[i].namn+'">'+
                         '<div class="cell">'+ beerdata[i].namn+'</div> <div class="cell" id="price'+i+'">'
-                        +beerdata[i].pub_price+':-</div><div class="cell" >' +
+                        +beerdata[i].pub_price+':-</div><div id="order3" class="cell" >' +
                         '<img class="picturestyleStar" onclick="addFavorite('+i+')" src="pictures/star-grey.png"/> ' +
                         'ⓘ</div></div>';
                 }
@@ -162,16 +165,14 @@ function getAllBeers(beerdata,fav) {
 // this function gets all beverages but they are sorted in what type they are
 // and appended to the "right tab" otherwise works the same way as getallBeers()
 function getBeers(type, beerdata, fav) {
-
+    
     var out = '<br><div class="table" ><div class="row"><div class=cell></div>' +
         '<div class =cell></div></div>';
     var endtable= '</div><br>';
     var i, myFavorite;
 
-
     var CK = document.cookie;  //get cookieinformation
     var start=CK.split("=")[1]; // chooses the part of the cookie that we need (looks like userName=username and we remove userName= by using split)
-    
     // this for-loop checks based on the cookie whose favorite list it should use
     for (var h = 0; h < fav.length; h++) {
         if (fav[h].Username==start){
@@ -194,7 +195,7 @@ function getBeers(type, beerdata, fav) {
                 else {
                     out +='<div class="row" id="item'+i+' data-price="'+beerdata[i].pub_price+'" data-name="'+beerdata[i].namn+'">'+
                         '<div class="cell">'+ beerdata[i].namn+'</div> <div class="cell" id="price'+i+'">'
-                        +beerdata[i].pub_price+':-</div><div class="cell" >' +
+                        +beerdata[i].pub_price+':-</div><div id="order4" class="cell" >' +
                         '<img class="picturestyleStar" onclick="removeFavorite('+i+')" src="pictures/stargul.png"/> ' +
                         'ⓘ</div></div>';
                 }
@@ -213,29 +214,27 @@ function getBeers(type, beerdata, fav) {
 
                 else{ out +='<div class="row" id="item'+i+' data-price="'+beerdata[i].pub_price+'" data-name="'+beerdata[i].namn+'">'+
                     '<div class="cell">'+ beerdata[i].namn+'</div> <div class="cell" id="price'+i+'">'
-                    +beerdata[i].pub_price+':-</div><div class="cell" >' +
+                    +beerdata[i].pub_price+':-</div><div id="order5" class="cell" >' +
                     '<img class="picturestyleStar" onclick="addFavorite('+i+')" src="pictures/star-grey.png"/> ' +
                     'ⓘ</div></div>';
 
-
                 }
             }
-
         }
     }
     return out+ endtable;
 }
 
 
-
+// functions that add a users favorite beverage
 function addFavorite(i){
     var favoritList;
 
     var CK = document.cookie;  //get cookieinformation
     var start=CK.split("=")[1]; // chooses the part of the cookie that we need (looks like userName=username and we remove userName= by using split)
-   
+
     for (var j = 0; j < fav.length; j++) {
-        if (fav[h].Username==start){
+        if (fav[j].Username==start){
             favoritList= fav[j].fav_beer_id;
         }
     }
@@ -266,12 +265,12 @@ function addFavorite(i){
 function removeFavorite(i){
     var favoritList;
 
-   /* slices favoriteList where the beer_ids matches and removes 1 element then updates*/
+    /* slices favoriteList where the beer_ids matches and removes 1 element then updates*/
     var CK = document.cookie;  //get cookieinformation
     var start=CK.split("=")[1]; // chooses the part of the cookie that we need (looks like userName=username and we remove userName= by using split)
-    
+
     for (var j = 0; j < fav.length; j++) {
-        if (fav[h].Username==start){
+        if (fav[j].Username==start){
             favoritList= fav[j].fav_beer_id;
         }
     }
@@ -311,7 +310,7 @@ function SearchItem(beerdata) {
     /*this creates a search field and search button*/
     var search='<div id="searchplacement">' +
         ' <input class="searchbox" id="searchword1" type="text"> ' +
-        '<button class="sbutton" onclick="SearchInStock(beerdata)">Search Beverage</button> <p id="foundBeverage"> </div><br>';
+        '<button id="search_2" class="sbutton" onclick="SearchInStock(beerdata)">Search Beverage</button> <p id="foundBeverage"> </div><br>';
     return search;
 }
 
@@ -322,7 +321,7 @@ function SearchInStock(beerdata) {
     var searchBeverage;
     var fBeverage ="";
     var startTable='<div><br></div><div class="table" ><div class="row"><div class =cell><strong></strong></div>' +
-        '<div class =cell></div></div>';
+        '<div class =cell><strong>Price:</strong></div></div>';
     var endtable= '</div>';
 
     /*gets the variables from the html document and also the data needed*/

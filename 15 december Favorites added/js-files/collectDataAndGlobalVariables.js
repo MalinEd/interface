@@ -1,5 +1,6 @@
 /**
  */
+
 /*variable that states what is popular or not if below this limit it should not be counted as popular*/
 
 var popLimit=1;

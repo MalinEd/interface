@@ -55,19 +55,12 @@
 
 	/* Menu styles */
 
-	#menutabs {
+	.menutabs {
 		position: relative;
 		width: 100%;
 		color:white;
 	}
 	
-	
-	#menutabs2 {
-		position: relative;
-		width: 100%;
-		color:white;
-	}
-
 
 	#mtabs li {
 		margin: auto;
@@ -80,11 +73,13 @@
 	#mtabs li:hover {
 		background: #70C3FF;
 	}
-	#mtabs li.active{
-		background: #FFFFFF;
-		border-bottom: 1px solid #FFFFFF;
+
+	.menutabs2 {
+		position: relative;
+		width: 100%;
+		color:white;
 	}
-	
+
 	#mtabs2 li {
 		margin: auto;
 		display: inline;  /* Makes the list horisontal */
@@ -96,11 +91,12 @@
 	#mtabs2 li:hover {
 		background: #70C3FF;
 	}
-	#mtabs2 li.active{
-		background: #FFFFFF;
-		border-bottom: 1px solid #FFFFFF;
-	}
 
+	.menutabs3 {
+		position: relative;
+		width: 100%;
+		color:white;
+	}
 	#mtabs3 li {
 		margin: auto;
 		display: inline;  /* Makes the list horisontal */
@@ -112,12 +108,8 @@
 	#mtabs3 li:hover {
 		background: #70C3FF;
 	}
-	#mtabs3 li.active{
-		background-color: #234C69;
-		border-bottom: 1px solid #FFFFFF;
-	}
-	
-	#menutabs4 {
+
+	.menutabs4 {
 		position: relative;
 		width: 100%;
 		color:white;
@@ -133,12 +125,12 @@
 	#mtabs4 li:hover {
 		background: #70C3FF;
 	}
-	#mtabs4 li.active{
-		background-color: #234C69;
-		border-bottom: 1px solid #FFFFFF;
-	}
 
-	
+	.current {
+		padding: 4px;
+		border-radius: 10px 10px 0px 0px;
+		background: #70C3FF;
+	}
 	/* End menu styles */
 
 	#display {
@@ -146,20 +138,10 @@
 		font-size: larger;
 		background-color: darkgrey;
 		color: white;
+	}
 
-	}
-	
-	/* style for the tab that is currently active (li element)"*/
-	.current {
-		padding: 4px;
-		border-radius: 10px 10px 0px 0px;
-		background: #70C3FF;
-	}
-	/* style for text "order from bartender"*/
 	.inf{
 		font-size: 14px;
 		text-align:right;
 	}
-
-
 
