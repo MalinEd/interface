@@ -11,3 +11,17 @@ $(document).ready(function() {
 		$("#"+activeTab).fadeIn(); 
 	});
 });
+
+// user is able to see the current li tab in for example my page
+function checklist(letter, id)
+{
+	$(letter).removeClass("current" );
+	$("#"+id).addClass( "current" );
+}
+
+// removes value from cookie
+function logout() {
+
+	document.cookie="usName=";
+
+}
