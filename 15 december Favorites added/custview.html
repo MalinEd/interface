@@ -108,67 +108,81 @@
         <div class="tab_container">
 
             <div id="tab1" class="tab_content">
-
-
+            	<!-- see queries in favorites_and_popular.js --->
+                <div id="inf1" class="inf">ⓘ=Order from bartender</div>
 
                     <div id="menutabs2">
                         <ul id="mtabs3">
-                            <li id="favs">
-                                Favorites
+                            <li  onclick="checklist('b','b1')" id="favs">
+                                <b id="b1" class ="current">Favorites</b>
                             </li>
-                            <li id="popular">
-                                Popular
+                            <li onclick="checklist('b','b2')" id="popular">
+                                <b id="b2" >Popular</b>
                             </li>
                         </ul>
 
-
                         <div class="menu" id="favBeverage">
-                            <h3>My Favorites</h3>
-
+                            <!-- text generated from js file--->
                         </div>
-
                         <div class="menu" id="popularBev">
-                            <h3>Most sold Beverages</h3>
-
+                            <!-- text generated from js file--->
                         </div>
                     </div>
 
 
-
-
             </div><!-- #tab1 -->
-
 
             <div id="tab2" class="tab_content">
                 <!-- See queries for this in file handleBeverages.js -->
+                <div id="inf2" class="inf">ⓘ=Order from bartender</div>
 
                 <div id="menutabs">
                     <ul id="mtabs">
-                        <li id="all1">Beverages
+                        <li onclick="checklist('c','c1')" id="all1">
+                            <c id="c1" class ="current">Beverages</c>
                         </li>
-                        <li id="öl1">Beers
+                        <li onclick="checklist('c','c2')" id="öl1" >
+                            <c id="c2">Beers</c>
                         </li>
-                        <li id="cider1">Cider
+                        <li  onclick="checklist('c','c3')" id="cider1">
+                            <c id="c3">Cider</c>
                         </li>
-                        <li id="vitt_vin1">White wine
+                        <li onclick="checklist('c','c4')" id="vitt_vin1">
+                            <c id="c4">White wine</c>
                         </li>
-                        <li id="rött_vin1">Red wine
+                        <li onclick="checklist('c','c5')" id="rött_vin1">
+                            <c id="c5">Red wine</c>
                         </li>
-                        <li id="alcohol-free1">Alcohol-free
+                        <li  onclick="checklist('c','c6')" id="alcohol-free1">
+                            <c id="c6">Alcohol-free</c>
                         </li>
-                        <li id="searching1">Search
+                        <li onclick="checklist('c','c7')" id="searching1">
+                            <c id="c7">Search</c>
                         </li>
                     </ul>
                 </div>
 
 
-                <div class="menu" id="all"><br><strong>All</strong></div>
-                <div class="menu" id="öl"><br><strong>Beers</strong> </div>
-                <div class="menu" id="cider"><br><strong> Cider</strong></div>
-                <div class="menu" id="vitt_vin"><br><strong>White wine</strong> </div>
-                <div class="menu" id="rött_vin"><br><strong>Red Wine</strong></div>
-                <div class="menu" id="alcohol-free"><br> <strong>Alcohol free</strong></div>
-                <div class="menu" id="SearchStock"></div>
+                <div class="menu" id="all">
+                    <!-- text generated from js file--->
+                </div>
+                <div class="menu" id="öl">
+                    <!-- text generated from js file--->
+                </div>
+                <!-- text generated from js file--->
+                <div class="menu" id="cider">
+                </div>
+                <div class="menu" id="vitt_vin">
+                    <!-- text generated from js file--->
+                </div>
+                <div class="menu" id="rött_vin">
+                    <!-- text generated from js file--->
+                </div>
+                <div class="menu" id="alcohol-free">
+                    <!-- text generated from js file--->
+                </div>
+                <div class="menu" id="SearchStock">
+                </div>
 
 
 
