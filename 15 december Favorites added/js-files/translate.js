@@ -70,7 +70,7 @@ function Svenska() {
         ["vitt_vin1", "<c id='c4' >Vitt vin</c>"], 
         ["rött_vin1","<c id='c5' >Rött vin</c>"], 
         ["alcohol-free1","<c id='c6' >Alcohol fri</c>"], 
-        ["searching1", "<c id='c7' >Search</c>"], 
+        ["searching1", "<c id='c7' >Sök</c>"], 
         ["search_2","Sök dryck"],
         ["inf1","ⓘ=Beställ av bartendern"],
         ["inf2","ⓘ=Beställ av bartendern"],
