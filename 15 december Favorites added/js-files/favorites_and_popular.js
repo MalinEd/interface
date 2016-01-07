@@ -4,7 +4,7 @@
 
 $(function () {
 
-    // First we hide all menus, but the one with all courses.
+    // First we hide all menus
     //
     $("#popularBev").hide();
     $("#favBeverage").show();
@@ -30,10 +30,10 @@ function getAllfav(fav, beerdata) {
     var CK = document.cookie;  //get cookieinformation
     var start=CK.split("=")[1]; // chooses the part of the cookie that we need (looks like userName=username and we remove userName= by using split)
 
-    var out = '<div class="table" ><div class="row"><div class =cell>Beverages:</div>' +
-        '<div class =cell>Price:</div></div>';
-    var endtable= '</div>';
-
+    var out = '<br><div class="table" ><div class="row"><div class =cell></div>' +
+        '<div class =cell></div></div>';
+    var endtable= '</div><br>';
+    
     var i;
     for (i = 0; i < fav.length; i++) {
 
@@ -61,7 +61,7 @@ function getAllfav(fav, beerdata) {
                                     '<div class="cell">'+ beerdata[j].namn+'</div> <div class="cell" id="'+
                                     " price"+j+'">'+beerdata[j].pub_price+':-</div><div class="cell" >' +
                                     '<img class="picturestyleStar" onclick="removeFavorite('+j+')" src="pictures/stargul.png"/> ' +
-                                    'Order from Bartender</div></div>';
+                                    'ⓘ</div></div>';
                             }
                         }
                     }
@@ -69,8 +69,8 @@ function getAllfav(fav, beerdata) {
             }
 
             else {
-                out ='<div> You have not added any favorites<br>';
-
+                out = '<br><div class="table" ><div class="row"><div class =cell></div>' +
+                    '<div class =cell></div></div><div id="favMessage"> You have not added any favorites<br>';
 
             }
         }
@@ -80,9 +80,9 @@ function getAllfav(fav, beerdata) {
 
 
 function getAllpop(pop, beerdata) {
-    var out = '<div class="table" ><div class="row"><div class =cell>Beverages:</div>' +
-        '<div class =cell>Price:</div></div>';
-    var endtable= '</div>';
+    var out = '<br><div class="table" ><div class="row"><div class =cell></div>' +
+        '<div class =cell></div></div>';
+    var endtable= '</div><br>';
 
     var countedItem=countSales(pop);
 
@@ -105,11 +105,12 @@ function getAllpop(pop, beerdata) {
         }
     }
 
-    if (out=='<div class="table" ><div class="row"><div class =cell>Beverages:</div>' +
-        '<div class =cell>Price:</div></div>'){
+    if (out == '<br><div class="table" ><div class="row"><div class =cell></div>' +
+        '<div class =cell></div></div>'){
         /* out is a variable that contains the information*/
-        out ='<div> The most popular beverages might be out of stock, please contact the bartender<br>';
-    }
+        out ='<br><div class="table" ><div class="row"><div class =cell></div>' +
+        '<div class =cell></div></div><div id="popMessage"> The most popular beverages might be out of stock, please contact the bartender<br>';
+       }
     return out+endtable;
 }
 
