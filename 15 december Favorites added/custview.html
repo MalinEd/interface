@@ -13,16 +13,18 @@
 	<link rel="stylesheet" type="text/css" href="css-files/flagbuttons.css">
     <link rel="stylesheet" type="text/css" href="css-files/jqueryui.css">
 	<!--- Javascript --->
-	<script type="text/javascript" src="js-files/jquery.js" ></script>
+    <script type="text/javascript" src="js-files/jquery.js" ></script>
     <script type="text/javascript" src ="js-files/jtest.js"></script>
      <script type="text/javascript" src ="js-files/jqueryui.js"></script>
-	<script type="text/javascript" src ="js-files/translate.js"></script>
     <script type="text/javascript" src ="js-files/handleBeverages.js"></script>
     <script type="text/javascript" src ="js-files/paymentdialogue.js"></script>
     <script type="text/javascript" src="js-files/drop.js" ></script>
     <script type="text/javascript" src="js-files/collectDataAndGlobalVariables.js" ></script>
-
     <script type="text/javascript" src="js-files/favorites_and_popular.js" ></script>
+    <script type="text/javascript" src ="js-files/translate.js"></script>
+
+
+
 
 
 
@@ -41,27 +43,15 @@
     <div id="top">
         <h1 align="center"><span class="style1">The Flying Dutchman</span>      <img class="picturestyle2"  src="pictures/background.JPG"/>
             <a href="login.html">
-                <button id="logoutbutton" align="right" class="logoutbutton">Log Out</button> </a>    </h1>
+                <button id="logoutbutton" onclick="logout()" align="right" class="logoutbutton">Log Out</button> </a>    </h1>
     </div>
 
 <div id="translationbar">
-    <button align="right" class="flagbutton" onClick="Translate(English)"></button>
-    <button align="right" class="flagbutton" onClick="Translate(Svenska)"></button>
-    <button align="right" class="flagbutton" onClick="Translate(Español)"></button>
+    <button align="right" class="flagbutton" onClick="Translate(English,'English')"></button>
+    <button align="right" class="flagbutton" onClick="Translate(Svenska,'Svenska')"></button>
+    <button align="right" class="flagbutton" onClick="Translate(Español,'Español')"></button>
 </div>
 
-    <!--
-    <div id="searchplacement">
-        <form method="post" action="">
-            <input class="searchbox" name="Searchword" type="text">
-            <input class=" button blue small" type="submit" name="Submit" value="Search">
-
-
-        </form>
-
-    </div>
-
--->
 
     <div id="lefttbar">
         <ul class="tabs">
@@ -71,12 +61,11 @@
         </ul>
 
     </div>
-    <div id="rightbar">
 
+    <div id="rightbar">
         <div id="receipt" class="receipt" ondrop="drop(event)" ondragover="allowDrop(event)">
             <div id="credit"><h5>Your credit: ...</h5></div>
             <ul id="menu">
-
             </ul>
 
             <div id="cost"><h5>Total cost: ....</h5></div>
@@ -95,23 +84,18 @@
 
             </form>
 		</div>
-                
+
         </div>
-
-
-
-
-
     </div>
 
     <div id="mainframe">
         <div class="tab_container">
 
             <div id="tab1" class="tab_content">
-            	<!-- see queries in favorites_and_popular.js --->
+                <!-- see queries in favorites_and_popular.js --->
                 <div id="inf1" class="inf">ⓘ=Order from bartender</div>
 
-                    <div id="menutabs2">
+                <div id="menutabs2">
                         <ul id="mtabs3">
                             <li  onclick="checklist('b','b1')" id="favs">
                                 <b id="b1" class ="current">Favorites</b>
@@ -121,16 +105,20 @@
                             </li>
                         </ul>
 
+
                         <div class="menu" id="favBeverage">
                             <!-- text generated from js file--->
                         </div>
+
                         <div class="menu" id="popularBev">
                             <!-- text generated from js file--->
+
                         </div>
                     </div>
 
 
             </div><!-- #tab1 -->
+
 
             <div id="tab2" class="tab_content">
                 <!-- See queries for this in file handleBeverages.js -->
@@ -198,4 +186,5 @@
 
 
 </body>
+
 </html>
