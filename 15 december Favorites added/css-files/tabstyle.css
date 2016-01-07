@@ -148,5 +148,18 @@
 		color: white;
 
 	}
+	
+	/* style for the tab that is currently active (li element)"*/
+	.current {
+		padding: 4px;
+		border-radius: 10px 10px 0px 0px;
+		background: #70C3FF;
+	}
+	/* style for text "order from bartender"*/
+	.inf{
+		font-size: 14px;
+		text-align:right;
+	}
+
 
 
