@@ -1,6 +1,6 @@
 $(function () {
 
-    // First we hide all menus, but the one with all courses.
+    // First we hide all menus, but not the first one
     //
     $("#all").show();
     $("#öl").hide();
@@ -95,9 +95,9 @@ $(function () {
 // this function gets all of the beverages in one list but no sorting of what type they are
 
 function getAllBeers(beerdata,fav) {
-    var out = '<div class="table" ><div class="row"><div class =cell><strong>All Beverages:</strong></div>' +
-        '<div class =cell><strong>Price:</strong></div></div>';
-    var endtable= '</div>';
+   var out = '<br><div class="table" ><div class="row"><div class =cell></div>' +
+        '<div class =cell></div></div>';
+    var endtable= '</div><br>';
     var i, myFavorite;
 
     var CK = document.cookie;  //get cookieinformation
@@ -132,7 +132,7 @@ function getAllBeers(beerdata,fav) {
                         '<div class="cell">'+ beerdata[i].namn+'</div> <div class="cell" id="price'+i+'">'
                         +beerdata[i].pub_price+':-</div><div class="cell" >' +
                         '<img class="picturestyleStar" onclick="removeFavorite('+i+')" src="pictures/stargul.png"/> ' +
-                        'Order from Bartender</div></div>';
+                        'ⓘ</div></div>';
                 }
 
             }
@@ -150,7 +150,7 @@ function getAllBeers(beerdata,fav) {
                         '<div class="cell">'+ beerdata[i].namn+'</div> <div class="cell" id="price'+i+'">'
                         +beerdata[i].pub_price+':-</div><div class="cell" >' +
                         '<img class="picturestyleStar" onclick="addFavorite('+i+')" src="pictures/star-grey.png"/> ' +
-                        'Order from Bartender</div></div>';
+                        'ⓘ</div></div>';
                 }
             }
 
@@ -163,9 +163,9 @@ function getAllBeers(beerdata,fav) {
 // and appended to the "right tab" otherwise works the same way as getallBeers()
 function getBeers(type, beerdata, fav) {
 
-    var out = '<div class="table" ><div class="row"><div class =cell><strong>All Beverages:</strong></div>' +
-        '<div class =cell><strong>Price:</strong></div></div>';
-    var endtable= '</div>';
+    var out = '<br><div class="table" ><div class="row"><div class=cell></div>' +
+        '<div class =cell></div></div>';
+    var endtable= '</div><br>';
     var i, myFavorite;
 
 
@@ -196,7 +196,7 @@ function getBeers(type, beerdata, fav) {
                         '<div class="cell">'+ beerdata[i].namn+'</div> <div class="cell" id="price'+i+'">'
                         +beerdata[i].pub_price+':-</div><div class="cell" >' +
                         '<img class="picturestyleStar" onclick="removeFavorite('+i+')" src="pictures/stargul.png"/> ' +
-                        'Order from Bartender</div></div>';
+                        'ⓘ</div></div>';
                 }
 
             }
@@ -215,7 +215,7 @@ function getBeers(type, beerdata, fav) {
                     '<div class="cell">'+ beerdata[i].namn+'</div> <div class="cell" id="price'+i+'">'
                     +beerdata[i].pub_price+':-</div><div class="cell" >' +
                     '<img class="picturestyleStar" onclick="addFavorite('+i+')" src="pictures/star-grey.png"/> ' +
-                    'Order from Bartender</div></div>';
+                    'ⓘ</div></div>';
 
 
                 }
@@ -311,7 +311,7 @@ function SearchItem(beerdata) {
     /*this creates a search field and search button*/
     var search='<div id="searchplacement">' +
         ' <input class="searchbox" id="searchword1" type="text"> ' +
-        '<button class="sbutton" onclick="SearchInStock(beerdata)">Search Beverage</button> <p id="foundBeverage"> </div>';
+        '<button class="sbutton" onclick="SearchInStock(beerdata)">Search Beverage</button> <p id="foundBeverage"> </div><br>';
     return search;
 }
 
@@ -322,7 +322,7 @@ function SearchInStock(beerdata) {
     var searchBeverage;
     var fBeverage ="";
     var startTable='<div><br></div><div class="table" ><div class="row"><div class =cell><strong></strong></div>' +
-        '<div class =cell><strong>Price:</strong></div></div>';
+        '<div class =cell></div></div>';
     var endtable= '</div>';
 
     /*gets the variables from the html document and also the data needed*/
