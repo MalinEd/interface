@@ -40,7 +40,7 @@ function English() {
         ["cider1", "<c id='c3' >Cider</c>"],
         ["vitt_vin1", "<c id='c4' >White wine</c>"],
         ["rött_vin1","<c id='c5' >Red wine</c>"],
-        ["alcohol-free1","<c id='c6' >Alcohol free</c>"],
+        ["alcohol-free1","<c id='c6' >Alkohol free</c>"],
         ["searching1", "<c id='c7' >Search</c>"],
         ["search_2","Search beverage"],
         ["inf1","ⓘ=Order from bartender"],
