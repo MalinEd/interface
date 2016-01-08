@@ -1,0 +1,36 @@
+.button1 {
+	border-radius: 40px;
+	background-color: #00FF00;
+	border: 1px solid black;
+	width: 150px;
+	height:30px;
+	font-size: 18px;
+	font-weight: bold;
+	font-style: italic;
+	text-align: center;
+}
+
+.button1:hover {
+	border-color: white;
+	background-color: #00FF00;
+}
+
+.button2 {
+    background-color: #D9B4A6;
+    border-radius: 1px;
+    border: 1px solid black;
+
+    width: 200px;
+    height:37px;
+    font-size: 18px;
+    font-weight: bold;
+    font-style: italic;
+    text-align: center;
+}
+
+.button2:hover {
+    border-color: white;
+    background-color: #9f8077;
+
+
+}

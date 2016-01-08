@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <title id="sitetitle">Welcome Aboard The Flying Dutchman</title>
+	<!-- CSS --->
+    <link rel="stylesheet" type="text/css" href="css-files/basic.css">
+    <link rel="stylesheet" type="text/css" href="css-files/buttons.css">
+    <link rel="stylesheet" type="text/css" href="css-files/buttonstyles.css">
+    <link rel="stylesheet" type="text/css" href="css-files/ids.css">
+    <link rel="stylesheet" type="text/css" href="css-files/tabstyle.css">
+	<link rel="stylesheet" type="text/css" href="css-files/flagbuttons.css">
+    <link rel="stylesheet" type="text/css" href="css-files/jqueryui.css">
+	<!--- Javascript --->
+    <script type="text/javascript" src="js-files/jquery.js" ></script>
+    <script type="text/javascript" src ="js-files/jtest.js"></script>
+     <script type="text/javascript" src ="js-files/jqueryui.js"></script>
+    <script type="text/javascript" src ="js-files/handleBeverages.js"></script>
+    <script type="text/javascript" src ="js-files/paymentdialogue.js"></script>
+    <script type="text/javascript" src="js-files/drop.js" ></script>
+    <script type="text/javascript" src="js-files/collectDataAndGlobalVariables.js" ></script>
+    <script type="text/javascript" src="js-files/favorites_and_popular.js" ></script>
+    <script type="text/javascript" src ="js-files/translate.js"></script>
+
+
+
+
+</head>
+<body>
+
+<div id="container">
+    <div id="top">
+        <h1 align="center"><span class="style1">The Flying Dutchman</span>      <img class="picturestyle2"  src="pictures/background.JPG"/>
+            <a href="login.html">
+                <button id="logoutbutton" onclick="logout()" align="right" class="logoutbutton">Log Out</button> </a>    </h1>
+    </div>
+
+<div id="translationbar">
+    <button align="right" class="flagbutton" onClick="Translate(English,'English')"></button>
+    <button align="right" class="flagbutton" onClick="Translate(Svenska,'Svenska')"></button>
+    <button align="right" class="flagbutton" onClick="Translate(Español,'Español')"></button>
+</div>
+
+
+    <div id="lefttbar">
+        <ul class="tabs">
+            <br>
+            <li id="leftbar1" class="button blue small" rel="tab1">My Page</li><br><br>
+            <li id="leftbar2" class="button blue small" rel="tab2">Beverages</li>
+        </ul>
+
+    </div>
+
+    <div id="rightbar">
+        <div id="receipt" class="receipt">
+            <div id="credit"><h5>Your credit: ...</h5></div>
+            <ul id="menu">
+            </ul>
+
+            <div id="cost"><h5>Total cost: ....</h5></div>
+
+             <button id="opener">Pay</button>
+             <div id="yourorder"><h5>Your order:</h5></div>
+            <div id="wrapper">
+                 <p>Are you sure you would like to pay?</p>
+                 <form method="post" action="">
+                     <input class="button bluesize smaller" type="submit" value="Yes">
+                 </form>
+                 <form method="post" action="">
+                     <input class="button bluesize smaller" type="submit" value="No">
+                 </form>
+             </div> 
+
+
+         </div>
+
+     </div>
+
+     <div id="mainframe">
+         <div class="tab_container">
+
+             <div id="tab1" class="tab_content">
+                 <!-- see queries in favorites_and_popular.js --->
+                <div id="inf1" class="inf">ⓘ=Order from bartender</div>
+
+                <div id="menutabs2">
+                        <ul id="mtabs3">
+                            <li  onclick="checklist('b','b1')" id="favs">
+                                <b id="b1" class ="current">Favorites</b>
+                            </li>
+                            <li onclick="checklist('b','b2')" id="popular">
+                                <b id="b2" >Popular</b>
+                            </li>
+                        </ul>
+
+
+                        <div class="menu" id="favBeverage">
+                            <!-- text generated from js file--->
+                        </div>
+
+                        <div class="menu" id="popularBev">
+                            <!-- text generated from js file--->
+
+                        </div>
+                    </div>
+
+
+            </div><!-- #tab1 -->
+
+
+            <div id="tab2" class="tab_content">
+                <!-- See queries for this in file handleBeverages.js -->
+                <div id="inf2" class="inf">ⓘ=Order from bartender</div>
+
+                <div id="menutabs">
+                    <ul id="mtabs">
+                        <li onclick="checklist('c','c1')" id="all1">
+                            <c id="c1" class ="current">Beverages</c>
+                        </li>
+                        <li onclick="checklist('c','c2')" id="öl1" >
+                            <c id="c2">Beers</c>
+                        </li>
+                        <li  onclick="checklist('c','c3')" id="cider1">
+                            <c id="c3">Cider</c>
+                        </li>
+                        <li onclick="checklist('c','c4')" id="vitt_vin1">
+                            <c id="c4">White wine</c>
+                        </li>
+                        <li onclick="checklist('c','c5')" id="rött_vin1">
+                            <c id="c5">Red wine</c>
+                        </li>
+                        <li  onclick="checklist('c','c6')" id="alcohol-free1">
+                            <c id="c6">Alcohol-free</c>
+                        </li>
+                        <li onclick="checklist('c','c7')" id="searching1">
+                            <c id="c7">Search</c>
+                        </li>
+                    </ul>
+                </div>
+
+
+                <div class="menu" id="all">
+                    <!-- text generated from js file--->
+                </div>
+                <div class="menu" id="öl">
+                    <!-- text generated from js file--->
+                </div>
+                <!-- text generated from js file--->
+                <div class="menu" id="cider">
+                </div>
+                <div class="menu" id="vitt_vin">
+                    <!-- text generated from js file--->
+                </div>
+                <div class="menu" id="rött_vin">
+                    <!-- text generated from js file--->
+                </div>
+                <div class="menu" id="alcohol-free">
+                    <!-- text generated from js file--->
+                </div>
+                <div class="menu" id="SearchStock">
+                </div>
+
+
+
+
+            </div><!-- #tab2 -->
+
+
+        </div> <!-- .tab_container -->
+    </div>
+
+
+</div>
+
+
+</body>
+
+</html>
