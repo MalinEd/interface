@@ -225,7 +225,8 @@ function SearchStock(beerdata) {
                 }
                 else {
                  ffBeverage += '<div class="row" id="menuitemSearch'+ i +'" draggable="True" ' +
-                        'ondragstart="drag(event)" data-price="'+beerdata[i].price+'" data-name="'+beerdata[i].namn+'">'+
+                        'ondragstart="drag(event)" data-price="'+beerdata[i].price+'" data-name="'+beerdata[i].namn+'" ' +
+                     'data-beerID="'+beerdata[i].beer_id+'">'+
                         '<div class="cell">'+ beerdata[i].namn+'</div> <div class="cell" id="'+
                         " price"+i+'">'+beerdata[i].pub_price+':-</div>';
                  
@@ -262,13 +263,15 @@ function getAllPopular(pop, beerdata) {
                     /* out is a variable that contains the information*/
                     out +='<div class="row" id="menuItemPop' + i +' " draggable="true" ' +
                         'ondragstart="drag(event)" data-price="'+beerdata[j].pub_price+'" ' +
-                        'data-name="'+beerdata[j].namn+'"><div class="cell">'+
+                        'data-name="'+beerdata[j].namn+'" data-beerID="'+beerdata[j].beer_id+'">' +
+                        '<div class="cell">'+
                         beerdata[j].namn+'</div><div class ="cell"> '+beerdata[j].pub_price+
                         ':-</div></div>';
                 }
                 else {
                     out+='<div class="row" id="menuItemPop' + i +' " data-price="'+beerdata[j].pub_price+'" ' +
-                        'data-name="'+beerdata[j].namn+'"><div class="cell">'+beerdata[j].namn+
+                        'data-name="'+beerdata[j].namn+'" data-beerID="'+beerdata[j].beer_id+'">' +
+                        '<div class="cell">'+beerdata[j].namn+
                         '</div><div class="cell">Out of Stock</div></div>';
 
                 }

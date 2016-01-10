@@ -124,14 +124,16 @@ function getAllBeers(beerdata,fav) {
             if(myFavorite.indexOf(beerdata[i].beer_id)>-1){
                 if (beerdata[i].count>lowStockCustomer){
                     out +='<div class="row" id="item'+i+' "draggable="true" ' +
-                        'ondragstart="drag(event)" data-price="'+beerdata[i].pub_price+'" data-name="'+beerdata[i].namn+'">'+
+                        'ondragstart="drag(event)" data-price="'+beerdata[i].pub_price+'" data-name="'+beerdata[i].namn+'" ' +
+                        'data-beerID="'+beerdata[i].beer_id+'">'+
                         '<div class="cell">'+ beerdata[i].namn+'</div> <div class="cell" id="price'+i+'">'
                         +beerdata[i].pub_price+':-</div><div class="cell" >' +
                         '<img class="picturestyleStar" onclick="removeFavorite('+i+')" src="pictures/stargul.png"/></div></div>';
                 }
 
                 else {
-                    out +='<div class="row" id="item'+i+' data-price="'+beerdata[i].pub_price+'" data-name="'+beerdata[i].namn+'">'+
+                    out +='<div class="row" id="item'+i+' data-price="'+beerdata[i].pub_price+'" data-name="'+beerdata[i].namn+'" ' +
+                        'data-beerID="'+beerdata[i].beer_id+'">'+
                         '<div class="cell">'+ beerdata[i].namn+'</div> <div class="cell" id="price'+i+'">'
                         +beerdata[i].pub_price+':-</div><div id="order2" class="cell" >' +
                         '<img class="picturestyleStar" onclick="removeFavorite('+i+')" src="pictures/stargul.png"/> ' +
@@ -142,14 +144,16 @@ function getAllBeers(beerdata,fav) {
             else{
                 if (beerdata[i].count>lowStockCustomer){
                     out +='<div class="row" id="item'+i+' "draggable="true" ' +
-                        'ondragstart="drag(event)" data-price="'+beerdata[i].pub_price+'" data-name="'+beerdata[i].namn+'">' +
+                        'ondragstart="drag(event)" data-price="'+beerdata[i].pub_price+'" data-name="'+beerdata[i].namn+'" ' +
+                        'data-beerID="'+beerdata[i].beer_id+'">' +
                         '<div class="cell">'+ beerdata[i].namn+'</div> <div class="cell" id="price'+i+'">'
                         +beerdata[i].pub_price+':-</div><div class="cell" >' +
                         '<img class="picturestyleStar" onclick="addFavorite('+i+')" src="pictures/star-grey.png"/></div></div>';
                 }
 
                 else{ 
-                    out +='<div class="row" id="item'+i+' data-price="'+beerdata[i].pub_price+'" data-name="'+beerdata[i].namn+'">'+
+                    out +='<div class="row" id="item'+i+' data-price="'+beerdata[i].pub_price+'" data-name="'+beerdata[i].namn+'" ' +
+                        'data-beerID="'+beerdata[i].beer_id+'">'+
                         '<div class="cell">'+ beerdata[i].namn+'</div> <div class="cell" id="price'+i+'">'
                         +beerdata[i].pub_price+':-</div><div id="order3" class="cell" >' +
                         '<img class="picturestyleStar" onclick="addFavorite('+i+')" src="pictures/star-grey.png"/> ' +
@@ -186,14 +190,16 @@ function getBeers(type, beerdata, fav) {
             if(myFavorite.indexOf(beerdata[i].beer_id)>-1){
                 if (beerdata[i].count>lowStockCustomer){
                     out +='<div class="row" id="item'+i+' "draggable="true" ' +
-                        'ondragstart="drag(event)" data-price="'+beerdata[i].pub_price+'" data-name="'+beerdata[i].namn+'">'+
+                        'ondragstart="drag(event)" data-price="'+beerdata[i].pub_price+'" data-name="'+beerdata[i].namn+'" ' +
+                        'data-beerID="'+beerdata[i].beer_id+'">'+
                         '<div class="cell">'+ beerdata[i].namn+'</div> <div class="cell" id="price'+i+'">'
                         +beerdata[i].pub_price+':-</div><div class="cell" >' +
                         '<img class="picturestyleStar" onclick="removeFavorite('+i+')" src="pictures/stargul.png"/></div></div>';
                 }
 
                 else {
-                    out +='<div class="row" id="item'+i+' data-price="'+beerdata[i].pub_price+'" data-name="'+beerdata[i].namn+'">'+
+                    out +='<div class="row" id="item'+i+' data-price="'+beerdata[i].pub_price+'" data-name="'+beerdata[i].namn+'" ' +
+                        'data-beerID="'+beerdata[i].beer_id+'">'+
                         '<div class="cell">'+ beerdata[i].namn+'</div> <div class="cell" id="price'+i+'">'
                         +beerdata[i].pub_price+':-</div><div id="order4" class="cell" >' +
                         '<img class="picturestyleStar" onclick="removeFavorite('+i+')" src="pictures/stargul.png"/> ' +
@@ -206,17 +212,20 @@ function getBeers(type, beerdata, fav) {
 
 
                     out +='<div class="row" id="item'+i+' "draggable="true" ' +
-                        'ondragstart="drag(event)" data-price="'+beerdata[i].pub_price+'" data-name="'+beerdata[i].namn+'">' +
+                        'ondragstart="drag(event)" data-price="'+beerdata[i].pub_price+'" data-name="'+beerdata[i].namn+'" ' +
+                        'data-beerID="'+beerdata[i].beer_id+'">' +
                         '<div class="cell">'+ beerdata[i].namn+'</div> <div class="cell" id="price'+i+'">'
                         +beerdata[i].pub_price+':-</div><div class="cell" >' +
                         '<img class="picturestyleStar" onclick="addFavorite('+i+')" src="pictures/star-grey.png"/></div></div>';
                 }
 
-                else{ out +='<div class="row" id="item'+i+' data-price="'+beerdata[i].pub_price+'" data-name="'+beerdata[i].namn+'">'+
-                    '<div class="cell">'+ beerdata[i].namn+'</div> <div class="cell" id="price'+i+'">'
-                    +beerdata[i].pub_price+':-</div><div id="order5" class="cell" >' +
-                    '<img class="picturestyleStar" onclick="addFavorite('+i+')" src="pictures/star-grey.png"/> ' +
-                    'ⓘ</div></div>';
+                else{
+                    out +='<div class="row" id="item'+i+' data-price="'+beerdata[i].pub_price+'" data-name="'+beerdata[i].namn+'"' +
+                        'data-beerID="'+beerdata[i].beer_id+'">'+
+                        '<div class="cell">'+ beerdata[i].namn+'</div> <div class="cell" id="price'+i+'">'
+                        +beerdata[i].pub_price+':-</div><div id="order5" class="cell" >' +
+                        '<img class="picturestyleStar" onclick="addFavorite('+i+')" src="pictures/star-grey.png"/> ' +
+                        'ⓘ</div></div>';
 
                 }
             }
@@ -347,7 +356,8 @@ function SearchInStock(beerdata) {
                 }
                 else {
                     fBeverage += '<div class="row" id="menuitemSearch'+ i +'" draggable="True" ' +
-                        'ondragstart="drag(event)" data-price="'+beerdata[i].price+'" data-name="'+beerdata[i].namn+'">'+
+                        'ondragstart="drag(event)" data-price="'+beerdata[i].price+'" data-name="'+beerdata[i].namn+'" ' +
+                        'data-beerID="'+beerdata[i].beer_id+'">'+
                         '<div class="cell">'+ beerdata[i].namn+'</div> <div class="cell" id="'+
                         " price"+i+'">'+beerdata[i].pub_price+':-</div>';
 

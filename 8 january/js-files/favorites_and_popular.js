@@ -48,7 +48,8 @@ function getAllfav(fav, beerdata) {
                             if (beerdata[j].count>lowStockCustomer){
                                 /* out is a variable that contains the "middle of the table" + information*/
                                 out +='<div class="row" id="menuItemFav' + j +' " draggable="true" ' +
-                                    'ondragstart="drag(event)" data-price="'+beerdata[j].pub_price+'" data-name="'+beerdata[j].namn+'">'+
+                                    'ondragstart="drag(event)" data-price="'+beerdata[j].pub_price+'" data-name="'
+                                    +beerdata[j].namn+'" data-beerID="'+beerdata[j].beer_id+'">'+
                                     '<div class="cell">'+ beerdata[j].namn+'</div> <div class="cell" id="'+
                                     " price"+j+'">'+beerdata[j].pub_price+':-</div><div class="cell" >' +
                                     '<img class="picturestyleStar" onclick="removeFavorite('+j+')"' +
@@ -57,7 +58,8 @@ function getAllfav(fav, beerdata) {
                             else {
 
                                 out +='<div class="row" id="menuItemFav' + j +' " draggable="false" ' +
-                                    'data-price="'+beerdata[j].pub_price+'" data-name="'+beerdata[j].namn+'">'+
+                                    'data-price="'+beerdata[j].pub_price+'" data-name="'+beerdata[j].namn+'" ' +
+                                    'data-beerID="'+beerdata[j].beer_id+'">'+
                                     '<div class="cell">'+ beerdata[j].namn+'</div> <div class="cell" id="'+
                                     " price"+j+'">'+beerdata[j].pub_price+':-</div><div id="order1" class="cell" >' +
                                     '<img id="star" class="picturestyleStar" onclick="removeFavorite('+j+')" src="pictures/stargul.png"/> ' +
@@ -100,7 +102,7 @@ function getAllpop(pop, beerdata) {
                     /* out is a variable that contains the information*/
                     out +='<div class="row" id="menuItemPop' + i +' " draggable="true" ' +
                         'ondragstart="drag(event)" data-price="'+beerdata[j].pub_price+'" ' +
-                        'data-name="'+beerdata[j].namn+'"><div class="cell">'+
+                        'data-name="'+beerdata[j].namn+'" data-beerID="'+beerdata[j].beer_id+'"><div class="cell">'+
                         beerdata[j].namn+'</div> <div class ="cell"> '+beerdata[j].pub_price+
                         ':-</div></div>';
                 }
