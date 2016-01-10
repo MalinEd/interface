@@ -60,7 +60,7 @@ function getAllfav(fav, beerdata) {
                                     'data-price="'+beerdata[j].pub_price+'" data-name="'+beerdata[j].namn+'">'+
                                     '<div class="cell">'+ beerdata[j].namn+'</div> <div class="cell" id="'+
                                     " price"+j+'">'+beerdata[j].pub_price+':-</div><div id="order1" class="cell" >' +
-                                    '<img class="picturestyleStar" onclick="removeFavorite('+j+')" src="pictures/stargul.png"/> ' +
+                                    '<img id="star" class="picturestyleStar" onclick="removeFavorite('+j+')" src="pictures/stargul.png"/> ' +
                                     'ⓘ</div></div>';
 
                             }

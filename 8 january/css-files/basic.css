@@ -1,7 +1,7 @@
 
 
 div {
-   /* border: solid 2px brown;*/
+    /* border: solid 2px brown;*/
 }
 .style1 {
     font-family: Georgia, "Times New Roman", Times, serif;
@@ -61,16 +61,51 @@ body {
 
 .receipt{
     background-color: #FFD08A;
-    border-radius: 20px 20px 20px 20px;
+    border-radius: 20px 20px 0px 0px;
     border: 1px solid black;
-    height:385px;
+    height:125px;
     font-size: 22px;
     font-weight: bold;
     font-style: italic;
     text-align: center;
     border-bottom: 0px;
 }
+.receipt2{
+    background-color: #FFD08A;
+    border: 1px solid black;
+    height:60px;
+    font-size: 22px;
+    font-weight: bold;
+    font-style: italic;
+    text-align: center;
+    border-top: 0px;
+    border-bottom-color:#FFD08A ;
+}
+ul.receipt3{
+    list-style: none;
+    margin-top: 0px;
+    background-color: #FFD08A;
+    border-radius: 0px 0px 20px 20px;
+    border: 1px solid black;
+    min-height:245px;
+    font-size: 17px;
+    font-weight: bold;
+    font-style: italic;
+    text-align: center;
+    border-top-color:  #FFD08A;
+}
 
+.receipt4{
+    background-color: #FFD08A;
+    border-radius: 20px 20px 0px 0px;
+    border: 1px solid black;
+    height:145px;
+    font-size: 22px;
+    font-weight: bold;
+    font-style: italic;
+    text-align: center;
+    border-bottom: 0px;
+}
 
 div {
     padding: 0px;
@@ -178,3 +213,4 @@ div {
     height: 250px;
 
 }
+

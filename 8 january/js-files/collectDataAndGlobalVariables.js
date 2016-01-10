@@ -162,7 +162,7 @@ function getPurchaseData(){
 function getFavData() {
     return [
         {"Firstname" : "Aquilina","Lastname" : "Lyndon","Username" : "aqulyn", "fav_beer_id": ["157503","669702"]},
-        {"Firstname" : "Aamu","Lastname" : "Stankic","Username" : "aamsta","fav_beer_id": []},
+        {"Firstname" : "Aamu","Lastname" : "Stankic","Username" : "aamsta","fav_beer_id": ["157503","669702"]},
         {"Firstname" : "Andrea","Lastname" : "Darzi","Username" : "anddar","fav_beer_id": []},
         {"Firstname" : "Ângela","Lastname" : "Ková?","Username" : "ankov","fav_beer_id": []},
         {"Firstname" : "Aubrey","Lastname" : "Blackwood","Username" : "aubbla","fav_beer_id": []},
