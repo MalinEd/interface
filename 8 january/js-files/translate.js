@@ -30,8 +30,8 @@ function English() {
         ["logoutbutton", "Log Out"],
         ["leftbar1", "My Page"],
         ["leftbar2", "Beverages"],
-        ["credit", "<h5>Your credit: ...</h5>"],
-        ["cost", "<h5>Total cost: ....</h5>"],
+        ["credit", "Your credit: ..."],
+        ["cost", "Total cost: ...."],
         ["opener", "Pay"],
         ["yourorder", "Your order:"],
         ["favs", "<b id='b1' class ='current'>Favorites</b>"],
@@ -59,8 +59,8 @@ function Svenska() {
         ["logoutbutton", "Logga ut"], 
         ["leftbar1", "Min sida"], 
         ["leftbar2", "Drycker"], 
-        ["credit", "<h5>Din kredit: ...</h5>"], 
-        ["cost", "<h5>Total kostnad: ....</h5>"], 
+        ["credit", "Din kredit: ..."], 
+        ["cost", "Total kostnad: ...."], 
         ["yourorder", "Din beställning:"], 
         ["opener", "Betala"], 
         ["favs", "<b id='b1' class ='current'>  Favoriter  </b>"], 
@@ -89,8 +89,8 @@ function Español() {
         ["logoutbutton", "Cerrar sesión"],
         ["leftbar1", "Mi Página"],
         ["leftbar2", "Alcoholes"],
-        ["credit", "<h5>Su crédito: ...</h5>"],
-        ["cost", "<h5>Costo total: ....</h5>"],
+        ["credit", "Su crédito: ..."],
+        ["cost", "Costo total: ...."],
         ["yourorder", "Su pedido:"],
         ["opener", "Pagar"],
         ["favs", "<b id='b1' class='current'>Favoritos</b>"],
