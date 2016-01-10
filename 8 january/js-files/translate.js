@@ -32,7 +32,7 @@ function English() {
         ["leftbar2", "Beverages"],
         ["credit", "Your credit: ..."],
         ["cost", "Total cost: ...."],
-        ["opener", "Pay"],
+        //["opener", "Pay"],
         ["yourorder", "Your order:"],
         ["favs", "<b id='b1' class ='current'>Favorites</b>"],
         ["popular", "<b id='b2'>Popular</b>"],
@@ -46,8 +46,7 @@ function English() {
         ["search_2","Search beverage"],
         ["inf1","ⓘ=Order from bartender"],
         ["inf2","ⓘ=Order from bartender"],
-        ["favMessage","You have not added any favorites"],
-        ["wannaPay", "<p>Are you sure you would like to pay?</p>"],
+        ["favMessage","You have not added any favorites"]
 
     ]
 
@@ -62,7 +61,7 @@ function Svenska() {
         ["credit", "Din kredit: ..."], 
         ["cost", "Total kostnad: ...."], 
         ["yourorder", "Din beställning:"], 
-        ["opener", "Betala"], 
+        //["opener", "Betala"], 
         ["favs", "<b id='b1' class ='current'>  Favoriter  </b>"], 
         ["popular","<b id='b2' >Populära</b>"], 
         ["all1", "<c id='c1' class='current'>Drycker</c>"], 
@@ -76,7 +75,6 @@ function Svenska() {
         ["inf1","ⓘ=Beställ av bartendern"],
         ["inf2","ⓘ=Beställ av bartendern"],
         ["favMessage","Du har inte lagt till några favoriter"],
-        ["wannaPay", "<p>Är du säker att du vill betala?</p>"]
 
     ]
 
@@ -92,7 +90,7 @@ function Español() {
         ["credit", "Su crédito: ..."],
         ["cost", "Costo total: ...."],
         ["yourorder", "Su pedido:"],
-        ["opener", "Pagar"],
+        //["opener", "Pagar"],
         ["favs", "<b id='b1' class='current'>Favoritos</b>"],
         ["popular", "<b id='b2' >Popular</b>"],
         ["all1", "<c  id='c1' class='current'>Bedidas</c>"],
@@ -106,7 +104,6 @@ function Español() {
         ["inf1","ⓘ=Fin de camarero"],
         ["inf2","ⓘ=Fin de camarero"],
         ["favMessage","Usted no ha agregado favoritos"],
-        ["wannaPay", "<p> ¿Está seguro que desea pagar? </p>"],
 
     ]
 }

@@ -67,8 +67,7 @@ function drop(ev) {
             // get all the children to see if you are allowed to ordermore items
 
             var list = $("#"+newID).children(); // get all the children
-
-            if (list.length>maxNumOfOrders) {
+            if (list.length>2) {
                 $(list.get(list.length-1)).remove(); // remove the last one (the star will be removed)
                 var content=document.getElementById(newID).outerHTML;
                 undoDrop.push({"cont":content,"idet": identitet});
