@@ -56,13 +56,13 @@
 
       <div id="rightbar">
           <div id="receipt" class="receipt">
-              <div id="credit" font-size="16px">Your credit: ...</div>
-              <ul id="menu">
-              </ul>
-
-              <div id="cost" font-size="16px">Total cost: ....</div>
-              <button onclick="DropUndo()">undo</button>
-              <button onclick="DropRedo()">redo</button>
+              <br>
+              <div id="credit">Your credit: ...</div>
+              <br>
+              <button id="undoButton" onclick="DropUndo()" class="undobutton">undo</button>
+              <button id="redoButton"  onclick="DropRedo()" class="undobutton">redo</button>
+              <br>
+              <br>
 
               <!---  <button id="opener">Pay</button>-->
             <!---  <div id="wrapper">
@@ -75,12 +75,14 @@
                  </form>
              </div> -->
 
+              <div id="cost" >Total cost: ....</div>
 
         </div>
         <div id="receipt12" class="receipt2">
+            <br>
+            <div id="yourorder">Your order:</div>
 
-            <div id="yourorder" font-size="16px">Your order:</div>
-            <button>PAY</button>
+            <button id="opener" class="undobutton">Pay</button>
 
 
 
@@ -100,6 +102,8 @@
             <div id="tab1" class="tab_content">
                 <!-- see queries in favorites_and_popular.js --->
                 <div id="inf1" class="inf">ⓘ=Order from bartender</div>
+                <div id="dra1" class="inf">Drag and drop beverage in area under paybutton</div>
+
 
                 <div id="menutabs2">
                     <ul id="mtabs3">
@@ -129,6 +133,8 @@
             <div id="tab2" class="tab_content">
                 <!-- See queries for this in file handleBeverages.js -->
                 <div id="inf2" class="inf">ⓘ=Order from bartender</div>
+                <div id="dra2" class="inf">Drop beverage in area under paybutton</div>
+
 
                 <div id="menutabs">
                     <ul id="mtabs">

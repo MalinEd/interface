@@ -189,7 +189,7 @@ function SearchItemToPay(beerdata) {
     /*this creates a search field and search button*/
     var search='<div>' +
         ' <input class="searchbox" id="searchword3" type="text"> ' +
-        '<button type=button2" onclick="SearchStock(beerdata)">Search Beverage</button> <p id="ffoundBeverage"> </div>';
+        '<button type=button2" class="sbutton" onclick="SearchStock(beerdata)">Search Beverage</button> <p id="ffoundBeverage"> </div>';
     return search;
 }
 
@@ -282,7 +282,7 @@ function getAllPopular(pop, beerdata) {
     if (out=='<div class="table" ><div class="row"><div class =cell>Beverages:</div>' +
         '<div class =cell>Price:</div></div>'){
         /* out is a variable that contains the information*/
-        out ='<div> The most popular beverages might be out of stock, please contact the bartender<br>';
+        out ='<div> The most popular beverages might be out of stock. Check stock and order more if needed<br>';
     }
     return out+endtable;
 }

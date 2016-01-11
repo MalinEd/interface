@@ -15,6 +15,7 @@ var undoDrop=[];
 var countRedo=-1;
 var redoDrop=[];
 
+
 function allowDrop(ev) {
     ev.preventDefault();
 }
@@ -55,6 +56,7 @@ function drop(ev) {
         if (orders.length<maxNumOfOrders) {
             var node1 = document.createElement("LI");
             var nodeCopy = document.getElementById(data).cloneNode(true);
+           // nodeCopy.setAttribute('draggable', false);
 
 
             /* We cannot use the same ID */
@@ -91,6 +93,7 @@ function drop(ev) {
 
 
         var nodeCopy = document.getElementById(data).cloneNode(true);
+        //nodeCopy.setAttribute('draggable', false);
 
         /* We cannot use the same ID */
         var newID="newId"+countDrop;

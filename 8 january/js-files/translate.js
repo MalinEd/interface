@@ -32,7 +32,7 @@ function English() {
         ["leftbar2", "Beverages"],
         ["credit", "Your credit: ..."],
         ["cost", "Total cost: ...."],
-        //["opener", "Pay"],
+        ["opener", "Pay"],
         ["yourorder", "Your order:"],
         ["favs", "<b id='b1' class ='current'>Favorites</b>"],
         ["popular", "<b id='b2'>Popular</b>"],
@@ -41,11 +41,15 @@ function English() {
         ["cider1", "<c id='c3' >Cider</c>"],
         ["vitt_vin1", "<c id='c4' >White wine</c>"],
         ["rött_vin1","<c id='c5' >Red wine</c>"],
-        ["alcohol-free1","<c id='c6' >Alkohol free</c>"],
+        ["alcohol-free1","<c id='c6' >Alcohol free</c>"],
         ["searching1", "<c id='c7' >Search</c>"],
         ["search_2","Search beverage"],
         ["inf1","ⓘ=Order from bartender"],
         ["inf2","ⓘ=Order from bartender"],
+        ["undoButton","undo"],
+        ["redoButton","redo"],
+        ["dra1","Drag and drop beverage in area under pay"],
+        ["dra2","Drag and drop beverage in area under pay"],
         ["favMessage","You have not added any favorites"]
 
     ]
@@ -61,7 +65,7 @@ function Svenska() {
         ["credit", "Din kredit: ..."], 
         ["cost", "Total kostnad: ...."], 
         ["yourorder", "Din beställning:"], 
-        //["opener", "Betala"], 
+        ["opener", "Betala"], 
         ["favs", "<b id='b1' class ='current'>  Favoriter  </b>"], 
         ["popular","<b id='b2' >Populära</b>"], 
         ["all1", "<c id='c1' class='current'>Drycker</c>"], 
@@ -74,7 +78,11 @@ function Svenska() {
         ["search_2","Sök dryck"],
         ["inf1","ⓘ=Beställ av bartendern"],
         ["inf2","ⓘ=Beställ av bartendern"],
-        ["favMessage","Du har inte lagt till några favoriter"],
+        ["undoButton","ångra"],
+        ["redoButton","gör om"],
+        ["dra1","Dra och släpp dryck i området under betala"],
+        ["dra2","Dra och släpp dryck i området under betala"],
+        ["favMessage","Du har inte lagt till några favoriter"]
 
     ]
 
@@ -90,7 +98,7 @@ function Español() {
         ["credit", "Su crédito: ..."],
         ["cost", "Costo total: ...."],
         ["yourorder", "Su pedido:"],
-        //["opener", "Pagar"],
+        ["opener", "Pagar"],
         ["favs", "<b id='b1' class='current'>Favoritos</b>"],
         ["popular", "<b id='b2' >Popular</b>"],
         ["all1", "<c  id='c1' class='current'>Bedidas</c>"],
@@ -103,7 +111,11 @@ function Español() {
         ["search_2","Buscar"],
         ["inf1","ⓘ=Fin de camarero"],
         ["inf2","ⓘ=Fin de camarero"],
-        ["favMessage","Usted no ha agregado favoritos"],
+        ["undoButton","deshacer"],
+        ["redoButton","rehacer"],
+        ["dra1","Arrastrar y bebida caída en la zona bajo pagar"],
+        ["dra2","Arrastrar y bebida caída en la zona bajo pagar"],
+        ["favMessage","Usted no ha agregado favoritos"]
 
     ]
 }
