@@ -63,10 +63,51 @@
         </div>
 
 
+         <script>
+function purchase1() {
+   var checkIfsomethingIsDropped =$("#receipt23").children(); // get all the children
+    var i = 0;
+    var total = 0;
+    var arr = new Array();
+    var len = checkIfsomethingIsDropped.length
+    if (checkIfsomethingIsDropped.length>0){
+        while (len > 0){
+            var item = checkIfsomethingIsDropped =$("#receipt23").children()[i].innerHTML;
+            var splititem = item.split(">");
+            var priceOfItem = splititem[3].replace(":-</div","");
+            arr.push(priceOfItem);  
+            i = i + 1;
+            len = len - 1;
+            
+            
+        }
+        for (var i = 0; i < arr.length; i++) {
+    total += arr[i] << 0;
+}
+        window.alert(total);
+       document.getElementById("demo1").innerHTML = "SUMMIT HERE"; 
+       
+        
+        
+    }
+    else{
+       document.getElementById("demo1").innerHTML = "Nothing here.."; 
+    }
+    }
+    
+
+
+    
+
+</script>
         <div>
 
             <ul id="receipt23" class="receipt3" ondrop="drop(event)" ondragover="allowDrop(event)">
             </ul>
+
+        </div>
+ <p id="demo1" onclick="purchase1()">Pay</p>
+<p>Total: </p>
 
         </div>
 
