@@ -88,7 +88,7 @@ function Searchbox() {
     /*this creates a search field and search button*/
     var search1='<div id="searchplacement">' +
         ' <input class="searchbox" id="Searchword1" type="text"> ' +
-        '<button class="addVipbutton" onclick="FindObject()">Search Vip</button> <p id="foundPersons"></p> </div>';
+        '<button class="addVipbutton" onclick="FindObject()">Search Vip</button> </div><div><p id="foundPersons"></p> </div>';
     return search1;
 }
 
@@ -122,7 +122,15 @@ function FindObject() {
 
         /*Goes every row in vipmembers to see if it can find the search vip-member*/
         for (var i=0;  i < VipData.length; i++) {
-            if (user==VipData[i].username || user==VipData[i].first_name ||user==VipData[i].last_name) {
+            var str1=VipData[i].username ;
+            var str2=VipData[i].first_name;
+            var str3=VipData[i].last_name;
+            str1=str1.toLowerCase();
+            str2=str2.toLowerCase();
+            str3=str3.toLowerCase();
+            user=user.toLowerCase();
+
+            if (str1.search(user)>-1 || str2.search(user)>-1||str3.search(user)>-1) {
                 fPersons += ' <tr><td>'+VipData[i].assets+'</td> <td>'+VipData[i].username+ '</td> <td>'+
                     VipData[i].first_name+ '</td><td>'+ VipData[i].last_name+'</td>' +
                     '<td><button class="undobutton" onclick="deletemember('+i+')">Delete</button></td> </tr>';

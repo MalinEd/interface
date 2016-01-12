@@ -120,49 +120,74 @@ function SearchItem(beerdata) {
     /*this creates a search field and search button*/
     var search='<div id="searchplacement">' +
         ' <input class="searchbox" id="searchword1" type="text"> ' +
-        '<button class="searchBev" onclick="SearchInStock(beerdata)">Search Beverage</button> <p id="foundBeverage"> </div>'
+        '<button class="searchBev" onclick="SearchInStock(beerdata)">Search Beverage</button></div><div><p id="foundBeverage"> </div>'
     return search;
 }
 
 
 function SearchInStock(beerdata) {
 
-    /*top =start of result table, bottom = end of result table*/
-    var top='<div> <table class="table table-hover"><thead> <tr> <th>#Instock</th> <th>"Beverage"</th> ' +
-        '<th>Price</th></tr> </thead><tbody>';
-    var bottom='</tbody></table></div>';
-
     /* needed variables*/
     var foundBeverage;
     var searchBeverage;
     var fBeverage ="";
+    var startTable='<div class="table">';
+    var endtable= '</div>';
+
 
     /*gets the variables from the html document and also the data needed*/
     foundBeverage = document.getElementById("foundBeverage");
     searchBeverage = document.getElementById("searchword1").value;
 
+    // start searching through the beverages
+
     if(searchBeverage=="" ){
-        foundBeverage.innerHTML="You didn't search for anything ";
-
+        foundBeverage.innerHTML="You didn't search for anything";
     }
-    else {
-        for (var i=0;  i < beerdata.length; i++) {
-            if (searchBeverage.replace(/ +/g, "").toLowerCase()==beerdata[i].namn.replace(/ +/g, "").toLowerCase()) {
-                fBeverage += '<tr><td>'+beerdata[i].count+'</td> <td>'+beerdata[i].namn+ '</td> <td>'+
-                    beerdata[i].price+ '</td></tr>';
 
+    else {
+
+        for (var i = 0; i < beerdata.length; i++) {
+            var str=beerdata[i].namn;
+            str=str.toLowerCase();
+            searchBeverage=searchBeverage.toLowerCase();
+            if (str.search(searchBeverage)>-1) {
+                if (beerdata[i].count>lowStockLimit){
+                    fBeverage +='<div class="row" id="item'+i+' ' +
+                        ' data-price="'+beerdata[i].pub_price+'" data-name="'+beerdata[i].namn+'" ' +
+                        'data-beerID="'+beerdata[i].beer_id+'">'+
+                        '<div class="cell">'+ beerdata[i].namn+'</div> <div class="cell" id="price'+i+'">'
+                        +beerdata[i].pub_price+':-</div><div class="cell" >' +
+                        '</div></div>';
+                }
+
+                else {
+                    fBeverage +='<div class="row" id="item'+i+' data-price="'+beerdata[i].pub_price+'" data-name="'+beerdata[i].namn+'" ' +
+                        'data-beerID="'+beerdata[i].beer_id+'">'+
+                        '<div class="cell">'+ beerdata[i].namn+'</div> <div class="cell" id="price'+i+'">'
+                        +beerdata[i].pub_price+':-</div><div class="cell">Check stock</div></div>';
+                }
             }
         }
+
+
+
+
         if(fBeverage==""){
             foundBeverage.innerHTML="Couldn't find " + searchBeverage;
-
         }
+
         else {
-            foundBeverage.innerHTML="Results"+'<br>' + top+fBeverage+bottom;
+            foundBeverage.innerHTML='<br>' +startTable+fBeverage+endtable ;
 
         }
     }
+
 }
+
+
+
+
 
 
 

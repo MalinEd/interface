@@ -189,7 +189,7 @@ function SearchItemToPay(beerdata) {
     /*this creates a search field and search button*/
     var search='<div>' +
         ' <input class="searchbox" id="searchword3" type="text"> ' +
-        '<button type=button2" class="sbutton" onclick="SearchStock(beerdata)">Search Beverage</button> <p id="ffoundBeverage"> </div>';
+        '<button type=button2" class="sbutton" onclick="SearchStock(beerdata)">Search Beverage</button></div><div><p id="ffoundBeverage"> </div>';
     return search;
 }
 
@@ -201,9 +201,9 @@ function SearchStock(beerdata) {
     var ffoundBeverage;
     var searchBeverage;
     var ffBeverage ="";
-    var startTable='<div><br></div><div class="table" ><div class="row"><div class =cell><strong></strong></div>' +
-        '<div class =cell><strong>Price:</strong></div></div>';
+    var startTable='<div class="table">';
     var endtable= '</div>';
+
     /*gets the variables from the html document and also the data needed*/
     ffoundBeverage = document.getElementById("ffoundBeverage");
     searchBeverage = document.getElementById("searchword3").value;
@@ -217,28 +217,34 @@ function SearchStock(beerdata) {
         ffoundBeverage.innerHTML="Results"+'<br>' + ffBeverage;
 
 
-        for (var i=0;  i < beerdata.length; i++) {
-            if (searchBeverage==beerdata[i].namn) {
-                if(beerdata[i].count==notInStock){
+        for (var i = 0; i < beerdata.length; i++) {
+            var str=beerdata[i].namn;
+            str=str.toLowerCase();
+            searchBeverage=searchBeverage.toLowerCase();
+            if (str.search(searchBeverage)>-1) {
+                if (beerdata[i].count==notInStock){
                     ffoundBeverage.innerHTML=searchBeverage + "out of Stock";
 
                 }
                 else {
-                 ffBeverage += '<div class="row" id="menuitemSearch'+ i +'" draggable="True" ' +
+                    ffBeverage +='<div class="row" id="menuitemSearch'+ i +'" draggable="True" ' +
                         'ondragstart="drag(event)" data-price="'+beerdata[i].price+'" data-name="'+beerdata[i].namn+'" ' +
-                     'data-beerID="'+beerdata[i].beer_id+'">'+
-                        '<div class="cell">'+ beerdata[i].namn+'</div> <div class="cell" id="'+
-                        " price"+i+'">'+beerdata[i].pub_price+':-</div>';
-                 
+                        'data-beerID="'+beerdata[i].beer_id+'">'+
+                        '<div class="cell">'+ beerdata[i].namn+'</div> <div class="cell" id="price'+i+'">'
+                        +beerdata[i].pub_price+':-</div><div class="cell"></div></div>';
                 }
             }
         }
+
+
+
+
         if(ffBeverage==""){
             ffoundBeverage.innerHTML="Couldn't find " + searchBeverage;
-
         }
+
         else {
-            ffoundBeverage.innerHTML="Results"+'<br>' +startTable+ ffBeverage+endtable;
+            ffoundBeverage.innerHTML='<br>' +startTable+ffBeverage+endtable ;
 
         }
     }
