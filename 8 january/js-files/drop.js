@@ -147,7 +147,7 @@ return out;
 }
 
 
-function DropUndo(){
+function DropUndo(button){
     //alert(undoDrop.length)
     if (undoDrop.length>0){
 
@@ -163,7 +163,13 @@ function DropUndo(){
         countRedo++;
     }
     else{
-        alert("nothing to undo");
+        if (button=="undoC"){
+            $("#Instruct3").show();
+
+        }
+        else{
+            alert("nothing to undo");
+        }
     }
     //recalculate total cost
 
@@ -172,7 +178,7 @@ function DropUndo(){
 
 }
 
-function DropRedo(){
+function DropRedo(button){
     //alert(redoDrop.length)
 
     if (redoDrop.length>0){
@@ -188,7 +194,14 @@ function DropRedo(){
     }
 
     else{
-        alert("nothing to redo");
+        if (button=="redoC"){
+            $("#Instruct4").show();
+
+        }
+        else{
+            alert("nothing to undo");
+        }
+
     }
 
     //recalculate total cost

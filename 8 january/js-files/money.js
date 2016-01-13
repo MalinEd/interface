@@ -10,7 +10,8 @@ $(function () {
     $("#Instruct").hide();
     $("#outOfstock").hide();
     $("#Instruct2").hide();
-
+    $("#Instruct3").hide();
+    $("#Instruct4").hide();
 
 
     $("#ok").click(function () { /* Here we show and hide the field. */
@@ -22,13 +23,19 @@ $(function () {
 
     });
     $("#ok3").click(function () { /* Here we show and hide the field. */
-        $("#Instruct").hide("slow");
+        $("#outOfstock").hide("slow");
     });
     $("#ok4").click(function () { /* Here we show and hide the field. */
         $("#Instruct").hide("slow");
     });
     $("#ok5").click(function () { /* Here we show and hide the field. */
         $("#Instruct2").hide("slow");
+    });
+    $("#ok6").click(function () { /* Here we show and hide the field. */
+        $("#Instruct3").hide("slow");
+    });
+    $("#ok7").click(function () { /* Here we show and hide the field. */
+        $("#Instruct4").hide("slow");
     });
     $("#No").click(function () { /* Here we show and hide the field. */
         $("#confirm").hide("slow");
@@ -117,7 +124,7 @@ function pay(ident) {
                     changeStock=order[i].getAttribute("data-beerID");
                     for (j = 0; j < beerdata.length; j++) {
                         if (beerdata[j].beer_id==changeStock){
-                            if (beerdata[j].count>0){
+                            if (beerdata[j].count>lowStockCustomer){
                                 beerdata[j].count=Number(beerdata[j].count)-1;
                                 // here we add data so that the list of most popular beverages bought can be updated
                                 // some of the keyvalues are empty but they wouldn't have been if we used the API
@@ -141,6 +148,27 @@ function pay(ident) {
                 countRedo=-1;
                 redoDrop=[];
                 $("#Instruct").show("slow");
+
+                /* reloading content so that "status"
+                can be updated if item still can be order by Vipuser*/
+                $("#popularBev").empty();
+                $("#favBeverage").empty();
+                $("#all").empty();
+                $("#öl").empty();
+                $("#cider").empty();
+                $("#vitt_vin").empty();
+                $("#rött_vin").empty();
+                $("#alcohol-free").empty();
+                $("#SearchStock").empty();
+                $(getAllfav(fav, beerdata)).appendTo("#favBeverage");
+                $(getAllpop(pop, beerdata)).appendTo("#popularBev");
+                $(getBeers("öl", beerdata, fav)).appendTo("#öl");
+                $(getBeers("cider", beerdata, fav)).appendTo("#cider");
+                $(getBeers("vitt_vin", beerdata,fav)).appendTo("#vitt_vin");
+                $(getBeers("rött_vin", beerdata, fav)).appendTo("#rött_vin");
+                $(getBeers("alcohol-free", beerdata,fav)).appendTo("#alcohol-free");
+                $(getAllBeers(beerdata,fav)).appendTo("#all");
+
             }
         }
 
@@ -180,6 +208,16 @@ function pay(ident) {
                 undoDrop=[];
                 countRedo=-1;
                 redoDrop=[];
+
+                //reloading some of the functions by first emptying them and then appendthem again
+                $('#allStock').empty()   /*get rid of the old content*/
+                $(getAllBeers(beerdata)).appendTo("#allStock");
+                $('#low').empty()   /*get rid of the old content*/
+                $(getlowStock(beerdata)).appendTo("#lowStock");
+                $("#popularBeverages").empty()   /*get rid of the old content*/
+                $(getAllPopular(pop, beerdata)).appendTo("#popularBeverages");
+
+
             }
 
         }

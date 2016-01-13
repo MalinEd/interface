@@ -312,7 +312,7 @@ function getBeerData() {
     return [
 
         {"namn" : "Anchor Steam Beer","namn2" : "","sbl_price" : "23.90","pub_price" : "25","beer_id" : "157503","count" : "10","price" : "20.60", "type":"öl"},
-        {"namn" : "Beck's","namn2" : "","sbl_price" : "14.90","pub_price" : "20","beer_id" : "154903","count" : "3","price" : "14.10", "type":"öl"},
+        {"namn" : "Beck's","namn2" : "","sbl_price" : "14.90","pub_price" : "20","beer_id" : "154903","count" : "11","price" : "14.10", "type":"öl"},
         {"namn" : "Bedarö Bitter","namn2" : "","sbl_price" : "28.60","pub_price" : "30","beer_id" : "141001","count" : "1","price" : "28.20", "type":"öl"},
         {"namn" : "BEO","namn2" : "Apple Green Tea","sbl_price" : "12.90","pub_price" : "15","beer_id" : "197702","count" : "3","price" : "12.90", "type":"alcohol-free"},
         {"namn" : "BEO","namn2" : "Blood Orange Hibiscus","sbl_price" : "12.90","pub_price" : "15","beer_id" : "197302","count" : "2","price" : "12.90", "type":"alcohol-free"},

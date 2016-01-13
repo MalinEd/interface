@@ -46,10 +46,7 @@
           <button align="right" class="flagbutton" onClick="Translate(Español)"></button>
       </div>
 
-      <div id="Instruct">
-          <p id="instr">Take the receipt and go get your order</p>
-          <button id="ok4" class="undobutton" >Ok</button>
-      </div>
+
 
       <div id="lefttbar">
           <ul class="tabs">
@@ -66,8 +63,8 @@
               <br>
               <div id="credit">Your credit:</div><a id="UserCredit"></a>
               <br>
-              <button id="undoButton" onclick="DropUndo()" class="undobutton">undo</button>
-              <button id="redoButton"  onclick="DropRedo()" class="undobutton">redo</button>
+              <button id="undoButton" onclick="DropUndo('undoC')" class="undobutton">undo</button>
+              <button id="redoButton"  onclick="DropRedo('redoC')" class="undobutton">redo</button>
               <br>
               <br>
 
@@ -100,10 +97,6 @@
               <p id="noOrdermess">You haven't ordered anything</p>
               <button id="ok2" class="undobutton" >Ok</button>
           </div>
-          <div id="outOfstock">
-              <p id="slut">Out of stock</p>
-              <button id="ok3" class="undobutton" >Ok</button>
-          </div>
 
           <div id="Instruct2">
               <p id="ins2">You are only allowed to order five items at a time</p>
@@ -115,6 +108,26 @@
 
       </div>
 
+      <div id="Instruct3">
+          <p id="UndoMess">You have nothing to undo</p>
+          <button id="ok6" class="undobutton" >Ok</button>
+      </div>
+
+      <div id="Instruct4">
+          <p id="RedoMess">You have nothing to redo</p>
+          <button id="ok7" class="undobutton" >Ok</button>
+      </div>
+
+      <div id="Instruct">
+          <p id="instr">Take the receipt and go get your order</p>
+          <button id="ok4" class="undobutton" >Ok</button>
+      </div>
+
+      <div id="outOfstock">
+          <p id="slut">Some items might be out of stock. Check receipt
+              and order the beverage/beverages you didn't get on the receipt from bartender</p>
+          <button id="ok3" class="undobutton" >Ok</button>
+      </div>
       <div id="mainframe">
           <div class="tab_container">
 
@@ -213,7 +226,9 @@
 
 
         </div> <!-- .tab_container -->
-    </div>
+
+
+      </div>
 
 
 </div>

@@ -57,10 +57,12 @@ function English() {
         ["No","No"],
         ["noOrdermess","You haven't ordered anything"],
         ["ok2","Ok"],
-        ["slut","Out of stock"],
+        ["slut","Some items might be out of stock. Check receipt and order the beverage/beverages you didn't get on the receipt from bartender"],
         ["ok3","Ok"],
         ["instr","Take the receipt and go get your order"],
         ["ok4","Ok"],
+        ["UndoMess","You have nothing to undo"],
+        ["RedoMess","You have nothing to redo"],
         ["favMessage","You have not added any favorites"]
 
     ]
@@ -100,11 +102,14 @@ function Svenska() {
         ["No","Nej"],
         ["noOrdermess","Du har inte beställt något"],
         ["ok2","Ok"],
-        ["slut","Slut"],
+        ["slut","Några sorter kan vara slut. Kontrollera kvittot och beställ drycken/dryckerna du inte fick med på kvittot från bartendern"],
         ["ok3","Ok"],
         ["instr","Tag ditt kvitto och hämta din order"],
         ["ok4","Ok"],
+        ["UndoMess","Du har inget att ångra"],
+        ["RedoMess","Du har inget att göra om"],
         ["favMessage","You have not added any favorites"]
+
 
     ]
 
@@ -144,10 +149,12 @@ function Español() {
         ["No","No"],
         ["noOrdermess", "No ha pedido nada"],
         ["ok2","Ok"],
-        ["slut","Agotado"],
+        ["slut","Algunos de bebidas podría estar fuera de orden. Revise su recibo y pedir sus bebidas / bebidas que usted no recibió en el recibo del barman"],
         ["ok3","Ok"],
         ["instr", "Toma el recibo y ir a buscar su pedido"],
         ["ok4","Ok"],
+        ["UndoMess", "No tienes nada que deshacer"],
+        ["RedoMess", "No tienes nada que hacer de nuevo"],
         ["favMessage","Usted no ha agregado favoritos"]
 
     ]

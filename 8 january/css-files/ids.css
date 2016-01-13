@@ -104,11 +104,13 @@ display: inline-block;
 
 }
 #outOfstock{
-    background-color:whitesmoke;
-    width: 20%;
-    height: 100px;
-    z-index: 1;
+    background-color: #FFD08A;
     position: absolute;
+    width: 30%;
+    height: 150px;
+    z-index: 2;
+    top:27%;
+    left: 32.5%;
 
 }
 
