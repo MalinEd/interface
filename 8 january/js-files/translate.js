@@ -30,8 +30,8 @@ function English() {
         ["logoutbutton", "Log Out"],
         ["leftbar1", "My Page"],
         ["leftbar2", "Beverages"],
-        ["credit", "Your credit: ..."],
-        ["cost", "Total cost: ...."],
+        ["credit", "Your credit:"],
+        ["cost", "Total cost:"],
         ["opener", "Pay"],
         ["yourorder", "Your order:"],
         ["favs", "<b id='b1' class ='current'>Favorites</b>"],
@@ -50,6 +50,17 @@ function English() {
         ["redoButton","redo"],
         ["dra1","Drag and drop beverage in area under pay"],
         ["dra2","Drag and drop beverage in area under pay"],
+        ["creditmess","You don't have enough credit. Remove an item and try again or add more credit in the automat or in the bar"],
+        ["ok","Ok"],
+        ["confirmmess","Are you sure you want to pay?"],
+        ["Yes","Yes"],
+        ["No","No"],
+        ["noOrdermess","You haven't ordered anything"],
+        ["ok2","Ok"],
+        ["slut","Out of stock"],
+        ["ok3","Ok"],
+        ["instr","Take the receipt and go get your order"],
+        ["ok4","Ok"],
         ["favMessage","You have not added any favorites"]
 
     ]
@@ -62,8 +73,8 @@ function Svenska() {
         ["logoutbutton", "Logga ut"], 
         ["leftbar1", "Min sida"], 
         ["leftbar2", "Drycker"], 
-        ["credit", "Din kredit: ..."], 
-        ["cost", "Total kostnad: ...."], 
+        ["credit", "Din kredit:"], 
+        ["cost", "Total kostnad:"], 
         ["yourorder", "Din beställning:"], 
         ["opener", "Betala"], 
         ["favs", "<b id='b1' class ='current'>  Favoriter  </b>"], 
@@ -82,7 +93,18 @@ function Svenska() {
         ["redoButton","gör om"],
         ["dra1","Dra och släpp dryck i området under betala"],
         ["dra2","Dra och släpp dryck i området under betala"],
-        ["favMessage","Du har inte lagt till några favoriter"]
+        ["creditmess","Du har inte tillräckligt mycket kredit. Ta bort något och försök igen eller lägg till mer kredit i automaten eller i baren"],
+        ["ok","Ok"],
+        ["confirmmess","Är du säker på att du vill betala?"],
+        ["Yes","Ja"],
+        ["No","Nej"],
+        ["noOrdermess","Du har inte beställt något"],
+        ["ok2","Ok"],
+        ["slut","Slut"],
+        ["ok3","Ok"],
+        ["instr","Tag ditt kvitto och hämta din order"],
+        ["ok4","Ok"],
+        ["favMessage","You have not added any favorites"]
 
     ]
 
@@ -95,8 +117,8 @@ function Español() {
         ["logoutbutton", "Cerrar sesión"],
         ["leftbar1", "Mi Página"],
         ["leftbar2", "Alcoholes"],
-        ["credit", "Su crédito: ..."],
-        ["cost", "Costo total: ...."],
+        ["credit", "Su crédito:"],
+        ["cost", "Costo total:"],
         ["yourorder", "Su pedido:"],
         ["opener", "Pagar"],
         ["favs", "<b id='b1' class='current'>Favoritos</b>"],
@@ -115,6 +137,17 @@ function Español() {
         ["redoButton","rehacer"],
         ["dra1","Arrastrar y bebida caída en la zona bajo pagar"],
         ["dra2","Arrastrar y bebida caída en la zona bajo pagar"],
+        ["creditmess", "Usted no tiene suficiente crédito. Eliminar un elemento y vuelva a intentarlo o añadir más crédito en el Automator en el bar"],        ["ok","Ok"],
+        ["ok","Ok"],
+        ["confirmmess","¿Está seguro que desea pagar?"],
+        ["Yes","Sí"],
+        ["No","No"],
+        ["noOrdermess", "No ha pedido nada"],
+        ["ok2","Ok"],
+        ["slut","Agotado"],
+        ["ok3","Ok"],
+        ["instr", "Toma el recibo y ir a buscar su pedido"],
+        ["ok4","Ok"],
         ["favMessage","Usted no ha agregado favoritos"]
 
     ]

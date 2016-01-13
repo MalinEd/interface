@@ -232,7 +232,7 @@ function getFavData() {
 function getVipData() {
     return [
         {"username" : "anddar","first_name" : "Andrea","last_name" : "Darzi","assets" : "-357460"},
-        {"username" : "aamsta","first_name" : "Aamu","last_name" : "Stankic","assets" : "-5120"},
+        {"username" : "aamsta","first_name" : "Aamu","last_name" : "Stankic","assets" : "1000"},
         {"username" : "maihon","first_name" : "Maiken","last_name" : "Honda","assets" : "-3415"},
         {"username" : "ankov","first_name" : "Anders","last_name" : "Kovalchyck","assets" : "-3210"},
         {"username" : "jovsit","first_name" : "Zlatan","last_name" : "Ibrahimovic","assets" : "-1637"},

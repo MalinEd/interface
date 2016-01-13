@@ -78,3 +78,55 @@ display: inline-block;
     width: 50%;
 
 }
+
+#mess{
+    background-color:whitesmoke;
+    width: 20%;
+    height: 100px;
+    z-index: 1;
+    position: absolute;
+
+}
+#confirm{
+    background-color:whitesmoke;
+    width: 20%;
+    height: 100px;
+    z-index: 1;
+    position: absolute;
+
+}
+#noOrder{
+    background-color:whitesmoke;
+    width: 20%;
+    height: 100px;
+    z-index: 1;
+    position: absolute;
+
+}
+#outOfstock{
+    background-color:whitesmoke;
+    width: 20%;
+    height: 100px;
+    z-index: 1;
+    position: absolute;
+
+}
+
+#Instruct{
+    background-color: #FFD08A;
+    position: absolute;
+    width: 30%;
+    height: 100px;
+    z-index: 1;
+    top:27%;
+    left: 32.5%;
+
+}
+#Instruct2{
+    background-color:whitesmoke;
+    width: 20%;
+    height: 100px;
+    z-index: 1;
+    position: absolute;
+
+}

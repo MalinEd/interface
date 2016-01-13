@@ -21,14 +21,16 @@
     <script type="text/javascript" src="js-files/collectDataAndGlobalVariables.js" ></script>
     <script type="text/javascript" src ="js-files/translate.js"></script>
     <script type="text/javascript" src="js-files/favorites_and_popular.js" ></script>
-      <script type="text/javascript" src ="js-files/handleBeverages.js"></script>
+    <script type="text/javascript" src ="js-files/handleBeverages.js"></script>
+    <script type="text/javascript" src ="js-files/money.js"></script>
 
 
 
 
 
 
-  </head>
+
+</head>
   <body>
 
   <div id="container">
@@ -44,6 +46,10 @@
           <button align="right" class="flagbutton" onClick="Translate(Español)"></button>
       </div>
 
+      <div id="Instruct">
+          <p id="instr">Take the receipt and go get your order</p>
+          <button id="ok4" class="undobutton" >Ok</button>
+      </div>
 
       <div id="lefttbar">
           <ul class="tabs">
@@ -54,52 +60,65 @@
 
       </div>
 
+
       <div id="rightbar">
           <div id="receipt" class="receipt">
               <br>
-              <div id="credit">Your credit: ...</div>
+              <div id="credit">Your credit:</div><a id="UserCredit"></a>
               <br>
               <button id="undoButton" onclick="DropUndo()" class="undobutton">undo</button>
               <button id="redoButton"  onclick="DropRedo()" class="undobutton">redo</button>
               <br>
               <br>
 
-              <!---  <button id="opener">Pay</button>-->
-            <!---  <div id="wrapper">
-                 <p>Are you sure you would like to pay?</p>
-                 <form method="post" action="">
-                     <input class="button bluesize smaller" type="submit" value="Yes">
-                 </form>
-                 <form method="post" action="">
-                     <input class="button bluesize smaller" type="submit" value="No">
-                 </form>
-             </div> -->
 
-              <div id="cost" >Total cost: ....</div>
+              <div id="cost" >Total cost: </a></div><a id="total">0:-</a>
+          </div>
 
-        </div>
         <div id="receipt12" class="receipt2">
             <br>
             <div id="yourorder">Your order:</div>
 
-            <button id="opener" class="undobutton">Pay</button>
+            <button id="opener" class="undobutton" onclick="payIt('receipt13')">Pay</button>
 
 
 
-        </div>
-        <div>
-
-            <ul id="receipt13" class="receipt3" ondrop="drop(event)" ondragover="allowDrop(event)">
-            </ul>
 
         </div>
+          <div id="mess">
+              <p id="creditmess">You don't have enough credit. Remove an item and
+                  try again or add more credit in the automat or in the bar</p>
+              <button id="ok" class="undobutton" >Ok</button>
+          </div>
 
-    </div>
+          <div id="confirm">
+              <p id="confirmmess">Are you sure you want to pay?</p>
+              <button id="Yes" class="undobutton" onclick="pay('receipt13')">Yes</button>
+              <button id="No" class="undobutton" >No</button>
+          </div>
+          <div id="noOrder">
+              <p id="noOrdermess">You haven't ordered anything</p>
+              <button id="ok2" class="undobutton" >Ok</button>
+          </div>
+          <div id="outOfstock">
+              <p id="slut">Out of stock</p>
+              <button id="ok3" class="undobutton" >Ok</button>
+          </div>
 
-    <div id="mainframe">
-        <div class="tab_container">
+          <div id="Instruct2">
+              <p id="ins2">You are only allowed to order five items at a time</p>
+              <button id="ok5" class="undobutton" >Ok</button>
+          </div>
+          <div id="receipt13" class="receipt3" ondrop="drop(event)" ondragover="allowDrop(event)">
 
-            <div id="tab1" class="tab_content">
+          </div>
+
+      </div>
+
+      <div id="mainframe">
+          <div class="tab_container">
+
+              <div id="tab1" class="tab_content">
                 <!-- see queries in favorites_and_popular.js --->
                 <div id="inf1" class="inf">ⓘ=Order from bartender</div>
                 <div id="dra1" class="inf">Drag and drop beverage in area under paybutton</div>
@@ -124,6 +143,9 @@
                         <!-- text generated from js file--->
 
                     </div>
+
+
+
                 </div>
 
 

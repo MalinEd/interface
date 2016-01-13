@@ -24,6 +24,7 @@ $(function () {
 });
 
 
+//function that gets a users favorite beverages
 function getAllfav(fav, beerdata) {
     var CK = document.cookie;  //get cookieinformation
     var start=CK.split("=")[1]; // chooses the part of the cookie that we need (looks like userName=username and we remove userName= by using split)

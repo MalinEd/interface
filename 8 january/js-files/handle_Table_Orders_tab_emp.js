@@ -228,7 +228,7 @@ function SearchStock(beerdata) {
                 }
                 else {
                     ffBeverage +='<div class="row" id="menuitemSearch'+ i +'" draggable="True" ' +
-                        'ondragstart="drag(event)" data-price="'+beerdata[i].price+'" data-name="'+beerdata[i].namn+'" ' +
+                        'ondragstart="drag(event)" data-price="'+beerdata[i].pub_price+'" data-name="'+beerdata[i].namn+'" ' +
                         'data-beerID="'+beerdata[i].beer_id+'">'+
                         '<div class="cell">'+ beerdata[i].namn+'</div> <div class="cell" id="price'+i+'">'
                         +beerdata[i].pub_price+':-</div><div class="cell"></div></div>';
@@ -326,3 +326,6 @@ function countSales(pop){
 
     return counting;
 }
+
+
+

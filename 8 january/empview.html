@@ -21,6 +21,8 @@
     <script type="text/javascript" src="js-files/drop.js" ></script>
     <script type="text/javascript" src="js-files/collectDataAndGlobalVariables.js" ></script>
     <script type="text/javascript" src="js-files/handleIncidents.js" ></script>
+    <script type="text/javascript" src ="js-files/money.js"></script>
+
 
 
 
@@ -51,67 +53,24 @@
     <div id="rightbar">
         <div id="receipt" class="receipt4">
             <br>
-            <div id="cost" font-size="16px">Total cost: ....</div>
+            <div id="cost">Total cost: <a id="total">0:-</a></div>
 
             <button class="undobutton" onclick="DropUndo()">Undo</button>
             <button class="undobutton"onclick="DropRedo()">Redo</button>
             <br>
             <br>
-            <div id="yourorder" font-size="16px">Single Customer order:</div>
+            <div id="yourorder">Single Customer order:</div>
 
 
         </div>
 
 
-         <script>
-function purchase1() {
-   var checkIfsomethingIsDropped =$("#receipt23").children(); // get all the children
-    var i = 0;
-    var total = 0;
-    var arr = new Array();
-    var len = checkIfsomethingIsDropped.length
-    if (checkIfsomethingIsDropped.length>0){
-        while (len > 0){
-            var item = checkIfsomethingIsDropped =$("#receipt23").children()[i].innerHTML;
-            var splititem = item.split(">");
-            var priceOfItem = splititem[3].replace(":-</div","");
-            arr.push(priceOfItem);  
-            i = i + 1;
-            len = len - 1;
-            
-            
-        }
-        for (var i = 0; i < arr.length; i++) {
-    total += arr[i] << 0;
-}
-        window.alert(total);
-       document.getElementById("demo1").innerHTML = "SUMMIT HERE"; 
-       
-        
-        
-    }
-    else{
-       document.getElementById("demo1").innerHTML = "Nothing here.."; 
-    }
-    }
-    
+        <div id="receipt23" class="receipt3" ondrop="drop(event)" ondragover="allowDrop(event)">
 
-
-    
-
-</script>
-        <div>
-
-            <ul id="receipt23" class="receipt3" ondrop="drop(event)" ondragover="allowDrop(event)">
-            </ul>
-
-        </div>
- <p id="demo1" onclick="purchase1()">Pay</p>
-<p>Total: </p>
 
         </div>
 
-        <button class="undobutton">Pay</button>
+        <button id="opener" class="undobutton" onclick="pay('receipt23')">Pay</button>
 
 
     </div>
@@ -133,7 +92,7 @@ function purchase1() {
 
                         <div class="drinkorder" id="order1" ondrop="drop(event)" ondragover="allowDrop(event)">
                             Table 1
-                            <button class="undobutton">Pay</button>
+                            <button class="undobutton" onclick="pay('order1')">Pay</button>
 
                         </div>
 
@@ -146,7 +105,7 @@ function purchase1() {
                         <span class="tsum">0:-</span>
                         <div class="drinkorder" id="order2" ondrop="drop(event)" ondragover="allowDrop(event)">
                             Table 2
-                            <button class="undobutton">Pay</button>
+                            <button class="undobutton" onclick="pay('order2')">Pay</button>
                         </div>
                     </div>
 
@@ -155,7 +114,7 @@ function purchase1() {
                         <span class="tsum">0:-</span>
                         <div class="drinkorder" id="order3" ondrop="drop(event)" ondragover="allowDrop(event)">
                             Table 3
-                            <button class="undobutton">Pay</button>
+                            <button class="undobutton" onclick="pay('order3')">Pay</button>
 
                         </div>
 
@@ -165,7 +124,7 @@ function purchase1() {
                         <span class="tsum">0:-</span>
                         <div class="drinkorder" id="order4" ondrop="drop(event)" ondragover="allowDrop(event)">
                             Table 4
-                            <button class="undobutton">Pay</button>
+                            <button class="undobutton" onclick="pay('order4')">Pay</button>
 
                         </div>
 
@@ -176,7 +135,7 @@ function purchase1() {
 
                         <div class="drinkorder" id="order5" ondrop="drop(event)" ondragover="allowDrop(event)">
                             Table 5
-                            <button class="undobutton">Pay</button>
+                            <button class="undobutton" onclick="pay('order5')">Pay</button>
 
                         </div>
 
@@ -217,7 +176,7 @@ function purchase1() {
 
                         <div class="drinkorder" id="order6" ondrop="drop(event)" ondragover="allowDrop(event)">
                             Table 6
-                            <button class="undobutton">Pay</button>
+                            <button class="undobutton" onclick="pay('order6')">Pay</button>
 
                         </div>
 
@@ -229,7 +188,7 @@ function purchase1() {
                         <span class="tsum">0:-</span>
                         <div class="drinkorder" id="order7" ondrop="drop(event)" ondragover="allowDrop(event)">
                             Table 7
-                            <button class="undobutton">Pay</button>
+                            <button class="undobutton" onclick="pay('order7')">Pay</button>
 
                         </div>
 
@@ -240,7 +199,7 @@ function purchase1() {
                         <span class="tsum">0:-</span>
                         <div class="drinkorder" id="order8" ondrop="drop(event)" ondragover="allowDrop(event)">
                             Table 8
-                            <button class="undobutton">Pay</button>
+                            <button class="undobutton" onclick="pay('order8')">Pay</button>
 
                         </div>
 
@@ -251,7 +210,7 @@ function purchase1() {
                         <span class="tsum">0:-</span>
                         <div class="drinkorder" id="order9" ondrop="drop(event)" ondragover="allowDrop(event)">
                             Table 9
-                            <button class="undobutton">Pay</button>
+                            <button class="undobutton" onclick="pay('order9')">Pay</button>
 
                         </div>
 
@@ -261,7 +220,7 @@ function purchase1() {
                         <span class="tsum">0:-</span>
                         <div class="drinkorder" id="order10" ondrop="drop(event)" ondragover="allowDrop(event)">
                             Table 10
-                            <button class="undobutton">Pay</button>
+                            <button class="undobutton" onclick="pay('order10')">Pay</button>
 
                         </div>
 
