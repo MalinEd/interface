@@ -14,30 +14,30 @@ $(function () {
     $("#Instruct4").hide();
 
 
-    $("#ok").click(function () { /* Here we show and hide the field. */
+    $("#ok").click(function () { /* Here we hide the field. */
         $("#mess").hide("slow");
     });
-    $("#ok2").click(function () { /* Here we show and hide the field. */
+    $("#ok2").click(function () { /* Here we  hide the field. */
         $("#noOrder").hide("slow");
         $("#confirm").hide("slow");
 
     });
-    $("#ok3").click(function () { /* Here we show and hide the field. */
+    $("#ok3").click(function () { /* Here we hide the field. */
         $("#outOfstock").hide("slow");
     });
-    $("#ok4").click(function () { /* Here we show and hide the field. */
+    $("#ok4").click(function () { /* Here we  hide the field. */
         $("#Instruct").hide("slow");
     });
-    $("#ok5").click(function () { /* Here we show and hide the field. */
+    $("#ok5").click(function () { /* Here we  hide the field. */
         $("#Instruct2").hide("slow");
     });
-    $("#ok6").click(function () { /* Here we show and hide the field. */
+    $("#ok6").click(function () { /* Here we hide the field. */
         $("#Instruct3").hide("slow");
     });
-    $("#ok7").click(function () { /* Here we show and hide the field. */
+    $("#ok7").click(function () { /* Here we hide the field. */
         $("#Instruct4").hide("slow");
     });
-    $("#No").click(function () { /* Here we show and hide the field. */
+    $("#No").click(function () { /* Here we hide the field. */
         $("#confirm").hide("slow");
     });
 
