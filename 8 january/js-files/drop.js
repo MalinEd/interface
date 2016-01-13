@@ -31,7 +31,11 @@ function drag(ev) {
 // on the target. You can define any kind of action that you want to
 // incorporate.
 //
-function drop(ev) {
+// The drop function determines what happens when you drop the source item
+// on the target. You can define any kind of action that you want to
+// incorporate.
+//this is when drop in custview
+function drop1(ev) {
     var identitet=ev.target.id;
     countDrop++; /*count how many drops have been made and also giv the outer div a new id */
     var maxNumOfOrders=5;
@@ -44,74 +48,83 @@ function drop(ev) {
 
     var data = ev.dataTransfer.getData("text");
 
-    // If we use .cloneNode(true) the dragging results in a copy, rather than
-    // a move of the source.
+    //maxiumum number of items a customer can buy by them self
+    var orders = $("#"+"receipt13").children();
+    if (orders.length<maxNumOfOrders) {
+
+        // If we use .cloneNode(true) the dragging results in a copy, rather than
+        // a move of the source.
+
+        var nodeCopy;
+        var newID;
+
+        nodeCopy = document.getElementById(data).cloneNode(true);
+        //We cannot use the same ID
+        newID="newId"+countDrop;
+        nodeCopy.id=newID;
+        ev.target.appendChild(nodeCopy);
+
+        // getting the the beverages name and price so we add it into the innerhtml
+        // of the first div and remove the remaning divs containing for example the star
+        var bevName=nodeCopy.getAttribute("data-name");
+        var bevPrice=nodeCopy.getAttribute("data-price");
+
+        $("#"+newID).html(bevName+ " "+bevPrice+":-");
+
+        var content=document.getElementById(newID).outerHTML;
+        undoDrop.push({"cont":content,"idet": identitet});
+
+        //decides where the calculated sum should be placed  every time something is dropped
+        whereToUpdate(identitet);
+
+
+    }
+    // this will show up if you try to buy more than you are allowed
+    else{
+        $("#Instruct2").show("slow");
+    }
+
+
+}
+
+//this is drop in empview
+
+function drop(ev) {
+    var identitet=ev.target.id;
+    countDrop++; /*count how many drops have been made and also giv the outer div a new id */
+
+    ev.preventDefault();
+
+    // This allows for copying menu items, rather than moving them.
+    //
+    ev.dataTransfer.dropEffect="copy";
+
+    var data = ev.dataTransfer.getData("text");
 
     var nodeCopy;
     var newID;
 
-    // this is used when dropping in custview
-    if (identitet=="receipt13") {
-        var orders = $("#"+identitet).children();
-        if (orders.length<maxNumOfOrders) {
-           // var node1 = document.createElement("LI");
-           nodeCopy = document.getElementById(data).cloneNode(true);
-           // nodeCopy.setAttribute('draggable', false);
+    nodeCopy = document.getElementById(data).cloneNode(true);
+    //We cannot use the same ID
+    newID="newId"+countDrop;
+    nodeCopy.id=newID;
+    ev.target.appendChild(nodeCopy);
 
+    // getting the the beverages name and price so we add it into the innerhtml
+    // of the first div and remove the remaning divs containing for example the star
+    var bevName=nodeCopy.getAttribute("data-name");
+    var bevPrice=nodeCopy.getAttribute("data-price");
 
-            /* We cannot use the same ID */
-            newID="newId"+countDrop;
-            nodeCopy.id=newID;
+    $("#"+newID).html(bevName+ " "+bevPrice+":-");
 
-            //node1.appendChild(nodeCopy);
-           // ev.target.appendChild(node1);
-           ev.target.appendChild(nodeCopy);
-
-
-            // get all the children to see if you are allowed to ordermore items
-
-            var list = $("#"+newID).children(); // get all the children
-            //list[0].innerHTML=list[0].innerHTML+' '+list[1].innerHTML;
-
-
-            if (list.length>2) {
-
-                $(list.get(list.length-1)).remove(); // remove the last one (the star will be removed)
-                var list1 = $("#"+newID).children(); // get all the children
-                var content=document.getElementById(newID).outerHTML;
-
-                undoDrop.push({"cont":content,"idet": identitet});
-                }
-            else {
-                /* uses this to store what was dropped into target*/
-                undoDrop.push({"cont":nodeCopy.outerHTML,"idet": identitet});
-            }
-        }
-        else{
-            $("#Instruct2").show("slow");
-        }
-    }
-
-    //this is used when dropping in empview
-    else {
-        nodeCopy = document.getElementById(data).cloneNode(true);
-
-        /* We cannot use the same ID */
-        newID="newId"+countDrop;
-        nodeCopy.id=newID;
-
-        ev.target.appendChild(nodeCopy);
-        /* uses this to store what was dropped into target*/
-        undoDrop.push({"cont":nodeCopy.outerHTML,"idet": identitet});
-
-    }
+    var content=document.getElementById(newID).outerHTML;
+    undoDrop.push({"cont":content,"idet": identitet});
 
     //decides where the calculated sum should be placed  every time something is dropped
     whereToUpdate(identitet);
 
 
 }
-
 // this function keeps track of where to update to total sum of items added in order
 function whereToUpdate(ident){
 
