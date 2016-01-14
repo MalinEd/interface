@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <title>The Flying Dutchman</title>
+
+    <link rel="stylesheet" type="text/css" href="css-files/basic.css">
+    <link rel="stylesheet" type="text/css" href="css-files/buttons.css">
+    <link rel="stylesheet" type="text/css" href="css-files/ids.css">
+    <link rel="stylesheet" type="text/css" href="css-files/tabstyle.css">
+    <link rel="stylesheet" type="text/css" href="css-files/BillAndTablestyle.css">
+
+
+    <script type="text/javascript" src="js-files/jquery.js" ></script>
+    <script type="text/javascript" src ="js-files/jtest.js"></script>
+    <script type="text/javascript" src ="js-files/handleStock.js"></script>
+    <script type="text/javascript" src ="js-files/handleVips.js"></script>
+    <script type="text/javascript" src ="js-files/handle_Table_Orders_tab_emp.js"></script>
+    <script type="text/javascript" src="js-files/drop.js" ></script>
+    <script type="text/javascript" src="js-files/collectDataAndGlobalVariables.js" ></script>
+    <script type="text/javascript" src="js-files/handleIncidents.js" ></script>
+    <script type="text/javascript" src ="js-files/money.js"></script>
+
+
+
+
+
+
+</head>
+<body>
+
+<div id="container">
+
+    <div id="top">
+        <h1 align="center"><span class="style1">The Flying Dutchman</span>      <img class="picturestyle2"  src="pictures/background.JPG"/>
+            <a href="login.html">
+                <button align="right" class="logoutbutton">Log Out</button> </a>    </h1>
+    </div>
+
+    <div id="lefttbar">
+        <ul class="tabs">
+            <li class="button blue small" rel="tab1">Handle Order</li>
+            <li class="button blue small" rel="tab2">Vip-members</li>
+            <li class="button blue small" rel="tab3">Stock</li>
+            <li class="button blue small" rel="tab5">Incidents</li>
+        </ul>
+
+    </div>
+    <div id="rightbar">
+        <div id="receipt" class="receipt4">
+            <br>
+            <div id="cost">Total cost: <a id="total">0:-</a></div>
+
+            <button class="undobutton" onclick="DropUndo('undoE')">Undo</button>
+            <button class="undobutton"onclick="DropRedo('redoE')">Redo</button>
+            <br>
+            <br>
+            <div id="yourorder">Single Customer order:</div>
+
+
+        </div>
+
+
+        <div id="receipt23" class="receipt3" ondrop="drop(event)" ondragover="allowDrop(event)">
+
+
+        </div>
+
+        <button id="opener" class="undobutton" onclick="pay('receipt23')">Pay</button>
+
+
+    </div>
+
+    <div id="mainframe">
+        <div class="tab_container">
+
+            <div id="tab1" class="tab_content">
+                <!-- See queries for this in file handle_Table_Orders_tab_emp.js -->
+
+                <div id="bartablesleft">
+
+                    <div class="barTable" id="t1">
+                            <span class="tname">
+                                Table 1
+                            </span>
+                        <span class="tsum">0:-</span>
+
+
+                        <div class="drinkorder" id="order1" ondrop="drop(event)" ondragover="allowDrop(event)">
+                            Table 1
+                            <button class="undobutton" onclick="pay('order1')">Pay</button>
+
+                        </div>
+
+
+                    </div>
+
+
+                    <div class="barTable" id="t2">
+                        <span class="tname">Table 2</span>
+                        <span class="tsum">0:-</span>
+                        <div class="drinkorder" id="order2" ondrop="drop(event)" ondragover="allowDrop(event)">
+                            Table 2
+                            <button class="undobutton" onclick="pay('order2')">Pay</button>
+                        </div>
+                    </div>
+
+                    <div class="barTable" id="t3">
+                        <span class="tname">Table 3</span>
+                        <span class="tsum">0:-</span>
+                        <div class="drinkorder" id="order3" ondrop="drop(event)" ondragover="allowDrop(event)">
+                            Table 3
+                            <button class="undobutton" onclick="pay('order3')">Pay</button>
+
+                        </div>
+
+                    </div>
+                    <div class="barTable" id="t4">
+                        <span class="tname">Table 4</span>
+                        <span class="tsum">0:-</span>
+                        <div class="drinkorder" id="order4" ondrop="drop(event)" ondragover="allowDrop(event)">
+                            Table 4
+                            <button class="undobutton" onclick="pay('order4')">Pay</button>
+
+                        </div>
+
+                    </div>
+                    <div class="barTable" id="t5">
+                        <span class="tname">Table 5</span>
+                        <span class="tsum">0:-</span>
+
+                        <div class="drinkorder" id="order5" ondrop="drop(event)" ondragover="allowDrop(event)">
+                            Table 5
+                            <button class="undobutton" onclick="pay('order5')">Pay</button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div>
+                    <div id="menubarright">
+                        <ul id="mtabs3">
+                            <li onclick="checklist('b','b1')" id="popular">
+                                <b id="b1" class="current" >Popular</b>
+                            </li>
+                            <li onclick="checklist('b','b2')" id="searching">
+                                <b id="b2">Search</b>
+                            </li>
+                        </ul>
+                        <div class="menu" id="popularBeverages">
+                            <h3>Popular</h3>
+
+                        </div>
+
+                        <div class="menu" id="searchBeverage">
+
+                        </div>
+                    </div>
+
+                </div>
+
+
+
+                <div id="barframe">
+
+                    <div class="barTable" id="t6">
+                        <span class="tname">Table 6</span>
+                        <span class="tsum">0:-</span>
+
+                        <div class="drinkorder" id="order6" ondrop="drop(event)" ondragover="allowDrop(event)">
+                            Table 6
+                            <button class="undobutton" onclick="pay('order6')">Pay</button>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="barTable" id="t7">
+                        <span class="tname">Table 7</span>
+                        <span class="tsum">0:-</span>
+                        <div class="drinkorder" id="order7" ondrop="drop(event)" ondragover="allowDrop(event)">
+                            Table 7
+                            <button class="undobutton" onclick="pay('order7')">Pay</button>
+
+                        </div>
+
+                    </div>
+
+                    <div class="barTable" id="t8">
+                        <span class="tname">Table 8</span>
+                        <span class="tsum">0:-</span>
+                        <div class="drinkorder" id="order8" ondrop="drop(event)" ondragover="allowDrop(event)">
+                            Table 8
+                            <button class="undobutton" onclick="pay('order8')">Pay</button>
+
+                        </div>
+
+                    </div>
+
+                    <div class="barTable" id="t9">
+                        <span class="tname">Table 9</span>
+                        <span class="tsum">0:-</span>
+                        <div class="drinkorder" id="order9" ondrop="drop(event)" ondragover="allowDrop(event)">
+                            Table 9
+                            <button class="undobutton" onclick="pay('order9')">Pay</button>
+
+                        </div>
+
+                    </div>
+                    <div class="barTable" id="t10">
+                        <span class="tname">Table 10</span>
+                        <span class="tsum">0:-</span>
+                        <div class="drinkorder" id="order10" ondrop="drop(event)" ondragover="allowDrop(event)">
+                            Table 10
+                            <button class="undobutton" onclick="pay('order10')">Pay</button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+            </div><!-- #tab1 -->
+
+
+            <div id="tab2" class="tab_content">
+                <!-- See queries for this in file handleVips.js -->
+                <div>
+                    <button class="undobutton" onclick="undoVIPdelete()">Undo Delete</button>
+                    <button class="undobutton" onclick="redoVIPdelete()">Redo Delete</button>
+                    <div id="menutabs">
+                        <ul  id="mtabs">
+                            <li onclick="checklist('c','c1')" id="vip">
+                                <c id="c1" class="current">All VIPS</c>
+                            </li>
+                            <li onclick="checklist('c','c2')" id="search">
+                                <c id="c2" >Search VIP</c>
+                            </li>
+                            <li onclick="checklist('c','c3')" id="newUser">
+                                <c id="c3">Add new VIP</c>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="menu" id="allVipUsers">
+                    </div>
+
+                    <div class="menu" id="searchVipUser">
+                    </div>
+
+                    <div class="menu" id="addVipUser">
+                    </div>
+                </div>
+
+            </div><!-- #tab2 -->
+            <div id="tab3" class="tab_content">
+                <!-- See queries for this in file handleStock.js -->
+
+                <div id="menutabs2">
+                    <ul id="mtabs2">
+                        <li onclick="checklist('d','d1')" id="drinks">
+                            <d id="d1" class="current" >All in Stock</d>
+                        </li>
+                        <li onclick="checklist('d','d2')" id="runningout">
+                            <d id="d2" >Low in Stock</d>
+                        </li>
+                        <li onclick="checklist('d','d3')" id="searching1">
+                            <d id="d3">Search Stock</d>
+                        </li>
+                    </ul>
+                </div>
+
+
+                <div class="menu" id="allStock">
+                </div>
+                <div class="menu" id="lowStock">
+                </div>
+                <div class="menu" id="SearchStock">
+                </div>
+
+            </div><!-- #tab3 -->
+
+
+
+            <div id="tab5" class="tab_content">
+                <div id="menutabs4">
+                    <ul id="mtabs4">
+                        <li onclick="checklist('e','e1')" id="history">
+                            <e id="e1" class="current" >History</e>
+                        </li>
+                        <li onclick="checklist('e','e2')" id="newincident">
+                            <e id="e2">New Incident</e>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="menu" id="Incidents">
+                </div>
+
+                <div class="menu" id="History1">
+
+                </div>
+
+
+            </div>
+
+        </div> <!-- .tab_container -->
+        <!-- #tab5 -->
+
+
+
+    </div>
+
+
+</div>
+
+
+
+
+
+</body>
+</html>
