@@ -63,6 +63,7 @@ function English() {
         ["ok4","Ok"],
         ["UndoMess","You have nothing to undo"],
         ["RedoMess","You have nothing to redo"],
+        ["ins2","You are only allowed to order five items at a time"],
         ["favMessage","You have not added any favorites"]
 
     ]
@@ -108,6 +109,7 @@ function Svenska() {
         ["ok4","Ok"],
         ["UndoMess","Du har inget att ångra"],
         ["RedoMess","Du har inget att göra om"],
+        ["ins2","Du får bara beställa fem drycker åt gången"],
         ["favMessage","You have not added any favorites"]
 
 
@@ -155,6 +157,7 @@ function Español() {
         ["ok4","Ok"],
         ["UndoMess", "No tienes nada que deshacer"],
         ["RedoMess", "No tienes nada que hacer de nuevo"],
+        ["ins2","Sólo se le permite ordenar cinco elementos a la vez"],
         ["favMessage","Usted no ha agregado favoritos"]
 
     ]
