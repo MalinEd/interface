@@ -159,7 +159,6 @@ function pay(ident) {
                 $("#vitt_vin").empty();
                 $("#rött_vin").empty();
                 $("#alcohol-free").empty();
-                $("#SearchStock").empty();
                 $(getAllfav(fav, beerdata)).appendTo("#favBeverage");
                 $(getAllpop(pop, beerdata)).appendTo("#popularBev");
                 $(getBeers("öl", beerdata, fav)).appendTo("#öl");
